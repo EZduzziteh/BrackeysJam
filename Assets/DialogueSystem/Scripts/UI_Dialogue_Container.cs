@@ -7,6 +7,7 @@ public class UI_Dialogue_Container : MonoBehaviour
     public static UI_Dialogue_Container Instance;
     public GameObject AnswerPanelTemplate;
     public GameObject LinePanelTemplate;
+    public GameObject TextPromptTemplate;
 
     public void Awake()
     {
@@ -22,12 +23,23 @@ public class UI_Dialogue_Container : MonoBehaviour
 
         AnswerPanelTemplate.SetActive(false);
         LinePanelTemplate.SetActive(false);
+        TextPromptTemplate.SetActive(false);
 
 
     }
 
+
+    public void DisplayPrompt()
+    {
+        GameObject temp = Instantiate(TextPromptTemplate, transform);
+        temp.SetActive(true);
+        
+    }
     public void DisplayAnswer(DialogueStage_Answer answerData)
     {
+
+        Clear();
+
         GameObject temp = Instantiate(AnswerPanelTemplate, this.transform);
         temp.SetActive(true);
 
@@ -41,6 +53,7 @@ public class UI_Dialogue_Container : MonoBehaviour
 
     public void DisplayLine(DialogueStage_Line lineData)
     {
+        Clear();
         GameObject temp = Instantiate(LinePanelTemplate, this.transform);
         temp.SetActive(true);
         if (temp.TryGetComponent<UI_Dialogue_Line_Panel>(out var linePanel)) {
@@ -49,6 +62,24 @@ public class UI_Dialogue_Container : MonoBehaviour
         }
     }
 
-    
-    
+
+    public void Clear()
+    {
+        List<GameObject> childrenToDestroy = new List<GameObject>();
+        for(int i = 0; i < transform.childCount; i++)
+        {
+            if(
+                transform.GetChild(i).gameObject != AnswerPanelTemplate &&
+                transform.GetChild(i).gameObject != LinePanelTemplate &&
+                transform.GetChild(i).gameObject != TextPromptTemplate)
+            {
+                childrenToDestroy.Add(transform.GetChild(i).gameObject);
+            }
+        }
+
+        foreach(var c in childrenToDestroy)
+        {
+            Destroy(c.gameObject);
+        }
+    }
 }

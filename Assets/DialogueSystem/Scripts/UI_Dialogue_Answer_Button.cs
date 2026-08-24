@@ -27,6 +27,17 @@ public class UI_Dialogue_Answer_Button : MonoBehaviour
 
     private void HandleButtonClicked()
     {
+        var buttons = transform.parent.GetComponentsInChildren<UI_Dialogue_Answer_Button>();
+
+        foreach(var b in buttons)
+        {
+            if (b != this)
+            {
+                Destroy(b.gameObject);
+            }
+            
+        }
+
         DialogueManager.Instance.TryAdvanceDialogue(OptionID);
     }
 }

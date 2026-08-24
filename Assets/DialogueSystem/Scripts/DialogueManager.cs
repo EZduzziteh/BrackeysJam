@@ -1,5 +1,6 @@
 
 using System;
+using System.Threading.Tasks;
 using UnityEngine;
 using static DialogueStage_Answer;
 
@@ -82,25 +83,37 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("No Dialogue to execute!");
             EndDialogue();
         }
   }
 
     private void EndDialogue()
     {
-        Debug.Log("Ending Dialogue!");
         currentDialogueStage = null;
+        UI_Dialogue_Container.Instance.Clear();
     }
 
-
+    bool awaitingUser = false;
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return) && awaitingUser)
         {
-            Debug.Log(TryAdvanceDialogue());
+            if (TryAdvanceDialogue())
+            {
+                //there is a next dialogue
+            }
+            else
+            {
+                // no next dialogue in chain, clear it up.
+                UI_Dialogue_Container.Instance.Clear();
+            }
         }
+    }
+
+    public void SetAwaitingUser(bool isAwaiting)
+    {
+        awaitingUser = isAwaiting;
     }
 
     public bool TryAdvanceDialogue(int option = 0)
@@ -154,7 +167,6 @@ public class DialogueManager : MonoBehaviour
 
     public void AdvanceDialogue(DialogueAnswer answer)
     {
-        Debug.Log("Advancing...");
         if (answer.nextStage!= null)
         {
             StartDialogue(answer.nextStage);
@@ -165,5 +177,5 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-
+   
 }
