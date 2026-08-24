@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99066965772588045a97e5a46a87e30f, type: 3}
+  m_Name: Player_Answer_01
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueAnswerSO
+  answers:
+  - LineData:
+      text: Red
+      audioClip: {fileID: 0}
+    nextStage: {fileID: 11400000, guid: 926a98e7a36eeea4b912c24720002ece, type: 2}
+  - LineData:
+      text: Blue
+      audioClip: {fileID: 0}
+    nextStage: {fileID: 11400000, guid: cdeb6c0258f968549b336778f8733bf7, type: 2}
+  - LineData:
+      text: Neither!
+      audioClip: {fileID: 0}
+    nextStage: {fileID: 11400000, guid: 335e16b946cd6d741af82ae90addbcb8, type: 2}
