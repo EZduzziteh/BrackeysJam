@@ -11,6 +11,7 @@ public class car_interior_controller : MonoBehaviour
     private InputSystem_Actions controller;
     private Vector3 pos;
     private Animator blinker_animator;
+    private interactable highlightedElement;
     private void Awake() { controller = new InputSystem_Actions(); }
     private void OnEnable()
     {
@@ -29,14 +30,18 @@ public class car_interior_controller : MonoBehaviour
             Debug.Log(hit2D.collider.gameObject);
             try
             {
-                //hit2D.collider.gameObject.GetComponent<interactable>().triggerEffect();
+                highlightedElement = hit2D.collider.gameObject.GetComponent<interactable>();
+                highlightedElement.showOutline();
+                return;
             }
             catch
             {
                 Debug.Log("missing interactable component");
             }
-
+            
         }
+        if(highlightedElement)//cleanup outlines if we did not highlight something new, and if we've highlighted something before.
+            highlightedElement.hideOutline(); 
     }
 
     private void OnDisable()
