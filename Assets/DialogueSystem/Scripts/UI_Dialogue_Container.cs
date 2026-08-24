@@ -20,17 +20,14 @@ public class UI_Dialogue_Container : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-
         AnswerPanelTemplate.SetActive(false);
         LinePanelTemplate.SetActive(false);
         TextPromptTemplate.SetActive(false);
-
-
     }
-
 
     public void DisplayPrompt()
     {
+        DialogueManager.Instance.SetAwaitingUser(false);
         GameObject temp = Instantiate(TextPromptTemplate, transform);
         temp.SetActive(true);
         
@@ -38,6 +35,7 @@ public class UI_Dialogue_Container : MonoBehaviour
     public void DisplayAnswer(DialogueStage_Answer answerData)
     {
 
+        DialogueManager.Instance.SetAwaitingUser(false);
         Clear();
 
         GameObject temp = Instantiate(AnswerPanelTemplate, this.transform);
@@ -53,6 +51,7 @@ public class UI_Dialogue_Container : MonoBehaviour
 
     public void DisplayLine(DialogueStage_Line lineData)
     {
+        DialogueManager.Instance.SetAwaitingUser(false);
         Clear();
         GameObject temp = Instantiate(LinePanelTemplate, this.transform);
         temp.SetActive(true);

@@ -44,11 +44,9 @@ public class DialogueManager : MonoBehaviour
 
   public void ExecuteDialogue()
   {
-      //  Debug.Log("Executing Dialogue...");
-
+ 
         if (currentDialogueStage != null)
         {
-
             DialogueStage_Line dialogueStageLine;
             try
             {
@@ -56,7 +54,7 @@ public class DialogueManager : MonoBehaviour
                 if (dialogueStageLine != null)
                 {
                     UI_Dialogue_Container.Instance.DisplayLine(dialogueStageLine);
-
+                    return;
                 }
 
             } catch (Exception e) {
@@ -72,7 +70,6 @@ public class DialogueManager : MonoBehaviour
                     UI_Dialogue_Container.Instance.DisplayAnswer(dialogueStageAnswer);
                    
                     return;
-                    //Prompt user to enter their answer
                 }
             }
             catch(Exception e)
@@ -97,18 +94,29 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return) && awaitingUser)
+        if (Input.GetKeyDown(KeyCode.Return))
         {
-            if (TryAdvanceDialogue())
+            if (awaitingUser)
             {
-                //there is a next dialogue
+                if (TryAdvanceDialogue())
+                {
+                    //there is a next dialogue
+                }
+                else
+                {
+                    // no next dialogue in chain, clear it up.
+                    UI_Dialogue_Container.Instance.Clear();
+                }
             }
             else
             {
-                // no next dialogue in chain, clear it up.
-                UI_Dialogue_Container.Instance.Clear();
+               foreach(var f in FindObjectsByType<UI_Dialogue_Line_Panel>(FindObjectsSortMode.None))
+                {
+                    f.SkipText();
+                }
             }
         }
+        
     }
 
     public void SetAwaitingUser(bool isAwaiting)
@@ -140,7 +148,6 @@ public class DialogueManager : MonoBehaviour
                 if(dialogueStageAnswer.answers.Count > option)
                 {
                     AdvanceDialogue(dialogueStageAnswer.answers[option]);
-
                     return true;
                 }
             }

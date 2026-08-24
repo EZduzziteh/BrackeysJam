@@ -37,14 +37,13 @@ public class UI_Dialogue_Line_Panel : MonoBehaviour
         DialogueManager.Instance.SetAwaitingUser(true);
     }
 
-    private void Update()
+
+    public void SkipText()
     {
-        if ((Input.anyKeyDown))
-        {
+        if (typing) {
             currentTextInterval = 0.001f;
         }
     }
-
 
     public void Initialize(DialogueStage_Line lineData)
     {
@@ -53,9 +52,10 @@ public class UI_Dialogue_Line_Panel : MonoBehaviour
         typingCoroutine = StartCoroutine(TypeText());
         currentTextInterval = baseTextInterval;
     }
-
+    public bool typing = false;
     private IEnumerator TypeText()
     {
+        typing = true;
         currentTextInterval = baseTextInterval;
 
         int index = currentIndex; // snapshot index
@@ -87,7 +87,8 @@ public class UI_Dialogue_Line_Panel : MonoBehaviour
 
         currentTextInterval = baseTextInterval;
 
-
+        yield return new WaitForSeconds(0);
+        typing = false;
         OnTypingComplete?.Invoke();
     }
 
