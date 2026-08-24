@@ -7,12 +7,22 @@ using static DialogueStage_Answer;
 public class DialogueManager : MonoBehaviour
 {
 
+    public static DialogueManager Instance;
+
   public DialogueStage currentDialogueStage;
     AudioSource aud;
 
     private void Awake()
     {
-        aud = GetComponent<AudioSource>();
+        if (!Instance)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+            aud = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -25,7 +35,7 @@ public class DialogueManager : MonoBehaviour
 
 
 
-    public void StartDialogue(DialogueStage stage)
+  public void StartDialogue(DialogueStage stage)
   {
         currentDialogueStage = stage;
         ExecuteDialogue();
@@ -44,12 +54,8 @@ public class DialogueManager : MonoBehaviour
                 dialogueStageLine = (DialogueStage_Line)currentDialogueStage;
                 if (dialogueStageLine != null)
                 {
-                    Debug.Log(dialogueStageLine.LineData.text);
-                    if (dialogueStageLine.NextStage)
-                    {
-                        AdvanceDialogue(dialogueStageLine);
-                        return;
-                    }
+                    UI_Dialogue_Container.Instance.DisplayLine(dialogueStageLine);
+
                 }
 
             } catch (Exception e) {
@@ -62,23 +68,8 @@ public class DialogueManager : MonoBehaviour
                 if (dialogueStageAnswer != null)
                 {
 
-                    string optionString = "";
-                    foreach (var o in dialogueStageAnswer.answers)
-                    {
-                        optionString += o.LineData.text + ", ";
-                        Debug.Log(o.LineData.text);
-                    }
-
-                    optionString.Substring(0, optionString.Length - 2); //trims off the trailing ,
-
-                    Debug.Log("Please Answer, Options: ");
-
-                    int randomAnswer = UnityEngine.Random.Range(0, dialogueStageAnswer.answers.Count);
-
-
-                    Debug.LogWarning("Answer: " + dialogueStageAnswer.answers[randomAnswer].LineData.text);
-
-                    AdvanceDialogue(dialogueStageAnswer.answers[randomAnswer]);
+                    UI_Dialogue_Container.Instance.DisplayAnswer(dialogueStageAnswer);
+                   
                     return;
                     //Prompt user to enter their answer
                 }
@@ -94,7 +85,6 @@ public class DialogueManager : MonoBehaviour
             Debug.Log("No Dialogue to execute!");
             EndDialogue();
         }
-
   }
 
     private void EndDialogue()
@@ -103,6 +93,52 @@ public class DialogueManager : MonoBehaviour
         currentDialogueStage = null;
     }
 
+
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            Debug.Log(TryAdvanceDialogue());
+        }
+    }
+
+    public bool TryAdvanceDialogue(int option = 0)
+    {
+        DialogueStage_Line dialogueStageLine;
+
+        try
+        {
+            dialogueStageLine = (DialogueStage_Line)currentDialogueStage;
+            AdvanceDialogue(dialogueStageLine);
+            return true;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+
+        DialogueStage_Answer dialogueStageAnswer;
+        try
+        {
+            dialogueStageAnswer = (DialogueStage_Answer)currentDialogueStage;
+            if (dialogueStageAnswer != null)
+            {
+                if(dialogueStageAnswer.answers.Count > option)
+                {
+                    AdvanceDialogue(dialogueStageAnswer.answers[option]);
+
+                    return true;
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+
+        return false;
+    }
     public void AdvanceDialogue(DialogueStage_Line line)
     {
        // Debug.Log("Advancing...");

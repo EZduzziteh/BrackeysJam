@@ -1,16 +1,18 @@
+using TMPro;
 using UnityEngine;
 
 public class UI_Dialogue_Line_Panel : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    TextMeshProUGUI Text;
+
+    private void Awake()
     {
-        
+        Text = GetComponentInChildren<TextMeshProUGUI>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Initialize(DialogueStage_Line lineData)
     {
-        
+        Text.text = lineData.LineData.text;
     }
 }

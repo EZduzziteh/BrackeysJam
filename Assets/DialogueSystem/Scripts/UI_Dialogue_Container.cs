@@ -1,44 +1,54 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class UI_Dialogue_Container : MonoBehaviour
 {
-
-
-
+    public static UI_Dialogue_Container Instance;
     public GameObject AnswerPanelTemplate;
     public GameObject LinePanelTemplate;
 
+    public void Awake()
+    {
+        if (!Instance)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
 
 
-    public void DisplayAnswer(List<DialogueAnswer> answerData)
+        AnswerPanelTemplate.SetActive(false);
+        LinePanelTemplate.SetActive(false);
+
+
+    }
+
+    public void DisplayAnswer(DialogueStage_Answer answerData)
     {
         GameObject temp = Instantiate(AnswerPanelTemplate, this.transform);
+        temp.SetActive(true);
 
-        foreach (var answer in answerData) {
+        if(temp.TryGetComponent<UI_Dialogue_Answer_Panel>(out var answerPanel))
+        {
+            answerPanel.Initialize(answerData);
+        }
 
-            Debug.Log(answer.LineData.text);
+      
+    }
 
-                    
+    public void DisplayLine(DialogueStage_Line lineData)
+    {
+        GameObject temp = Instantiate(LinePanelTemplate, this.transform);
+        temp.SetActive(true);
+        if (temp.TryGetComponent<UI_Dialogue_Line_Panel>(out var linePanel)) {
+
+            linePanel.Initialize(lineData);
         }
     }
 
-    public void DisplayLine(DialogueLineData lineData)
-    {
-        GameObject temp = Instantiate(LinePanelTemplate, this.transform);
-
-        Debug.Log(lineData.text);
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
+    
 }
