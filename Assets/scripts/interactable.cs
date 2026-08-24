@@ -39,7 +39,7 @@ public class interactable : MonoBehaviour
         if(cursorTexture)
             Cursor.SetCursor(cursorTexture, hotSpot,CursorMode.Auto);
     }
-    public void hideOutline()
+    public void hideOutline(bool updateCursor=true)
     {
         sr.color = defaultColor;
         //update cursor.

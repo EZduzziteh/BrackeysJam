@@ -18,27 +18,25 @@ public class car_interior_controller : MonoBehaviour
         controller.Enable();
         controller.Player.Attack.performed += checkInteraction;
         controller.Player.LookAtPassenger.performed += hotkeyTransition;
-        controller.Player.MousePos.performed += testFunc;
+        controller.Player.MousePos.performed += mouseMoved;
     }
 
-    private void testFunc(InputAction.CallbackContext context)
+    private void mouseMoved(InputAction.CallbackContext context)
     {
         Ray ray = Camera.main.ScreenPointToRay(controller.Player.MousePos.ReadValue<Vector2>());
         RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
         if (hit2D.collider != null)
         {
             Debug.Log(hit2D.collider.gameObject);
-            try
+            if (hit2D.collider.gameObject.GetComponent<interactable>())
             {
+                if(highlightedElement && highlightedElement.gameObject != hit2D.collider.gameObject)
+                    highlightedElement.hideOutline();
                 highlightedElement = hit2D.collider.gameObject.GetComponent<interactable>();
                 highlightedElement.showOutline();
                 return;
             }
-            catch
-            {
-                Debug.Log("missing interactable component");
-            }
-            
+            else { Debug.Log("missing interactable component"); }   
         }
         if(highlightedElement)//cleanup outlines if we did not highlight something new, and if we've highlighted something before.
             highlightedElement.hideOutline(); 
