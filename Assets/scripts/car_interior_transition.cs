@@ -14,6 +14,7 @@ public class car_interior_transition : MonoBehaviour
     {
         controller.Enable();
         controller.Player.Attack.performed += newTransition;
+        controller.Player.LookAtPassenger.performed += newTransition;
     }
     private void OnDisable()
     {
