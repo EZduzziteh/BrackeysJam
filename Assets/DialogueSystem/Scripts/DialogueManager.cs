@@ -52,8 +52,8 @@ public class DialogueManager : MonoBehaviour
                     }
                 }
 
-            } catch (Exception e) { 
-            
+            } catch (Exception e) {
+                Console.WriteLine(e.Message);
             }
 
             DialogueStage_Answer dialogueStageAnswer;
@@ -78,8 +78,6 @@ public class DialogueManager : MonoBehaviour
 
                     Debug.LogWarning("Answer: " + dialogueStageAnswer.answers[randomAnswer].LineData.text);
 
-
-
                     AdvanceDialogue(dialogueStageAnswer.answers[randomAnswer]);
                     return;
                     //Prompt user to enter their answer
@@ -87,7 +85,7 @@ public class DialogueManager : MonoBehaviour
             }
             catch(Exception e)
             {
-
+                Console.WriteLine(e.Message);
             }
 
         }
