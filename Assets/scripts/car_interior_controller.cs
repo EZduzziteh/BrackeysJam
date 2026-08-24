@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -16,7 +17,28 @@ public class car_interior_controller : MonoBehaviour
         controller.Enable();
         controller.Player.Attack.performed += checkInteraction;
         controller.Player.LookAtPassenger.performed += hotkeyTransition;
+        controller.Player.MousePos.performed += testFunc;
     }
+
+    private void testFunc(InputAction.CallbackContext context)
+    {
+        Ray ray = Camera.main.ScreenPointToRay(controller.Player.MousePos.ReadValue<Vector2>());
+        RaycastHit2D hit2D = Physics2D.GetRayIntersection(ray);
+        if (hit2D.collider != null)
+        {
+            Debug.Log(hit2D.collider.gameObject);
+            try
+            {
+                //hit2D.collider.gameObject.GetComponent<interactable>().triggerEffect();
+            }
+            catch
+            {
+                Debug.Log("missing interactable component");
+            }
+
+        }
+    }
+
     private void OnDisable()
     {
         controller.Disable();

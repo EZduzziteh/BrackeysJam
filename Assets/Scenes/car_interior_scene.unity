@@ -225,6 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::transssitions
   SceneCamera: {fileID: 290074433}
+  cameraOffset: 5
 --- !u!95 &196490238
 Animator:
   serializedVersion: 7
