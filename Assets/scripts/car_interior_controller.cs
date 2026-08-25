@@ -73,8 +73,11 @@ public class car_interior_controller : MonoBehaviour
         {
             Debug.Log(hit2D.collider.gameObject);
             try
-            { 
-                hit2D.collider.gameObject.GetComponent<interactable>().triggerEffect();
+            {
+                interactable interactee = hit2D.collider.gameObject.GetComponent<interactable>();
+                interactee.triggerEffect();
+                if (highlightedElement && interactee.shouldHideCursorAfterUse)
+                    highlightedElement.hideOutline();
             }
             catch
             {

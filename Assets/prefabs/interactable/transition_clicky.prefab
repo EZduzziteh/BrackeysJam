@@ -108,6 +108,8 @@ MonoBehaviour:
   effectName: transition
   defaultCursor: {fileID: 11400000, guid: 57519c4a18ecf574481f62b59bc2820b, type: 2}
   altCursor: {fileID: 11400000, guid: dbf976ebdb956e9499ade5d6cebd8b3e, type: 2}
+  shouldHideCursorAfterUse: 1
+  highlightThickness: 1.1
 --- !u!70 &542791007974464222
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

@@ -226,7 +226,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::transssitions
   SceneCamera: {fileID: 290074433}
   cameraOffset: 5
-  defaultCursor: {fileID: 0}
 --- !u!95 &196490238
 Animator:
   serializedVersion: 7
@@ -754,6 +753,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1222739662100577521, guid: efea0b2f6fcca0645817a78b4c4dff19, type: 3}
+      propertyPath: altCursor
+      value: 
+      objectReference: {fileID: 11400000, guid: 7840ae9c0e89a794abf45876334c54b6, type: 2}
     - target: {fileID: 3546797536795641944, guid: efea0b2f6fcca0645817a78b4c4dff19, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.784
@@ -811,6 +814,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 609809687385650768, guid: b06dd4061034d524bad6d86de45132b1, type: 3}
+      propertyPath: highlightThickness
+      value: 1.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1724253413688378662, guid: b06dd4061034d524bad6d86de45132b1, type: 3}
       propertyPath: m_Name
       value: transition_clicky

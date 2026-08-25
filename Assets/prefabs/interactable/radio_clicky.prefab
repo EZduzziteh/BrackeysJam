@@ -107,7 +107,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::interactable
   effectName: radio
   defaultCursor: {fileID: 11400000, guid: 57519c4a18ecf574481f62b59bc2820b, type: 2}
-  passengerCursor: {fileID: 11400000, guid: 7840ae9c0e89a794abf45876334c54b6, type: 2}
+  altCursor: {fileID: 0}
+  shouldHideCursorAfterUse: 0
+  highlightThickness: 1.1
 --- !u!70 &48167142263883300
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class interactable : MonoBehaviour
     [Header("Cursor settings")]
     [SerializeField] private cursorPackage defaultCursor;
     [SerializeField] private cursorPackage altCursor;
+    public bool shouldHideCursorAfterUse=false;
     private float cursorTimer; private int cursorIndex;
     private bool doAnim=false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -39,11 +40,36 @@ public class interactable : MonoBehaviour
                 return;
         }
     }
+
+    private GameObject myOutline;
+    [SerializeField]
+    private float highlightThickness=1.1f;
+
     public void showOutline()
     {
+        //color change
         Color outline = Color.red;
         outline.a = sr.color.a;
         sr.color = outline;
+
+        if (!myOutline)
+        {
+            //create highlight object
+            myOutline = Instantiate(gameObject);
+            myOutline.name = "Highlight of " + gameObject;
+            //remove components that break things
+            Destroy(myOutline.GetComponent<interactable>());
+            Destroy(myOutline.GetComponent<Collider2D>());
+
+            //setup highlight options.
+            myOutline.transform.localScale = myOutline.transform.localScale * highlightThickness;
+            SpriteRenderer outlineSR = myOutline.GetComponent<SpriteRenderer>();
+            outlineSR.sortingOrder -= 1;
+            Color highlightColor = Color.yellow;
+            highlightColor.a = outlineSR.color.a; //transfer alpha channel
+            outlineSR.color = highlightColor;
+            
+        }
         //update cursor.
         if (altCursor)
         {
@@ -56,7 +82,13 @@ public class interactable : MonoBehaviour
     }
     public void hideOutline(bool updateCursor = true)
     {
+        //color change
         sr.color = defaultColor;
+
+        //highlight cleanup
+        if (myOutline)
+            Destroy(myOutline);
+
         //update cursor.
         if (altCursor)
         { 
