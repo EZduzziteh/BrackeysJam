@@ -49,6 +49,10 @@ public class StressSystem : MonoBehaviour
         }
     }
 
+    public StressState GetStressState()
+    {
+        return currentStressState;
+    }
     public void TickStress()
     {
         foreach(var stressor in StressSources)

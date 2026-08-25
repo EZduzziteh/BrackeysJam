@@ -258,6 +258,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 591816545}
   m_CullTransparentMesh: 1
+--- !u!1 &744119892
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 744119894}
+  - component: {fileID: 744119893}
+  m_Layer: 0
+  m_Name: StressEventManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &744119893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744119892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6954f2a759d590f4a8ed0821e2b236b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  stressEventCheckInterval: 0.5
+  minTimeBetweenEvents: 2
+  maxTimeBetweenEvents: 8
+  StressLevelNoneEvents:
+  - {fileID: 11400000, guid: c05f232b435af4943ae10daac4a28cfa, type: 2}
+  - {fileID: 11400000, guid: 1160af7ed71b9744596fe9163d86f0b6, type: 2}
+  StressLevelUneasyEvents:
+  - {fileID: 11400000, guid: e6f50f9cfced6d04ab71388774d71484, type: 2}
+  - {fileID: 11400000, guid: 435955d358880224a9bad37750e6bd13, type: 2}
+  StressLevelAnxiousEvents:
+  - {fileID: 11400000, guid: 3fbb3215a5f23374faf206728902ad18, type: 2}
+  StressLevelPanickingEvents:
+  - {fileID: 11400000, guid: 179ef9ea09aa06b43bd5f2ee3053310f, type: 2}
+  StressLevelDeliriousEvents:
+  - {fileID: 11400000, guid: df4032368f452cb4d94249db6e618c93, type: 2}
+--- !u!4 &744119894
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744119892}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 849.7735, y: 365.50726, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &755913325
 GameObject:
   m_ObjectHideFlags: 0
@@ -909,3 +968,4 @@ SceneRoots:
   - {fileID: 1528369384}
   - {fileID: 1780408598}
   - {fileID: 2085701135}
+  - {fileID: 744119894}
