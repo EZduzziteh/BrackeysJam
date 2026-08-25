@@ -1,0 +1,132 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Events;
+
+public class StressSystem : MonoBehaviour
+{
+    StressState currentStressState;
+
+    float currentStress;
+    [SerializeField] float stressThreshold = 100.0f;
+
+    public List<StressSource> StressSources = new();
+
+    public float StressTickInterval = 1.0f;
+    float timeSinceLastTick;
+
+    public UnityEvent OnMaxStressAchieved;
+    public UnityEvent OnStressIncreased;
+    public UnityEvent OnStressDecreased;
+
+    float totalStressAccumulated;
+    float totalStressRemoved;
+
+    private void Start()
+    {
+        currentStress = 0.0f;
+        timeSinceLastTick = 0.0f;
+        currentStressState = StressState.None;
+    }
+
+    private void Update()
+    {
+       timeSinceLastTick += Time.deltaTime;
+
+        if(timeSinceLastTick > StressTickInterval)
+        {
+            TickStress();
+            timeSinceLastTick = 0.0f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            ModifyStress(-25.0f);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            ModifyStress(25.0f);
+        }
+    }
+
+    public void TickStress()
+    {
+        foreach(var stressor in StressSources)
+        {
+            currentStress += stressor.amount;
+            TrackStress(stressor.amount);
+        }
+
+        Debug.Log("Tick stress: "+currentStress);
+        CheckStressLevel();
+    }
+    private void CheckStressLevel()
+    {
+        if (currentStress <= 0)
+        {
+            DecreaseStressLevel();
+            
+        }
+
+        if (currentStress >= stressThreshold)
+        {
+            IncreaseStressLevel();
+        }
+    }
+
+    public void ModifyStress(float amount)
+    {
+        TrackStress(amount);
+        currentStress += amount;
+        CheckStressLevel();
+    }
+
+    void TrackStress(float amount)
+    {
+        if (amount > 0)
+        {
+            totalStressAccumulated += amount;
+        }
+        else
+        {
+            totalStressRemoved += amount;
+        }
+    }
+
+    public void AddStressor(StressSource newSource)
+    {
+        StressSources.Add(newSource);
+        Debug.Log("Stress added!");
+    }
+
+    public void RemoveStressor(int index)
+    {
+        StressSources.RemoveAt(index);
+        Debug.Log("Stress removed!");
+    }
+
+    public void IncreaseStressLevel()
+    {
+        if (currentStressState == StressState.Delirious) {
+            currentStress = 100;
+            OnMaxStressAchieved?.Invoke();
+            return; //return becasue we arealready max stress
+        }
+
+        currentStressState++;
+        currentStress -= stressThreshold;
+        OnStressIncreased?.Invoke();
+    }
+
+    public void DecreaseStressLevel()
+    {
+        if (currentStressState == StressState.None) {
+            currentStress = 0;
+            return; //return because we arealready min stress
+        }
+
+        currentStressState--;
+        currentStress += stressThreshold;
+        OnStressDecreased?.Invoke();
+    }
+}
