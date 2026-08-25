@@ -6,6 +6,10 @@ using UnityEngine;
 public class StressEventManager : MonoBehaviour
 {
 
+    [SerializeField]bool stressEventsEnabled = false;
+
+    float eventBaseChance = 10.0f;
+
     float timeSinceLastStressEvent = 0.0f;
     float timeSinceLastStressCheck = 0.0f;
 
@@ -36,6 +40,12 @@ public class StressEventManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!stressEventsEnabled)
+        {
+            return;
+        }
+
+
         if (timeSinceLastStressEvent > minTimeBetweenEvents)
         {
             if (timeSinceLastStressCheck > stressEventCheckInterval)
@@ -48,8 +58,10 @@ public class StressEventManager : MonoBehaviour
         timeSinceLastStressCheck += Time.deltaTime;
     }
 
-    float eventBaseChance = 10.0f;
-
+    public void SetStressEventEnabled(bool _enabled)
+    {
+        stressEventsEnabled = _enabled;
+    }
 
 
     private void CheckForStressEvent()
