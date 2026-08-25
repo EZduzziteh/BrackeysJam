@@ -226,6 +226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::transssitions
   SceneCamera: {fileID: 290074433}
   cameraOffset: 5
+  defaultCursor: {fileID: 0}
 --- !u!95 &196490238
 Animator:
   serializedVersion: 7
@@ -754,18 +755,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3546797536795641944, guid: efea0b2f6fcca0645817a78b4c4dff19, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.1012
-      objectReference: {fileID: 0}
-    - target: {fileID: 3546797536795641944, guid: efea0b2f6fcca0645817a78b4c4dff19, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.8935966
-      objectReference: {fileID: 0}
-    - target: {fileID: 3546797536795641944, guid: efea0b2f6fcca0645817a78b4c4dff19, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.3282265
-      objectReference: {fileID: 0}
-    - target: {fileID: 3546797536795641944, guid: efea0b2f6fcca0645817a78b4c4dff19, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.784
       objectReference: {fileID: 0}
@@ -825,10 +814,6 @@ PrefabInstance:
     - target: {fileID: 1724253413688378662, guid: b06dd4061034d524bad6d86de45132b1, type: 3}
       propertyPath: m_Name
       value: transition_clicky
-      objectReference: {fileID: 0}
-    - target: {fileID: 2622461771411023113, guid: b06dd4061034d524bad6d86de45132b1, type: 3}
-      propertyPath: m_SortingOrder
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4066794653851717856, guid: b06dd4061034d524bad6d86de45132b1, type: 3}
       propertyPath: m_LocalPosition.x

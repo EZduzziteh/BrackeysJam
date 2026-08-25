@@ -81,7 +81,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 10
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.77254903, g: 0.99318826, b: 1, a: 0.19607843}
@@ -106,9 +106,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::interactable
   effectName: transition
-  cursorTexture: {fileID: 2800000, guid: a3eafb17f2e3f404ba9d26a56eccb1dc, type: 3}
-  hotSpot: {x: 0, y: 0}
-  tempCursorTextureDefault: {fileID: 2800000, guid: 8f707c9b69ee3364fb94128ef5a5df9f, type: 3}
+  defaultCursor: {fileID: 11400000, guid: 57519c4a18ecf574481f62b59bc2820b, type: 2}
+  passengerCursor: {fileID: 11400000, guid: dbf976ebdb956e9499ade5d6cebd8b3e, type: 2}
 --- !u!70 &542791007974464222
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
