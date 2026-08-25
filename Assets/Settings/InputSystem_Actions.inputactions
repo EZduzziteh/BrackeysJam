@@ -871,6 +871,16 @@
                     "interactions": "",
                     "initialStateCheck": false,
                     "priority": 0
+                },
+                {
+                    "name": "cycleTransitions",
+                    "type": "Button",
+                    "id": "e9a1c854-b41f-4d2d-b1e0-ac0b8cc77421",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
                 }
             ],
             "bindings": [
@@ -882,6 +892,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "LoadPassenger",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "64a5683b-a1cf-4e96-817e-b019b4ad7b2c",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "cycleTransitions",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

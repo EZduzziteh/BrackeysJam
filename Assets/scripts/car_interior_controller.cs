@@ -11,11 +11,8 @@ public class car_interior_controller : MonoBehaviour
     [SerializeField] private GameObject SceneCamera;
     [SerializeField] private float cameraOffset=5f;
     private Vector3 pos;
-    private Animator blinker_animator;
 
     private interactable highlightedElement;
-
-    //Startup functions
     private void Awake() { controller = new InputSystem_Actions(); }
     private void OnEnable()
     {
@@ -24,6 +21,14 @@ public class car_interior_controller : MonoBehaviour
         controller.Player.LookAtPassenger.performed += hotkeyTransition;
         controller.Player.MousePos.performed += mouseMoved;
         controller.debugs.LoadPassenger.performed += loadPass;
+        controller.debugs.cycleTransitions.performed += updateDebugTransition;
+    }
+
+    private void updateDebugTransition(InputAction.CallbackContext context)
+    {
+        debugTransition += 1;
+        if (((int)debugTransition) >= Enum.GetValues(typeof(transitionType)).Length)
+            debugTransition = 0;
     }
 
     private void loadPass(InputAction.CallbackContext context)
@@ -36,23 +41,47 @@ public class car_interior_controller : MonoBehaviour
         controller.Disable();
     }
 
-    // Start & Update
-    private void Start()
-    {
-        blinker_animator = GetComponent<Animator>();
-    }
-
     //car scene transitions
-    public void startNewTransition()
+    public enum transitionType {full_blink,wide_blink,Swipe_left,Swipe_right}
+    [Header("transition animators")]
+    [SerializeField] private Animator full_blink_animator;
+    [SerializeField] private Animator wide_blink_animator;
+    [SerializeField] private Animator Swipe_left_animator;
+    [SerializeField] private Animator Swipe_right_animator;
+    [SerializeField] private transitionType debugTransition;
+
+    public void startNewTransition(transitionType style=transitionType.full_blink)
     {
-        blinker_animator.enabled = true;
+        if (style == transitionType.Swipe_left || style == transitionType.Swipe_right)
+            style=determineBestSwipe();
+        switch (style)
+        {
+            case transitionType.full_blink:
+                full_blink_animator.enabled = true;
+                break;
+            case transitionType.wide_blink:
+                wide_blink_animator.enabled = true;
+                break;
+            case transitionType.Swipe_left:
+                Swipe_left_animator.enabled = true;
+                break;
+            case transitionType.Swipe_right:
+                Swipe_right_animator.enabled = true;
+                break;
+        }
+    }
+    private transitionType determineBestSwipe()
+    {
+        if (SceneCamera.transform.position.x == 0)
+            return transitionType.Swipe_left;
+        return transitionType.Swipe_right;
     }
     private void hotkeyTransition(InputAction.CallbackContext context)
     {
         //start blink
-        startNewTransition();
+        startNewTransition(debugTransition);
     }
-    private void PerformTransition()
+    public void animPerformTransition()
     {
         //called by blinker animator.
         pos = SceneCamera.transform.position;
@@ -64,10 +93,6 @@ public class car_interior_controller : MonoBehaviour
         if(SceneCamera.transform.position.x==0)
             return cameraOffset;
         return 0f; // default
-    }
-    private void resetBlinker()
-    {
-        blinker_animator.enabled = false;
     }
 
     //interaction

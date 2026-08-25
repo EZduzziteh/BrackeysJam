@@ -30,7 +30,7 @@ public class interactable : MonoBehaviour
         switch (effectName)
         {
             case "transition":
-                FindFirstObjectByType<car_interior_controller>().startNewTransition();
+                FindFirstObjectByType<car_interior_controller>().startNewTransition(car_interior_controller.transitionType.wide_blink);
                 return;
             case "radio":
                 print("jamming jamming jamming, what's brackening party ppl?");

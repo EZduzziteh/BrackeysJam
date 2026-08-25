@@ -957,6 +957,16 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""initialStateCheck"": false,
                     ""priority"": 0
+                },
+                {
+                    ""name"": ""cycleTransitions"",
+                    ""type"": ""Button"",
+                    ""id"": ""e9a1c854-b41f-4d2d-b1e0-ac0b8cc77421"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false,
+                    ""priority"": 0
                 }
             ],
             ""bindings"": [
@@ -968,6 +978,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""LoadPassenger"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""64a5683b-a1cf-4e96-817e-b019b4ad7b2c"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""cycleTransitions"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1062,6 +1083,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         // debugs
         m_debugs = asset.FindActionMap("debugs", throwIfNotFound: true);
         m_debugs_LoadPassenger = m_debugs.FindAction("LoadPassenger", throwIfNotFound: true);
+        m_debugs_cycleTransitions = m_debugs.FindAction("cycleTransitions", throwIfNotFound: true);
     }
 
     ~@InputSystem_Actions()
@@ -1513,6 +1535,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_debugs;
     private List<IDebugsActions> m_DebugsActionsCallbackInterfaces = new List<IDebugsActions>();
     private readonly InputAction m_debugs_LoadPassenger;
+    private readonly InputAction m_debugs_cycleTransitions;
     /// <summary>
     /// Provides access to input actions defined in input action map "debugs".
     /// </summary>
@@ -1528,6 +1551,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "debugs/LoadPassenger".
         /// </summary>
         public InputAction @LoadPassenger => m_Wrapper.m_debugs_LoadPassenger;
+        /// <summary>
+        /// Provides access to the underlying input action "debugs/cycleTransitions".
+        /// </summary>
+        public InputAction @cycleTransitions => m_Wrapper.m_debugs_cycleTransitions;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1557,6 +1584,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @LoadPassenger.started += instance.OnLoadPassenger;
             @LoadPassenger.performed += instance.OnLoadPassenger;
             @LoadPassenger.canceled += instance.OnLoadPassenger;
+            @cycleTransitions.started += instance.OnCycleTransitions;
+            @cycleTransitions.performed += instance.OnCycleTransitions;
+            @cycleTransitions.canceled += instance.OnCycleTransitions;
         }
 
         /// <summary>
@@ -1571,6 +1601,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @LoadPassenger.started -= instance.OnLoadPassenger;
             @LoadPassenger.performed -= instance.OnLoadPassenger;
             @LoadPassenger.canceled -= instance.OnLoadPassenger;
+            @cycleTransitions.started -= instance.OnCycleTransitions;
+            @cycleTransitions.performed -= instance.OnCycleTransitions;
+            @cycleTransitions.canceled -= instance.OnCycleTransitions;
         }
 
         /// <summary>
@@ -1825,5 +1858,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnLoadPassenger(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "cycleTransitions" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnCycleTransitions(InputAction.CallbackContext context);
     }
 }
