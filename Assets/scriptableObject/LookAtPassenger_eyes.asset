@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LookAtPassenger_eyes
   m_EditorClassIdentifier: Assembly-CSharp::cursorPackage
   cursorFrames:
-  - {fileID: 2800000, guid: a3eafb17f2e3f404ba9d26a56eccb1dc, type: 3}
+  - {fileID: 2800000, guid: 832edc0221b9b6546955ec331f61189d, type: 3}
   hotSpot: {x: 0, y: 0}
   animated: 0
   animFrameRate: 0.1
