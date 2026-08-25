@@ -23,6 +23,12 @@ public class car_interior_controller : MonoBehaviour
         controller.Player.Attack.performed += checkInteraction;
         controller.Player.LookAtPassenger.performed += hotkeyTransition;
         controller.Player.MousePos.performed += mouseMoved;
+        controller.debugs.LoadPassenger.performed += loadPass;
+    }
+
+    private void loadPass(InputAction.CallbackContext context)
+    {
+        FindFirstObjectByType<PassengerSeat_Manager>().LoadPassenger();
     }
 
     private void OnDisable()

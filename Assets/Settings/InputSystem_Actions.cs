@@ -943,6 +943,35 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""debugs"",
+            ""id"": ""bcba209b-8692-4ea4-aa67-2db6944eecf9"",
+            ""actions"": [
+                {
+                    ""name"": ""LoadPassenger"",
+                    ""type"": ""Button"",
+                    ""id"": ""0f390331-8d79-4ad6-a5db-4e33105e887f"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false,
+                    ""priority"": 0
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""2329a772-012c-4da9-b630-a4a562e8ea5f"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LoadPassenger"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -1030,12 +1059,16 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_UI_ScrollWheel = m_UI.FindAction("ScrollWheel", throwIfNotFound: true);
         m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
+        // debugs
+        m_debugs = asset.FindActionMap("debugs", throwIfNotFound: true);
+        m_debugs_LoadPassenger = m_debugs.FindAction("LoadPassenger", throwIfNotFound: true);
     }
 
     ~@InputSystem_Actions()
     {
         UnityEngine.Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, InputSystem_Actions.Player.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_UI.enabled, "This will cause a leak and performance issues, InputSystem_Actions.UI.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_debugs.enabled, "This will cause a leak and performance issues, InputSystem_Actions.debugs.Disable() has not been called.");
     }
 
     /// <summary>
@@ -1475,6 +1508,102 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     /// Provides a new <see cref="UIActions" /> instance referencing this action map.
     /// </summary>
     public UIActions @UI => new UIActions(this);
+
+    // debugs
+    private readonly InputActionMap m_debugs;
+    private List<IDebugsActions> m_DebugsActionsCallbackInterfaces = new List<IDebugsActions>();
+    private readonly InputAction m_debugs_LoadPassenger;
+    /// <summary>
+    /// Provides access to input actions defined in input action map "debugs".
+    /// </summary>
+    public struct DebugsActions
+    {
+        private @InputSystem_Actions m_Wrapper;
+
+        /// <summary>
+        /// Construct a new instance of the input action map wrapper class.
+        /// </summary>
+        public DebugsActions(@InputSystem_Actions wrapper) { m_Wrapper = wrapper; }
+        /// <summary>
+        /// Provides access to the underlying input action "debugs/LoadPassenger".
+        /// </summary>
+        public InputAction @LoadPassenger => m_Wrapper.m_debugs_LoadPassenger;
+        /// <summary>
+        /// Provides access to the underlying input action map instance.
+        /// </summary>
+        public InputActionMap Get() { return m_Wrapper.m_debugs; }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+        public void Enable() { Get().Enable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+        public void Disable() { Get().Disable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+        public bool enabled => Get().enabled;
+        /// <summary>
+        /// Implicitly converts an <see ref="DebugsActions" /> to an <see ref="InputActionMap" /> instance.
+        /// </summary>
+        public static implicit operator InputActionMap(DebugsActions set) { return set.Get(); }
+        /// <summary>
+        /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <param name="instance">Callback instance.</param>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+        /// </remarks>
+        /// <seealso cref="DebugsActions" />
+        public void AddCallbacks(IDebugsActions instance)
+        {
+            if (instance == null || m_Wrapper.m_DebugsActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_DebugsActionsCallbackInterfaces.Add(instance);
+            @LoadPassenger.started += instance.OnLoadPassenger;
+            @LoadPassenger.performed += instance.OnLoadPassenger;
+            @LoadPassenger.canceled += instance.OnLoadPassenger;
+        }
+
+        /// <summary>
+        /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <remarks>
+        /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+        /// </remarks>
+        /// <seealso cref="DebugsActions" />
+        private void UnregisterCallbacks(IDebugsActions instance)
+        {
+            @LoadPassenger.started -= instance.OnLoadPassenger;
+            @LoadPassenger.performed -= instance.OnLoadPassenger;
+            @LoadPassenger.canceled -= instance.OnLoadPassenger;
+        }
+
+        /// <summary>
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="DebugsActions.UnregisterCallbacks(IDebugsActions)" />.
+        /// </summary>
+        /// <seealso cref="DebugsActions.UnregisterCallbacks(IDebugsActions)" />
+        public void RemoveCallbacks(IDebugsActions instance)
+        {
+            if (m_Wrapper.m_DebugsActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        /// <summary>
+        /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+        /// </summary>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+        /// </remarks>
+        /// <seealso cref="DebugsActions.AddCallbacks(IDebugsActions)" />
+        /// <seealso cref="DebugsActions.RemoveCallbacks(IDebugsActions)" />
+        /// <seealso cref="DebugsActions.UnregisterCallbacks(IDebugsActions)" />
+        public void SetCallbacks(IDebugsActions instance)
+        {
+            foreach (var item in m_Wrapper.m_DebugsActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_DebugsActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    /// <summary>
+    /// Provides a new <see cref="DebugsActions" /> instance referencing this action map.
+    /// </summary>
+    public DebugsActions @debugs => new DebugsActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     /// <summary>
     /// Provides access to the input control scheme.
@@ -1681,5 +1810,20 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
+    }
+    /// <summary>
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "debugs" which allows adding and removing callbacks.
+    /// </summary>
+    /// <seealso cref="DebugsActions.AddCallbacks(IDebugsActions)" />
+    /// <seealso cref="DebugsActions.RemoveCallbacks(IDebugsActions)" />
+    public interface IDebugsActions
+    {
+        /// <summary>
+        /// Method invoked when associated input action "LoadPassenger" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnLoadPassenger(InputAction.CallbackContext context);
     }
 }

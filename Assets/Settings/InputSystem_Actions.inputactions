@@ -857,6 +857,35 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "debugs",
+            "id": "bcba209b-8692-4ea4-aa67-2db6944eecf9",
+            "actions": [
+                {
+                    "name": "LoadPassenger",
+                    "type": "Button",
+                    "id": "0f390331-8d79-4ad6-a5db-4e33105e887f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2329a772-012c-4da9-b630-a4a562e8ea5f",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LoadPassenger",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
