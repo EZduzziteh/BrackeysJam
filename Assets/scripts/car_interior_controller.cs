@@ -42,18 +42,14 @@ public class car_interior_controller : MonoBehaviour
     }
 
     //car scene transitions
-    public enum transitionType {full_blink,wide_blink,Swipe_left,Swipe_right}
+    public enum transitionType {full_blink,wide_blink}
     [Header("transition animators")]
     [SerializeField] private Animator full_blink_animator;
     [SerializeField] private Animator wide_blink_animator;
-    [SerializeField] private Animator Swipe_left_animator;
-    [SerializeField] private Animator Swipe_right_animator;
-    [SerializeField] private transitionType debugTransition;
+    [SerializeField] private transitionType debugTransition=transitionType.full_blink;
 
     public void startNewTransition(transitionType style=transitionType.full_blink)
     {
-        if (style == transitionType.Swipe_left || style == transitionType.Swipe_right)
-            style=determineBestSwipe();
         switch (style)
         {
             case transitionType.full_blink:
@@ -62,19 +58,7 @@ public class car_interior_controller : MonoBehaviour
             case transitionType.wide_blink:
                 wide_blink_animator.enabled = true;
                 break;
-            case transitionType.Swipe_left:
-                Swipe_left_animator.enabled = true;
-                break;
-            case transitionType.Swipe_right:
-                Swipe_right_animator.enabled = true;
-                break;
         }
-    }
-    private transitionType determineBestSwipe()
-    {
-        if (SceneCamera.transform.position.x == 0)
-            return transitionType.Swipe_left;
-        return transitionType.Swipe_right;
     }
     private void hotkeyTransition(InputAction.CallbackContext context)
     {
