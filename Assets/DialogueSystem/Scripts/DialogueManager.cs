@@ -7,10 +7,9 @@ using static DialogueStage_Answer;
 [RequireComponent(typeof(AudioSource))]
 public class DialogueManager : MonoBehaviour
 {
-
     public static DialogueManager Instance;
 
-  public DialogueStage currentDialogueStage;
+    public DialogueStage currentDialogueStage;
     AudioSource aud;
 
     private void Awake()
@@ -54,6 +53,11 @@ public class DialogueManager : MonoBehaviour
                 if (dialogueStageLine != null)
                 {
                     UI_Dialogue_Container.Instance.DisplayLine(dialogueStageLine);
+                    if (aud.clip)
+                    {
+                        aud.clip = dialogueStageLine.LineData.audioClip;
+                        aud.Play();
+                    }
                     return;
                 }
 
@@ -68,7 +72,6 @@ public class DialogueManager : MonoBehaviour
                 {
 
                     UI_Dialogue_Container.Instance.DisplayAnswer(dialogueStageAnswer);
-                   
                     return;
                 }
             }
