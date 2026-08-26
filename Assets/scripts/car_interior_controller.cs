@@ -20,6 +20,8 @@ public class car_interior_controller : MonoBehaviour
         controller.Player.Attack.performed += checkInteraction;
         controller.Player.LookAtPassenger.performed += hotkeyTransition;
         controller.Player.MousePos.performed += mouseMoved;
+
+
         controller.debugs.LoadPassenger.performed += loadPass;
         controller.debugs.cycleTransitions.performed += updateDebugTransition;
     }
@@ -33,7 +35,8 @@ public class car_interior_controller : MonoBehaviour
 
     private void loadPass(InputAction.CallbackContext context)
     {
-        FindFirstObjectByType<PassengerSeat_Manager>().LoadPassenger();
+        loadPassengerMoment = true;
+        startNewTransition(transitionType.wide_blink);
     }
 
     private void OnDisable()
@@ -48,12 +51,15 @@ public class car_interior_controller : MonoBehaviour
     [SerializeField] private Animator wide_blink_animator;
     [SerializeField] private transitionType debugTransition=transitionType.full_blink;
 
+    bool moveScene = false;
+    bool loadPassengerMoment = false;
     public void startNewTransition(transitionType style=transitionType.full_blink)
     {
         switch (style)
         {
             case transitionType.full_blink:
                 full_blink_animator.enabled = true;
+                moveScene = true;
                 break;
             case transitionType.wide_blink:
                 wide_blink_animator.enabled = true;
@@ -65,12 +71,23 @@ public class car_interior_controller : MonoBehaviour
         //start blink
         startNewTransition(debugTransition);
     }
+
     public void animPerformTransition()
     {
+        
         //called by blinker animator.
-        pos = SceneCamera.transform.position;
-        pos.x = getNextTransitionPosition();
-        SceneCamera.transform.position = pos;
+        if (moveScene)
+        {
+            moveScene = false;
+            pos = SceneCamera.transform.position;
+            pos.x = getNextTransitionPosition();
+            SceneCamera.transform.position = pos;
+        }
+        if (loadPassengerMoment)
+        {
+            loadPassengerMoment = false;
+            FindFirstObjectByType<PassengerSeat_Manager>().LoadPassenger();
+        }
     }
     private float getNextTransitionPosition()
     {
