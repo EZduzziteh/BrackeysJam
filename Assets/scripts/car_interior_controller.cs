@@ -20,6 +20,8 @@ public class car_interior_controller : MonoBehaviour
         controller.Player.Attack.performed += checkInteraction;
         controller.Player.LookAtPassenger.performed += hotkeyTransition;
         controller.Player.MousePos.performed += mouseMoved;
+
+
         controller.debugs.LoadPassenger.performed += loadPass;
         controller.debugs.cycleTransitions.performed += updateDebugTransition;
     }
@@ -33,7 +35,8 @@ public class car_interior_controller : MonoBehaviour
 
     private void loadPass(InputAction.CallbackContext context)
     {
-        FindFirstObjectByType<PassengerSeat_Manager>().LoadPassenger();
+        loadPassengerMoment = true;
+        startNewTransition(transitionType.wide_blink);
     }
 
     private void OnDisable()
@@ -42,51 +45,49 @@ public class car_interior_controller : MonoBehaviour
     }
 
     //car scene transitions
-    public enum transitionType {full_blink,wide_blink,Swipe_left,Swipe_right}
+    public enum transitionType {full_blink,wide_blink}
     [Header("transition animators")]
     [SerializeField] private Animator full_blink_animator;
     [SerializeField] private Animator wide_blink_animator;
-    [SerializeField] private Animator Swipe_left_animator;
-    [SerializeField] private Animator Swipe_right_animator;
-    [SerializeField] private transitionType debugTransition;
+    [SerializeField] private transitionType debugTransition=transitionType.full_blink;
 
+    bool moveScene = false;
+    bool loadPassengerMoment = false;
     public void startNewTransition(transitionType style=transitionType.full_blink)
     {
-        if (style == transitionType.Swipe_left || style == transitionType.Swipe_right)
-            style=determineBestSwipe();
         switch (style)
         {
             case transitionType.full_blink:
                 full_blink_animator.enabled = true;
+                moveScene = true;
                 break;
             case transitionType.wide_blink:
                 wide_blink_animator.enabled = true;
                 break;
-            case transitionType.Swipe_left:
-                Swipe_left_animator.enabled = true;
-                break;
-            case transitionType.Swipe_right:
-                Swipe_right_animator.enabled = true;
-                break;
         }
-    }
-    private transitionType determineBestSwipe()
-    {
-        if (SceneCamera.transform.position.x == 0)
-            return transitionType.Swipe_left;
-        return transitionType.Swipe_right;
     }
     private void hotkeyTransition(InputAction.CallbackContext context)
     {
         //start blink
         startNewTransition(debugTransition);
     }
+
     public void animPerformTransition()
     {
-        //called by blinker animator.
-        pos = SceneCamera.transform.position;
-        pos.x = getNextTransitionPosition();
-        SceneCamera.transform.position = pos;
+        //called by blinker animator at mid-point.
+
+        if (moveScene)
+        {
+            moveScene = false;
+            pos = SceneCamera.transform.position;
+            pos.x = getNextTransitionPosition();
+            SceneCamera.transform.position = pos;
+        }
+        if (loadPassengerMoment)
+        {
+            loadPassengerMoment = false;
+            FindFirstObjectByType<PassengerSeat_Manager>().LoadPassenger();
+        }
     }
     private float getNextTransitionPosition()
     {
