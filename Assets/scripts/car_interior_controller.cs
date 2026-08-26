@@ -28,13 +28,14 @@ public class car_interior_controller : MonoBehaviour
     private void Start()
     {
         if (debugStartOnSideView)
-        {
-            //auto set to side panel view.
-            currentEffect = transitionGameEffect.moveScene;
-            animPerformTransition();
-        }
+            silentTransition();
     }
 
+    public void silentTransition()
+    {
+        currentEffect = transitionGameEffect.moveScene;
+        animPerformTransition();
+    }
     private void loadPass(InputAction.CallbackContext context)
     {
         startNewTransition(transitionType.wide_blink,transitionGameEffect.passengerCutscene);
@@ -84,6 +85,8 @@ public class car_interior_controller : MonoBehaviour
                 pos = SceneCamera.transform.position;
                 pos.x = getNextTransitionPosition();
                 SceneCamera.transform.position = pos;
+                if (pos.x > 0) //check for discovery on side scene.
+                    FindFirstObjectByType<PassengerSeat_Manager>().checkForDiscovery();
                 break;
             case transitionGameEffect.passengerCutscene:
                 FindFirstObjectByType<PassengerSeat_Manager>().stepPassenger();
