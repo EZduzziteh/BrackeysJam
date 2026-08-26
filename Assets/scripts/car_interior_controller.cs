@@ -74,8 +74,8 @@ public class car_interior_controller : MonoBehaviour
 
     public void animPerformTransition()
     {
-        
-        //called by blinker animator.
+        //called by blinker animator at mid-point.
+
         if (moveScene)
         {
             moveScene = false;
