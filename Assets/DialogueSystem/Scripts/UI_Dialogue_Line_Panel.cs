@@ -37,7 +37,6 @@ public class UI_Dialogue_Line_Panel : MonoBehaviour
         DialogueManager.Instance.SetAwaitingUser(true);
     }
 
-
     public void SkipText()
     {
         if (typing) {
