@@ -9,11 +9,18 @@ public class PassengerSeat_Manager : MonoBehaviour
     [SerializeField] private int sortingOrderShift=3;
     private GameObject debugFakeNextPassenger;
     private bool seatOccupied = false;
+    car_interior_controller controller;
     //stats
     [SerializeField] private int totalPassengersCollected;
     [SerializeField] private float passengerTimer;
     [SerializeField] private float passengerEventTimer;
+    [SerializeField] private float silhouetteEventTimer;
+    [SerializeField] private float silhouetteMaxDuration=3f;
 
+    private void Start()
+    {
+        controller=  FindFirstObjectByType<car_interior_controller>();
+    }
     private void Update()
     {
         if(seatOccupied)
@@ -26,50 +33,60 @@ public class PassengerSeat_Manager : MonoBehaviour
                 passengerEventTimer = 0f;
             }
         }
+        if (needDiscovery())
+        {
+            silhouetteEventTimer += Time.deltaTime;
+            if (silhouetteEventTimer >= silhouetteMaxDuration)
+            {
+                controller.startNewTransition(car_interior_controller.transitionType.full_blink, car_interior_controller.transitionGameEffect.moveScene);
+            }
+        }
     }
     private void LoadPassenger()
     {
         if(passenger.activeSelf)
         {
+            //create next passenger for later.
             debugFakeNextPassenger = Instantiate(passenger);
             debugFakeNextPassenger.SetActive(false);
             debugFakeNextPassenger.GetComponent<jimmy_face_swapper>().selectNewFace();
 
+            //move passenger into car
             SpriteRenderer [] sprites = passenger.GetComponentsInChildren<SpriteRenderer>();
             foreach (SpriteRenderer childrenSR in sprites)
             {
                 childrenSR.sortingOrder += sortingOrderShift;
             }
             passenger.transform.position = gameObject.transform.position;
-            totalPassengersCollected++;
-            seatOccupied = true;
-
             foreach (GameObject model in insideModel)
             {
                 model.SetActive(true);
             }
+
+            //system updates
+            silhouetteEventTimer = 0f; // cleanup
+            totalPassengersCollected++;
+            seatOccupied = true;
         }
         else
-        {
             discoverPassenger();
-        }
     }
     private void ejectPassenger()
     {
-        print("ejecto seat");
-        seatOccupied = false;
+        //cleanup passenger
         Destroy(passenger);
-        passengerTimer = 0f;
-        passengerEventTimer = 0f;
-
-        passenger = debugFakeNextPassenger;
-
-        silhouetteModel.SetActive(true);
         foreach (GameObject model in insideModel)
         {
             model.SetActive(false);
         }
-        FindFirstObjectByType<car_interior_controller>().silentTransition();
+        seatOccupied = false;
+        passengerTimer = 0f;
+        passengerEventTimer = 0f;
+
+        //setup for next passenger -> transition into silhouette
+        passenger = debugFakeNextPassenger;
+        silhouetteModel.SetActive(true);
+        controller.silentTransition();
     }
     private void discoverPassenger()
     {
@@ -78,22 +95,18 @@ public class PassengerSeat_Manager : MonoBehaviour
     }
     public void checkForDiscovery()
     {
-        if( !seatOccupied & !passenger.activeSelf)
+        if(needDiscovery())
             discoverPassenger();
     }
+    private bool needDiscovery()
+    {
+        return !seatOccupied & !passenger.activeSelf;
+    } 
     public void stepPassenger()
     {
-        // Step through the next passenger process automatically. (called by transitions :) ) 
-        //if seatOccupied variable is active, that means next step is to eject.
-        //if passenger variable is active, Load Passenger into seat, else discover a new passenger.
-
         if (seatOccupied)
-        {
           ejectPassenger();
-        }
         else
-        {
-          LoadPassenger();
-        }    
+          LoadPassenger();    
     }
 }

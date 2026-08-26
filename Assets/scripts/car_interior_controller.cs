@@ -24,29 +24,18 @@ public class car_interior_controller : MonoBehaviour
 
         controller.debugs.LoadPassenger.performed += loadPass;
     }
+    private void OnDisable()
+    {
+        controller.Disable();
+    }
 
     private void Start()
     {
         if (debugStartOnSideView)
             silentTransition();
     }
-
-    public void silentTransition()
-    {
-        currentEffect = transitionGameEffect.moveScene;
-        animPerformTransition();
-    }
-    private void loadPass(InputAction.CallbackContext context)
-    {
-        startNewTransition(transitionType.wide_blink,transitionGameEffect.passengerCutscene);
-    }
-
-    private void OnDisable()
-    {
-        controller.Disable();
-    }
-
     //car scene transitions
+
     public enum transitionType {full_blink,wide_blink}
     public enum transitionGameEffect {none,moveScene,passengerCutscene}
     private transitionGameEffect currentEffect;
@@ -68,10 +57,7 @@ public class car_interior_controller : MonoBehaviour
                 break;
         }
     }
-    private void hotkeyTransition(InputAction.CallbackContext context)
-    {
-        startNewTransition(default,transitionGameEffect.moveScene);
-    }
+    private void hotkeyTransition(InputAction.CallbackContext context) { startNewTransition(default,transitionGameEffect.moveScene); }
 
     public void animPerformTransition()
     {
@@ -99,6 +85,12 @@ public class car_interior_controller : MonoBehaviour
             return cameraOffset;
         return 0f; // default
     }
+    public void silentTransition()
+    {
+        currentEffect = transitionGameEffect.moveScene;
+        animPerformTransition();
+    }
+    private void loadPass(InputAction.CallbackContext context) { startNewTransition(transitionType.wide_blink, transitionGameEffect.passengerCutscene); }
 
     //interaction
     private void checkInteraction(InputAction.CallbackContext context)
