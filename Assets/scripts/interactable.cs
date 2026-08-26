@@ -2,18 +2,21 @@ using UnityEngine;
 
 public class interactable : MonoBehaviour
 {
+    public enum interactableEffectType { none, transition, radio }
+
     [Header("Functionality")]
-    public string effectName;
+    [SerializeField] private interactableEffectType effectName =interactableEffectType.none;
+
     [Header("highlight settings")]
     SpriteRenderer sr; Color defaultColor;
+
     [Header("Cursor settings")]
     [SerializeField] private cursorPackage defaultCursor;
     [SerializeField] private cursorPackage altCursor;
     public bool shouldHideCursorAfterUse=false;
-    private float cursorTimer; private int cursorIndex;
-    private bool doAnim=false;
+    private float cursorTimer; private int cursorIndex; private bool doAnim=false;
     private car_interior_controller interiorController;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -29,19 +32,15 @@ public class interactable : MonoBehaviour
     }
     public void triggerEffect()
     {
-        switch (effectName)
+        switch(effectName)
         {
-            case "transition":
-                interiorController.startNewTransition(car_interior_controller.transitionType.full_blink,car_interior_controller.transitionGameEffect.moveScene);
+            case interactableEffectType.transition:
+                interiorController.startNewTransition(car_interior_controller.transitionType.full_blink, car_interior_controller.transitionGameEffect.moveScene);
                 break;
-            case "stepPassenger":
-                interiorController.startNewTransition(car_interior_controller.transitionType.wide_blink,car_interior_controller.transitionGameEffect.passengerCutscene);
-                gameObject.SetActive(false);
-                break;
-            case "radio":
+            case interactableEffectType.radio:
                 print("jamming jamming jamming, what's brackening party ppl?");
                 break;
-            default:
+            case interactableEffectType.none:
                 print("you interacted to no effect!");
                 break;
         }
@@ -62,6 +61,7 @@ public class interactable : MonoBehaviour
         {
             //create highlight object
             myOutline = Instantiate(gameObject);
+            myOutline.transform.position = gameObject.transform.position; // dumb but needed apparently?
             myOutline.name = "Highlight of " + gameObject;
             //remove components that break things
             Destroy(myOutline.GetComponent<interactable>());

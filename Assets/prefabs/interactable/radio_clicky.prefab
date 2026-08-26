@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 248030c3b02a82f489030ef4b60c35b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::interactable
-  effectName: radio
+  effectName: 2
   defaultCursor: {fileID: 11400000, guid: 57519c4a18ecf574481f62b59bc2820b, type: 2}
   altCursor: {fileID: 11400000, guid: 7840ae9c0e89a794abf45876334c54b6, type: 2}
   shouldHideCursorAfterUse: 0

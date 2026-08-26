@@ -6,10 +6,12 @@ public class PassengerSeat_Manager : MonoBehaviour
     [SerializeField] private GameObject passenger;
     [SerializeField] private int sortingOrderShift=3;
     private GameObject debugFakeNextPassenger;
+    private bool seatOccupied = false;
+    //stats
     [SerializeField] private int totalPassengersCollected;
     [SerializeField] private float passengerTimer;
     [SerializeField] private float passengerEventTimer;
-    private bool seatOccupied = false;
+    
 
     private void Update()
     {
@@ -24,7 +26,7 @@ public class PassengerSeat_Manager : MonoBehaviour
             }
         }
     }
-    public void LoadPassenger()
+    private void LoadPassenger()
     {
         if(passenger.activeSelf)
         {
@@ -46,7 +48,7 @@ public class PassengerSeat_Manager : MonoBehaviour
             discoverPassenger();
         }
     }
-    public void ejectPassenger()
+    private void ejectPassenger()
     {
         print("ejecto seat");
         seatOccupied = false;
@@ -56,31 +58,23 @@ public class PassengerSeat_Manager : MonoBehaviour
 
         passenger = debugFakeNextPassenger;    
     }
-    public void discoverPassenger()
+    private void discoverPassenger()
     {
         passenger.SetActive(true);
     }
-
-    // Step through the next passenger process automatically. (called by transitions :) ) 
     public void stepPassenger()
     {
+        // Step through the next passenger process automatically. (called by transitions :) ) 
         //if seatOccupied variable is active, that means next step is to eject.
-        //if passenger variable is not active? if not, discovr, if so, load.
+        //if passenger variable is active, Load Passenger into seat, else discover a new passenger.
 
         if (seatOccupied)
         {
-            ejectPassenger();
+          ejectPassenger();
         }
         else
         {
-            if(passenger.activeSelf)
-            {
-                LoadPassenger();
-            }
-            else
-            {
-                discoverPassenger();
-            }
+          LoadPassenger();
         }    
     }
 }

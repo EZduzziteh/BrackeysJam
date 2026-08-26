@@ -10,6 +10,7 @@ public class car_interior_controller : MonoBehaviour
 
     [SerializeField] private GameObject SceneCamera;
     [SerializeField] private float cameraOffset=5f;
+    [SerializeField] private bool debugStartOnSideView = false;
     private Vector3 pos;
 
     private interactable highlightedElement;
@@ -21,23 +22,17 @@ public class car_interior_controller : MonoBehaviour
         controller.Player.LookAtPassenger.performed += hotkeyTransition;
         controller.Player.MousePos.performed += mouseMoved;
 
-
         controller.debugs.LoadPassenger.performed += loadPass;
-        controller.debugs.EjectPassenger.performed += ejectPass;
-        controller.debugs.cycleTransitions.performed += updateDebugTransition;
     }
 
-    private void ejectPass(InputAction.CallbackContext context)
+    private void Start()
     {
-        //ejectPassengerMoment = true;
-        startNewTransition(transitionType.wide_blink, transitionGameEffect.passengerCutscene);
-    }
-
-    private void updateDebugTransition(InputAction.CallbackContext context)
-    {
-        debugTransition += 1;
-        if (((int)debugTransition) >= Enum.GetValues(typeof(transitionType)).Length)
-            debugTransition = 0;
+        if (debugStartOnSideView)
+        {
+            //auto set to side panel view.
+            currentEffect = transitionGameEffect.moveScene;
+            animPerformTransition();
+        }
     }
 
     private void loadPass(InputAction.CallbackContext context)
@@ -74,14 +69,12 @@ public class car_interior_controller : MonoBehaviour
     }
     private void hotkeyTransition(InputAction.CallbackContext context)
     {
-        //start blink
-        //startNewTransition(debugTransition);
         startNewTransition(default,transitionGameEffect.moveScene);
     }
 
     public void animPerformTransition()
     {
-        //called by blinker animator at mid-point.
+        //called by blinker animator script at anim mid-point.
         switch (currentEffect)
         {
             case transitionGameEffect.none:
@@ -94,7 +87,6 @@ public class car_interior_controller : MonoBehaviour
                 break;
             case transitionGameEffect.passengerCutscene:
                 FindFirstObjectByType<PassengerSeat_Manager>().stepPassenger();
-                //FindFirstObjectByType<PassengerSeat_Manager>().ejectPassenger();
                 break;
         }
     }
