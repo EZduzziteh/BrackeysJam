@@ -949,9 +949,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             ""id"": ""bcba209b-8692-4ea4-aa67-2db6944eecf9"",
             ""actions"": [
                 {
-                    ""name"": ""LoadPassenger"",
+                    ""name"": ""cycleTransitions"",
                     ""type"": ""Button"",
-                    ""id"": ""0f390331-8d79-4ad6-a5db-4e33105e887f"",
+                    ""id"": ""e9a1c854-b41f-4d2d-b1e0-ac0b8cc77421"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -959,9 +959,19 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""priority"": 0
                 },
                 {
-                    ""name"": ""cycleTransitions"",
+                    ""name"": ""EjectPassenger"",
                     ""type"": ""Button"",
-                    ""id"": ""e9a1c854-b41f-4d2d-b1e0-ac0b8cc77421"",
+                    ""id"": ""afbe18d9-772b-4132-ba7e-cbaef05ef91a"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false,
+                    ""priority"": 0
+                },
+                {
+                    ""name"": ""LoadPassenger"",
+                    ""type"": ""Button"",
+                    ""id"": ""0f390331-8d79-4ad6-a5db-4e33105e887f"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -989,6 +999,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""cycleTransitions"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7d04a86d-56ed-4cbf-9826-5015722c6afd"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""EjectPassenger"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1082,8 +1103,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
         // debugs
         m_debugs = asset.FindActionMap("debugs", throwIfNotFound: true);
-        m_debugs_LoadPassenger = m_debugs.FindAction("LoadPassenger", throwIfNotFound: true);
         m_debugs_cycleTransitions = m_debugs.FindAction("cycleTransitions", throwIfNotFound: true);
+        m_debugs_EjectPassenger = m_debugs.FindAction("EjectPassenger", throwIfNotFound: true);
+        m_debugs_LoadPassenger = m_debugs.FindAction("LoadPassenger", throwIfNotFound: true);
     }
 
     ~@InputSystem_Actions()
@@ -1534,8 +1556,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     // debugs
     private readonly InputActionMap m_debugs;
     private List<IDebugsActions> m_DebugsActionsCallbackInterfaces = new List<IDebugsActions>();
-    private readonly InputAction m_debugs_LoadPassenger;
     private readonly InputAction m_debugs_cycleTransitions;
+    private readonly InputAction m_debugs_EjectPassenger;
+    private readonly InputAction m_debugs_LoadPassenger;
     /// <summary>
     /// Provides access to input actions defined in input action map "debugs".
     /// </summary>
@@ -1548,13 +1571,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// </summary>
         public DebugsActions(@InputSystem_Actions wrapper) { m_Wrapper = wrapper; }
         /// <summary>
-        /// Provides access to the underlying input action "debugs/LoadPassenger".
-        /// </summary>
-        public InputAction @LoadPassenger => m_Wrapper.m_debugs_LoadPassenger;
-        /// <summary>
         /// Provides access to the underlying input action "debugs/cycleTransitions".
         /// </summary>
         public InputAction @cycleTransitions => m_Wrapper.m_debugs_cycleTransitions;
+        /// <summary>
+        /// Provides access to the underlying input action "debugs/EjectPassenger".
+        /// </summary>
+        public InputAction @EjectPassenger => m_Wrapper.m_debugs_EjectPassenger;
+        /// <summary>
+        /// Provides access to the underlying input action "debugs/LoadPassenger".
+        /// </summary>
+        public InputAction @LoadPassenger => m_Wrapper.m_debugs_LoadPassenger;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1581,12 +1608,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_DebugsActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_DebugsActionsCallbackInterfaces.Add(instance);
-            @LoadPassenger.started += instance.OnLoadPassenger;
-            @LoadPassenger.performed += instance.OnLoadPassenger;
-            @LoadPassenger.canceled += instance.OnLoadPassenger;
             @cycleTransitions.started += instance.OnCycleTransitions;
             @cycleTransitions.performed += instance.OnCycleTransitions;
             @cycleTransitions.canceled += instance.OnCycleTransitions;
+            @EjectPassenger.started += instance.OnEjectPassenger;
+            @EjectPassenger.performed += instance.OnEjectPassenger;
+            @EjectPassenger.canceled += instance.OnEjectPassenger;
+            @LoadPassenger.started += instance.OnLoadPassenger;
+            @LoadPassenger.performed += instance.OnLoadPassenger;
+            @LoadPassenger.canceled += instance.OnLoadPassenger;
         }
 
         /// <summary>
@@ -1598,12 +1628,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="DebugsActions" />
         private void UnregisterCallbacks(IDebugsActions instance)
         {
-            @LoadPassenger.started -= instance.OnLoadPassenger;
-            @LoadPassenger.performed -= instance.OnLoadPassenger;
-            @LoadPassenger.canceled -= instance.OnLoadPassenger;
             @cycleTransitions.started -= instance.OnCycleTransitions;
             @cycleTransitions.performed -= instance.OnCycleTransitions;
             @cycleTransitions.canceled -= instance.OnCycleTransitions;
+            @EjectPassenger.started -= instance.OnEjectPassenger;
+            @EjectPassenger.performed -= instance.OnEjectPassenger;
+            @EjectPassenger.canceled -= instance.OnEjectPassenger;
+            @LoadPassenger.started -= instance.OnLoadPassenger;
+            @LoadPassenger.performed -= instance.OnLoadPassenger;
+            @LoadPassenger.canceled -= instance.OnLoadPassenger;
         }
 
         /// <summary>
@@ -1852,18 +1885,25 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     public interface IDebugsActions
     {
         /// <summary>
-        /// Method invoked when associated input action "LoadPassenger" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnLoadPassenger(InputAction.CallbackContext context);
-        /// <summary>
         /// Method invoked when associated input action "cycleTransitions" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnCycleTransitions(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "EjectPassenger" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnEjectPassenger(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "LoadPassenger" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnLoadPassenger(InputAction.CallbackContext context);
     }
 }

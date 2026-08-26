@@ -23,7 +23,14 @@ public class car_interior_controller : MonoBehaviour
 
 
         controller.debugs.LoadPassenger.performed += loadPass;
+        controller.debugs.EjectPassenger.performed += ejectPass;
         controller.debugs.cycleTransitions.performed += updateDebugTransition;
+    }
+
+    private void ejectPass(InputAction.CallbackContext context)
+    {
+        ejectPassengerMoment = true;
+        startNewTransition(transitionType.wide_blink);
     }
 
     private void updateDebugTransition(InputAction.CallbackContext context)
@@ -53,6 +60,7 @@ public class car_interior_controller : MonoBehaviour
 
     bool moveScene = false;
     bool loadPassengerMoment = false;
+    bool ejectPassengerMoment = false;
     public void startNewTransition(transitionType style=transitionType.full_blink)
     {
         switch (style)
@@ -87,6 +95,11 @@ public class car_interior_controller : MonoBehaviour
         {
             loadPassengerMoment = false;
             FindFirstObjectByType<PassengerSeat_Manager>().LoadPassenger();
+        }
+        if (ejectPassengerMoment)
+        {
+            ejectPassengerMoment = false;
+            FindFirstObjectByType<PassengerSeat_Manager>().ejectPassenger();
         }
     }
     private float getNextTransitionPosition()
