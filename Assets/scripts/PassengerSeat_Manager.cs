@@ -27,6 +27,7 @@ public class PassengerSeat_Manager : MonoBehaviour
     {
         debugFakeNextPassenger = Instantiate(passenger);
         debugFakeNextPassenger.SetActive(false);
+        debugFakeNextPassenger.GetComponent<jimmy_face_swapper>().selectNewFace();
 
         SpriteRenderer [] sprites = passenger.GetComponentsInChildren<SpriteRenderer>();
         foreach (SpriteRenderer childrenSR in sprites)
