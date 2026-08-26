@@ -26,18 +26,25 @@ public class PassengerSeat_Manager : MonoBehaviour
     }
     public void LoadPassenger()
     {
-        debugFakeNextPassenger = Instantiate(passenger);
-        debugFakeNextPassenger.SetActive(false);
-        debugFakeNextPassenger.GetComponent<jimmy_face_swapper>().selectNewFace();
-
-        SpriteRenderer [] sprites = passenger.GetComponentsInChildren<SpriteRenderer>();
-        foreach (SpriteRenderer childrenSR in sprites)
+        if(passenger.activeSelf)
         {
-            childrenSR.sortingOrder += sortingOrderShift;
+            debugFakeNextPassenger = Instantiate(passenger);
+            debugFakeNextPassenger.SetActive(false);
+            debugFakeNextPassenger.GetComponent<jimmy_face_swapper>().selectNewFace();
+
+            SpriteRenderer [] sprites = passenger.GetComponentsInChildren<SpriteRenderer>();
+            foreach (SpriteRenderer childrenSR in sprites)
+            {
+                childrenSR.sortingOrder += sortingOrderShift;
+            }
+            passenger.transform.position = gameObject.transform.position;
+            totalPassengersCollected++;
+            seatOccupied = true;
         }
-        passenger.transform.position = gameObject.transform.position;
-        totalPassengersCollected++;
-        seatOccupied = true;
+        else
+        {
+            discoverPassenger();
+        }
     }
     public void ejectPassenger()
     {
@@ -47,7 +54,33 @@ public class PassengerSeat_Manager : MonoBehaviour
         passengerTimer = 0f;
         passengerEventTimer = 0f;
 
-        passenger = debugFakeNextPassenger;
+        passenger = debugFakeNextPassenger;    
+    }
+    public void discoverPassenger()
+    {
         passenger.SetActive(true);
+    }
+
+    // Step through the next passenger process automatically. (called by transitions :) ) 
+    public void stepPassenger()
+    {
+        //if seatOccupied variable is active, that means next step is to eject.
+        //if passenger variable is not active? if not, discovr, if so, load.
+
+        if (seatOccupied)
+        {
+            ejectPassenger();
+        }
+        else
+        {
+            if(passenger.activeSelf)
+            {
+                LoadPassenger();
+            }
+            else
+            {
+                discoverPassenger();
+            }
+        }    
     }
 }

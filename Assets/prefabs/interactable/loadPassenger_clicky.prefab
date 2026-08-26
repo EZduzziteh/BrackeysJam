@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8079087385514854462
+--- !u!1 &1160783141897143412
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,41 +8,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3546797536795641944}
-  - component: {fileID: 7173649708189706769}
-  - component: {fileID: 1222739662100577521}
-  - component: {fileID: 8732899957352860996}
+  - component: {fileID: 2875346539861084141}
+  - component: {fileID: 6140061877769266761}
+  - component: {fileID: 1036813710638436445}
+  - component: {fileID: 7068930544632145988}
   m_Layer: 0
-  m_Name: radio_clicky
+  m_Name: loadPassenger_clicky
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3546797536795641944
+--- !u!4 &2875346539861084141
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8079087385514854462}
+  m_GameObject: {fileID: 1160783141897143412}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.66, y: 0.04, z: 0}
-  m_LocalScale: {x: 0.79837, y: 0.46913818, z: 0.3282265}
+  m_LocalPosition: {x: 3.63, y: 0.1, z: 0}
+  m_LocalScale: {x: 2.21125, y: 0.5445, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &7173649708189706769
+--- !u!212 &6140061877769266761
 SpriteRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8079087385514854462}
-  m_Enabled: 1
+  m_GameObject: {fileID: 1160783141897143412}
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -93,30 +93,30 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &1222739662100577521
+--- !u!114 &1036813710638436445
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8079087385514854462}
+  m_GameObject: {fileID: 1160783141897143412}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 248030c3b02a82f489030ef4b60c35b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::interactable
-  effectName: radio
+  effectName: stepPassenger
   defaultCursor: {fileID: 11400000, guid: 57519c4a18ecf574481f62b59bc2820b, type: 2}
-  altCursor: {fileID: 11400000, guid: 7840ae9c0e89a794abf45876334c54b6, type: 2}
-  shouldHideCursorAfterUse: 0
+  altCursor: {fileID: 11400000, guid: dbf976ebdb956e9499ade5d6cebd8b3e, type: 2}
+  shouldHideCursorAfterUse: 1
   highlightThickness: 1.1
---- !u!61 &8732899957352860996
+--- !u!61 &7068930544632145988
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8079087385514854462}
+  m_GameObject: {fileID: 1160783141897143412}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1

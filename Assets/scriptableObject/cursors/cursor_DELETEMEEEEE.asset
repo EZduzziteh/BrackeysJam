@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3755607278b95a542a833ea944792730, type: 3}
-  m_Name: delete_me_cursor
+  m_Name: cursor_DELETEMEEEEE
   m_EditorClassIdentifier: Assembly-CSharp::cursorPackage
   cursorFrames:
   - {fileID: 2800000, guid: 98e707911f44c6f45bedb45429c71fa1, type: 3}

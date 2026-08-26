@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3755607278b95a542a833ea944792730, type: 3}
-  m_Name: LookAtPassenger_eyes
+  m_Name: cursor_ciggy
   m_EditorClassIdentifier: Assembly-CSharp::cursorPackage
   cursorFrames:
-  - {fileID: 2800000, guid: 832edc0221b9b6546955ec331f61189d, type: 3}
+  - {fileID: 2800000, guid: 8f707c9b69ee3364fb94128ef5a5df9f, type: 3}
   hotSpot: {x: 0, y: 0}
   animated: 0
   animFrameRate: 0.1

@@ -29,8 +29,8 @@ public class car_interior_controller : MonoBehaviour
 
     private void ejectPass(InputAction.CallbackContext context)
     {
-        ejectPassengerMoment = true;
-        startNewTransition(transitionType.wide_blink);
+        //ejectPassengerMoment = true;
+        startNewTransition(transitionType.wide_blink, transitionGameEffect.passengerCutscene);
     }
 
     private void updateDebugTransition(InputAction.CallbackContext context)
@@ -42,8 +42,7 @@ public class car_interior_controller : MonoBehaviour
 
     private void loadPass(InputAction.CallbackContext context)
     {
-        loadPassengerMoment = true;
-        startNewTransition(transitionType.wide_blink);
+        startNewTransition(transitionType.wide_blink,transitionGameEffect.passengerCutscene);
     }
 
     private void OnDisable()
@@ -53,21 +52,20 @@ public class car_interior_controller : MonoBehaviour
 
     //car scene transitions
     public enum transitionType {full_blink,wide_blink}
+    public enum transitionGameEffect {none,moveScene,passengerCutscene}
+    private transitionGameEffect currentEffect;
     [Header("transition animators")]
     [SerializeField] private Animator full_blink_animator;
     [SerializeField] private Animator wide_blink_animator;
     [SerializeField] private transitionType debugTransition=transitionType.full_blink;
 
-    bool moveScene = false;
-    bool loadPassengerMoment = false;
-    bool ejectPassengerMoment = false;
-    public void startNewTransition(transitionType style=transitionType.full_blink)
+    public void startNewTransition(transitionType style=transitionType.full_blink, transitionGameEffect effect=transitionGameEffect.none)
     {
+        currentEffect = effect;
         switch (style)
         {
             case transitionType.full_blink:
                 full_blink_animator.enabled = true;
-                moveScene = true;
                 break;
             case transitionType.wide_blink:
                 wide_blink_animator.enabled = true;
@@ -77,29 +75,27 @@ public class car_interior_controller : MonoBehaviour
     private void hotkeyTransition(InputAction.CallbackContext context)
     {
         //start blink
-        startNewTransition(debugTransition);
+        //startNewTransition(debugTransition);
+        startNewTransition(default,transitionGameEffect.moveScene);
     }
 
     public void animPerformTransition()
     {
         //called by blinker animator at mid-point.
-
-        if (moveScene)
+        switch (currentEffect)
         {
-            moveScene = false;
-            pos = SceneCamera.transform.position;
-            pos.x = getNextTransitionPosition();
-            SceneCamera.transform.position = pos;
-        }
-        if (loadPassengerMoment)
-        {
-            loadPassengerMoment = false;
-            FindFirstObjectByType<PassengerSeat_Manager>().LoadPassenger();
-        }
-        if (ejectPassengerMoment)
-        {
-            ejectPassengerMoment = false;
-            FindFirstObjectByType<PassengerSeat_Manager>().ejectPassenger();
+            case transitionGameEffect.none:
+                break;
+            case transitionGameEffect.moveScene:
+                //moveScene = false;
+                pos = SceneCamera.transform.position;
+                pos.x = getNextTransitionPosition();
+                SceneCamera.transform.position = pos;
+                break;
+            case transitionGameEffect.passengerCutscene:
+                FindFirstObjectByType<PassengerSeat_Manager>().stepPassenger();
+                //FindFirstObjectByType<PassengerSeat_Manager>().ejectPassenger();
+                break;
         }
     }
     private float getNextTransitionPosition()

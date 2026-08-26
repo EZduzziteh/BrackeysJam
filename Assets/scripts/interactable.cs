@@ -12,11 +12,13 @@ public class interactable : MonoBehaviour
     public bool shouldHideCursorAfterUse=false;
     private float cursorTimer; private int cursorIndex;
     private bool doAnim=false;
+    private car_interior_controller interiorController;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
         defaultColor= sr.color;
+        interiorController=FindFirstObjectByType<car_interior_controller>();
     }
     private void Update()
     {
@@ -30,14 +32,18 @@ public class interactable : MonoBehaviour
         switch (effectName)
         {
             case "transition":
-                FindFirstObjectByType<car_interior_controller>().startNewTransition(car_interior_controller.transitionType.full_blink);
-                return;
+                interiorController.startNewTransition(car_interior_controller.transitionType.full_blink,car_interior_controller.transitionGameEffect.moveScene);
+                break;
+            case "stepPassenger":
+                interiorController.startNewTransition(car_interior_controller.transitionType.wide_blink,car_interior_controller.transitionGameEffect.passengerCutscene);
+                gameObject.SetActive(false);
+                break;
             case "radio":
                 print("jamming jamming jamming, what's brackening party ppl?");
-                return;
+                break;
             default:
                 print("you interacted to no effect!");
-                return;
+                break;
         }
     }
 
@@ -109,4 +115,5 @@ public class interactable : MonoBehaviour
         }
         Cursor.SetCursor(cursor.cursorFrames[cursorIndex], cursor.hotSpot, CursorMode.Auto);
     }
+
 }
