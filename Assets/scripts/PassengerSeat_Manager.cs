@@ -4,6 +4,7 @@ public class PassengerSeat_Manager : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField] private GameObject passenger;
+    [SerializeField] private int sortingOrderShift=3;
     private GameObject debugFakeNextPassenger;
     [SerializeField] private int totalPassengersCollected;
     [SerializeField] private float passengerTimer;
@@ -32,9 +33,9 @@ public class PassengerSeat_Manager : MonoBehaviour
         SpriteRenderer [] sprites = passenger.GetComponentsInChildren<SpriteRenderer>();
         foreach (SpriteRenderer childrenSR in sprites)
         {
-            childrenSR.sortingOrder += 2;
+            childrenSR.sortingOrder += sortingOrderShift;
         }
-        passenger.transform.position = gameObject.transform.localPosition;
+        passenger.transform.position = gameObject.transform.position;
         totalPassengersCollected++;
         seatOccupied = true;
     }
