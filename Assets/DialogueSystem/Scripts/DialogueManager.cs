@@ -2,15 +2,23 @@
 using System;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Events;
 using static DialogueStage_Answer;
 
 [RequireComponent(typeof(AudioSource))]
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance;
-
-    public DialogueStage currentDialogueStage;
+    public DialogueStage DEBUGDIALOGUESTAGE;
+    DialogueStage currentDialogueStage;
     AudioSource aud;
+
+
+    public UnityEvent OnDialogueAdvanced;
+    public UnityEvent OnDialogueStarted;
+    public UnityEvent OnDialogueEnded; 
+
+
 
     private void Awake()
     {
@@ -22,14 +30,32 @@ public class DialogueManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-            aud = GetComponent<AudioSource>();
+        aud = GetComponent<AudioSource>();
     }
 
     private void Start()
     {
-        if (currentDialogueStage != null)
+        //bind events for debugging
+        OnDialogueStarted.AddListener(() =>
         {
-            StartDialogue(currentDialogueStage);
+            Debug.Log("TESTING DIALOGUE EVENT DEBUG - OnDialogueStarted");
+        });
+
+        OnDialogueEnded.AddListener(() =>
+        {
+
+            Debug.Log("TESTING DIALOGUE EVENT DEBUG - OnDialogueEnded");
+        });
+
+        OnDialogueAdvanced.AddListener(() => {
+
+            Debug.Log("TESTING DIALOGUE EVENT DEBUG - OnDialogueAdvanced");
+        });
+
+
+        if (DEBUGDIALOGUESTAGE != null)
+        {
+            StartDialogue(DEBUGDIALOGUESTAGE);
         }  
     }
 
@@ -37,13 +63,23 @@ public class DialogueManager : MonoBehaviour
 
   public void StartDialogue(DialogueStage stage)
   {
+        bool newDialogueChain = false;
+        if(currentDialogueStage == null)
+        {
+            Debug.Log("This must be a new dialogue");
+            newDialogueChain = true;
+        }
         currentDialogueStage = stage;
         ExecuteDialogue();
-  }
+
+        if (newDialogueChain)
+        {
+            OnDialogueStarted?.Invoke();
+        }
+    }
 
   public void ExecuteDialogue()
   {
- 
         if (currentDialogueStage != null)
         {
             DialogueStage_Line dialogueStageLine;
@@ -91,6 +127,8 @@ public class DialogueManager : MonoBehaviour
     {
         currentDialogueStage = null;
         UI_Dialogue_Container.Instance.Clear();
+        OnDialogueEnded?.Invoke();
+
     }
 
     bool awaitingUser = false;
@@ -131,6 +169,7 @@ public class DialogueManager : MonoBehaviour
     {
         DialogueStage_Line dialogueStageLine;
 
+
         try
         {
             dialogueStageLine = (DialogueStage_Line)currentDialogueStage;
@@ -142,23 +181,26 @@ public class DialogueManager : MonoBehaviour
             Console.WriteLine(e.Message);
         }
 
-        DialogueStage_Answer dialogueStageAnswer;
-        try
-        {
-            dialogueStageAnswer = (DialogueStage_Answer)currentDialogueStage;
-            if (dialogueStageAnswer != null)
+            DialogueStage_Answer dialogueStageAnswer;
+            try
             {
-                if(dialogueStageAnswer.answers.Count > option)
+                dialogueStageAnswer = (DialogueStage_Answer)currentDialogueStage;
+                if (dialogueStageAnswer != null)
                 {
-                    AdvanceDialogue(dialogueStageAnswer.answers[option]);
-                    return true;
+                    if (dialogueStageAnswer.answers.Count > option)
+                    {
+                        AdvanceDialogue(dialogueStageAnswer.answers[option]);
+                        return true;
+                    }
                 }
             }
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e.Message);
-        }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        
+
+
 
         return false;
     }
@@ -180,6 +222,7 @@ public class DialogueManager : MonoBehaviour
         if (answer.nextStage!= null)
         {
             StartDialogue(answer.nextStage);
+            OnDialogueAdvanced?.Invoke();
         }
         else
         {

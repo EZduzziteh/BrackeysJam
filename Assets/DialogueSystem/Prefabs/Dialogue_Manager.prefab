@@ -45,7 +45,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b3e99d70b057574a881a411104080fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  currentDialogueStage: {fileID: 11400000, guid: e9b39331d48ad2e42a34cf76386f8bab, type: 2}
+  DEBUGDIALOGUESTAGE: {fileID: 11400000, guid: e9b39331d48ad2e42a34cf76386f8bab, type: 2}
+  OnDialogueAdvanced:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDialogueStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDialogueEnded:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!82 &7552683369910014569
 AudioSource:
   m_ObjectHideFlags: 0
