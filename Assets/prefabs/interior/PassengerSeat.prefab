@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1444394300575991125}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.85099983, y: -0.19, z: 0}
+  m_LocalPosition: {x: 0.85, y: -0.19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -239,3 +239,7 @@ MonoBehaviour:
   passengerEventTimer: 0
   silhouetteEventTimer: 0
   silhouetteMaxDuration: 3
+  windowDialogue: {fileID: 11400000, guid: a5134b456bc0cd1449d24f04b3ba051a, type: 2}
+  boardedDialogue: {fileID: 11400000, guid: 761799285f7331f419752d62d703b6cb, type: 2}
+  bootDialogue: {fileID: 11400000, guid: 7f29ca36ef82a224d93df1f3e3f34449, type: 2}
+  finalDialogue: {fileID: 11400000, guid: 69c12fc68a7f3d540965e970eda9694a, type: 2}
