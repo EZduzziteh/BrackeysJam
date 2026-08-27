@@ -28,14 +28,10 @@ public class CarSpeedSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         CalculateAccelerationMultiplier();
-
 
         acceleration = baseAcceleration * accelerationMultiplier;
         deceleration = baseDeceleration * decelerationMultiplier;
-
-
 
         if (Input.GetKey(KeyCode.D))
         {

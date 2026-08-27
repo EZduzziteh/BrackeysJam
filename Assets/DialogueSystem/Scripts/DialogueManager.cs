@@ -13,13 +13,16 @@ public class DialogueManager : MonoBehaviour
     DialogueStage currentDialogueStage;
     AudioSource aud;
 
-
     public UnityEvent OnDialogueAdvanced;
     public UnityEvent OnDialogueStarted;
     public UnityEvent OnDialogueEnded;
     public UnityEvent OnCustomDialogueEventTriggered;
+    private int lastSelectedOption;
 
-
+    public int GetLastSelectedOption()
+    {
+        return lastSelectedOption;
+    }
 
     private void Awake()
     {
@@ -62,12 +65,16 @@ public class DialogueManager : MonoBehaviour
         if (DEBUGDIALOGUESTAGE != null)
         {
             StartDialogue(DEBUGDIALOGUESTAGE);
-        }  
+        }
     }
 
 
+    public void HandleTypingComplete()
+    {
+        Debug.Log("Typing Complete!");
+    }
 
-  public void StartDialogue(DialogueStage stage)
+    public void StartDialogue(DialogueStage stage)
   {
         bool newDialogueChain = false;
         if(currentDialogueStage == null)
@@ -162,6 +169,8 @@ public class DialogueManager : MonoBehaviour
                     f.SkipText();
                 }
             }
+
+            
         }
         
     }
@@ -179,6 +188,8 @@ public class DialogueManager : MonoBehaviour
     }
     public bool TryAdvanceDialogue(int option)
     {
+
+        lastSelectedOption = option;
         DialogueStage_Line dialogueStageLine;
 
         try
@@ -209,9 +220,6 @@ public class DialogueManager : MonoBehaviour
             {
                 Console.WriteLine(e.Message);
             }
-        
-
-
 
         return false;
     }

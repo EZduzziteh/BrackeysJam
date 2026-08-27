@@ -34,7 +34,8 @@ public class StressEventManager : MonoBehaviour
 
     private void Start()
     {
-        stressSystem = FindObjectOfType<StressSystem>();
+
+        stressSystem = FindFirstObjectByType<StressSystem>();
     }
 
     // Update is called once per frame

@@ -17,7 +17,7 @@ public class UI_Dialogue_Line_Panel : MonoBehaviour
     TextMeshProUGUI Text;
     Coroutine typingCoroutine;
 
-    UnityEvent OnTypingComplete;
+    public UnityEvent OnTypingComplete;
 
     private void Awake()
     {
@@ -35,6 +35,7 @@ public class UI_Dialogue_Line_Panel : MonoBehaviour
         //prompt user to hit enter.
         UI_Dialogue_Container.Instance.DisplayPrompt();
         DialogueManager.Instance.SetAwaitingUser(true);
+        DialogueManager.Instance.HandleTypingComplete();
     }
 
     public void SkipText()
