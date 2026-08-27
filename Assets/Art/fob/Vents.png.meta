@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: a45981ed412ded245afb17d896fff951
+guid: cf6636ef541c4d14c8269b3ab0bc1cf4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3279520081611593478
-    second: Totem Front Facing Side View Soft Glow_0
+      213: -1236666252544227623
+    second: Vents_0
+  - first:
+      213: -3838701736104295329
+    second: Vents_1
+  - first:
+      213: 7654051127553733747
+    second: Vents_2
+  - first:
+      213: 512797083764595566
+    second: Vents_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
