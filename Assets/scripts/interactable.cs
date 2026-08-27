@@ -5,7 +5,7 @@ public class interactable : MonoBehaviour
     public enum interactableEffectType { none, transition, radio }
 
     [Header("Functionality")]
-    [SerializeField] private interactableEffectType effectName =interactableEffectType.none;
+    public interactableEffectType effectName =interactableEffectType.none;
 
     [Header("highlight settings")]
     SpriteRenderer sr; Color defaultColor;
