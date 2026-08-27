@@ -1289,6 +1289,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Passenger
       objectReference: {fileID: 0}
+    - target: {fileID: 4876339463268248825, guid: 71dae62085f2b8e4eaa29636198c0a0c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6361530144973689436, guid: 71dae62085f2b8e4eaa29636198c0a0c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
