@@ -42,7 +42,6 @@ public class car_interior_controller : MonoBehaviour
     [Header("transition animators")]
     [SerializeField] private Animator full_blink_animator;
     [SerializeField] private Animator wide_blink_animator;
-    [SerializeField] private transitionType debugTransition=transitionType.full_blink;
 
     public void startNewTransition(transitionType style=transitionType.full_blink, transitionGameEffect effect=transitionGameEffect.none)
     {
