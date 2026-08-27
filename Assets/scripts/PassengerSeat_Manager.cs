@@ -19,10 +19,7 @@ public class PassengerSeat_Manager : MonoBehaviour
 
     //dialogue
     private DialogueManager DM;
-    [SerializeField] private DialogueStage windowDialogue;
-    [SerializeField] private DialogueStage boardedDialogue;
-    [SerializeField] private DialogueStage bootDialogue;
-    [SerializeField] private DialogueStage finalDialogue;
+    [SerializeField] private DialogueCoreBundle dialogueBundle;
 
     private void Start()
     {
@@ -38,9 +35,10 @@ public class PassengerSeat_Manager : MonoBehaviour
             if (passengerEventTimer >= 30f)
             {
                 print("event triggered");
-                if(bootDialogue)
+                if(dialogueBundle.bootDialogue)
                 {
-                    DM.StartDialogue(bootDialogue);
+                    DM.StartDialogue(dialogueBundle.bootDialogue);
+                    lockTransitions(true);
                     DM.OnDialogueEnded.AddListener(ejectListener);
                 }   
                 passengerEventTimer = 0f;
@@ -65,8 +63,7 @@ public class PassengerSeat_Manager : MonoBehaviour
             debugFakeNextPassenger.GetComponent<jimmy_face_swapper>().selectNewFace();
 
             //move passenger into car
-            
-            SpriteRenderer [] sprites = passenger.GetComponentsInChildren<SpriteRenderer>();
+            SpriteRenderer[] sprites = passenger.GetComponentsInChildren<SpriteRenderer>();
             foreach (SpriteRenderer childrenSR in sprites)
             {
                 childrenSR.sortingOrder += sortingOrderShift;
@@ -83,11 +80,11 @@ public class PassengerSeat_Manager : MonoBehaviour
             seatOccupied = true;
 
             //dialogue stuff
-            if(boardedDialogue)
-                DM.StartDialogue(boardedDialogue);
+            if (dialogueBundle.boardedDialogue)
+                DM.StartDialogue(dialogueBundle.boardedDialogue);
         }
         else
-            discoverPassenger();
+            checkForDiscovery();
     }
     private void ejectPassenger()
     {
@@ -106,15 +103,22 @@ public class PassengerSeat_Manager : MonoBehaviour
         silhouetteModel.SetActive(true);
         controller.silentTransition();
     }
-    private void discoverPassenger()
+    public void checkForDiscovery()
     {
-        passenger.SetActive(true);
-        silhouetteModel.SetActive(false);
-        if (windowDialogue)
+        if (needDiscovery())
         {
-            DM.StartDialogue(windowDialogue);
-            DM.OnDialogueEnded.AddListener(loadListener);
+            passenger.SetActive(true);
+            silhouetteModel.SetActive(false);
+            if (dialogueBundle.windowDialogue)
+            {
+                DM.StartDialogue(dialogueBundle.windowDialogue);
+                DM.OnDialogueEnded.AddListener(loadListener);
+            }
         }
+    }
+    private bool needDiscovery()
+    {
+        return !seatOccupied & !passenger.activeSelf;
     }
     private void loadListener() { DM.OnDialogueEnded.RemoveListener(loadListener); controller.startNewTransition(car_interior_controller.transitionType.wide_blink, car_interior_controller.transitionGameEffect.passengerCutscene); }
 
@@ -122,6 +126,7 @@ public class PassengerSeat_Manager : MonoBehaviour
     { 
         DM.OnDialogueEnded.RemoveListener(ejectListener);
         print(DM.GetLastSelectedOption());
+        lockTransitions(false);
         switch (DM.GetLastSelectedOption())
         {
             case 1:
@@ -132,22 +137,19 @@ public class PassengerSeat_Manager : MonoBehaviour
         }  
     }
 
-    public void checkForDiscovery()
-    {
-        if(needDiscovery())
-        {
-            discoverPassenger();
-        } 
-    }
-    private bool needDiscovery()
-    {
-        return !seatOccupied & !passenger.activeSelf;
-    } 
     public void stepPassenger()
     {
         if (seatOccupied)
           ejectPassenger();
         else
           LoadPassenger();    
+    }
+    private void lockTransitions(bool shouldLock)
+    {
+        foreach (interactable interactee in FindObjectsByType<interactable>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+        {
+            if (interactee.effectName == interactable.interactableEffectType.transition)
+                interactee.gameObject.SetActive(!shouldLock);
+        }
     }
 }

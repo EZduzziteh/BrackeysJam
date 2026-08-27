@@ -239,7 +239,4 @@ MonoBehaviour:
   passengerEventTimer: 0
   silhouetteEventTimer: 0
   silhouetteMaxDuration: 3
-  windowDialogue: {fileID: 11400000, guid: a5134b456bc0cd1449d24f04b3ba051a, type: 2}
-  boardedDialogue: {fileID: 11400000, guid: 761799285f7331f419752d62d703b6cb, type: 2}
-  bootDialogue: {fileID: 11400000, guid: 7f29ca36ef82a224d93df1f3e3f34449, type: 2}
-  finalDialogue: {fileID: 11400000, guid: 69c12fc68a7f3d540965e970eda9694a, type: 2}
+  dialogueBundle: {fileID: 11400000, guid: f08dad2ce7dbba7498595d42c973ef62, type: 2}
