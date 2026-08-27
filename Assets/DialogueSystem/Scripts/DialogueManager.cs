@@ -16,7 +16,8 @@ public class DialogueManager : MonoBehaviour
 
     public UnityEvent OnDialogueAdvanced;
     public UnityEvent OnDialogueStarted;
-    public UnityEvent OnDialogueEnded; 
+    public UnityEvent OnDialogueEnded;
+    public UnityEvent OnCustomDialogueEventTriggered;
 
 
 
@@ -39,6 +40,11 @@ public class DialogueManager : MonoBehaviour
         OnDialogueStarted.AddListener(() =>
         {
             Debug.Log("TESTING DIALOGUE EVENT DEBUG - OnDialogueStarted");
+        });
+
+        OnCustomDialogueEventTriggered.AddListener(() =>
+        {
+            Debug.Log("TESTING DIALOGUE EVENT DEBUG - OnCustomFireEventOnAdvanceDialogue");
         });
 
         OnDialogueEnded.AddListener(() =>
@@ -135,7 +141,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.anyKeyDown)
         {
             if (awaitingUser)
             {
@@ -165,10 +171,15 @@ public class DialogueManager : MonoBehaviour
         awaitingUser = isAwaiting;
     }
 
-    public bool TryAdvanceDialogue(int option = 0)
+
+    public bool TryAdvanceDialogue()
+    {
+        //default to 0 if no option specified
+        return TryAdvanceDialogue(0);
+    }
+    public bool TryAdvanceDialogue(int option)
     {
         DialogueStage_Line dialogueStageLine;
-
 
         try
         {
@@ -204,25 +215,28 @@ public class DialogueManager : MonoBehaviour
 
         return false;
     }
+
+    
     public void AdvanceDialogue(DialogueStage_Line line)
     {
-       // Debug.Log("Advancing...");
-        if (line.NextStage != null)
-        {
-            StartDialogue(line.NextStage);
-        }
-        else
-        {
-            EndDialogue();
-        }
+        AdvanceDialogueStage(line.NextStage);
     }
 
     public void AdvanceDialogue(DialogueAnswer answer)
     {
-        if (answer.nextStage!= null)
+        AdvanceDialogueStage(answer.nextStage);
+    }
+
+    public void AdvanceDialogueStage(DialogueStage targetStage)
+    {
+        if (targetStage != null)
         {
-            StartDialogue(answer.nextStage);
+            StartDialogue(targetStage);
             OnDialogueAdvanced?.Invoke();
+            if (currentDialogueStage.fireCustomEventOnAdvance)
+            {
+                OnCustomDialogueEventTriggered?.Invoke();
+            }
         }
         else
         {
