@@ -525,6 +525,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1170261062621651723, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
+      propertyPath: DEBUGDIALOGUESTAGE
+      value: 
+      objectReference: {fileID: 11400000, guid: e9b39331d48ad2e42a34cf76386f8bab, type: 2}
     - target: {fileID: 3757422815117525739, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.40847
