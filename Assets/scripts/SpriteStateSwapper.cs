@@ -15,6 +15,7 @@ public class SpriteStateSwapper : MonoBehaviour
     }
     private void OnValidate()
     {
-        spriteIndex = _spriteIndex;
+        if(sprites.Length>0)
+            spriteIndex = _spriteIndex;
     }
 }

@@ -573,6 +573,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   baseTextInterval: 0.05
+  OnTypingComplete:
+    m_PersistentCalls:
+      m_Calls: []
   typing: 0
 --- !u!1 &5216734139684746339
 GameObject:

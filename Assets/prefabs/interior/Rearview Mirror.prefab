@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6651614379494232050}
   - component: {fileID: 7512514335216857213}
   m_Layer: 0
-  m_Name: Square
+  m_Name: inside_mirrior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 1447214360454271491}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.626, y: 1.053, z: 0}
-  m_LocalScale: {x: 1.1146874, y: 0.275, z: 1}
+  m_LocalPosition: {x: 0.626, y: 1.042, z: 0}
+  m_LocalScale: {x: 1.1146874, y: 0.14781252, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2543158135610304911}
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
   m_Color: {r: 0.2951215, g: 0, b: 0.4716981, a: 1}
   m_FlipX: 0
   m_FlipY: 0
