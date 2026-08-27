@@ -55,6 +55,9 @@ MonoBehaviour:
   OnDialogueEnded:
     m_PersistentCalls:
       m_Calls: []
+  OnCustomDialogueEventTriggered:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!82 &7552683369910014569
 AudioSource:
   m_ObjectHideFlags: 0

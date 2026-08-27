@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4d7e64a667b16d4b8342b418e4a3cf6, type: 3}
+  m_Name: 01_grandma
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueStage_Line
+  fireCustomEventOnAdvance: 0
+  NextStage: {fileID: 11400000, guid: 3e4006b188242704db299c06f2ba4fb2, type: 2}
+  LineData:
+    text: Hello, dearie. Would you be so kind as to help an old woman? I was picking
+      blueberries, and next thing I knew, I couldn't find my car in the fog. Would
+      you be so kind and help me find it? It couldn't be far...
+    audioClip: {fileID: 0}
+  AutoAdvance: 1
+  AutoAdvanceDelay: 4
