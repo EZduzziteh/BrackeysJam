@@ -19,10 +19,9 @@ public class DialogueManager : MonoBehaviour
     public UnityEvent OnCustomDialogueEventTriggered;
     private int lastSelectedOption;
 
-    public int GetLastSelectedOption()
-    {
-        return lastSelectedOption;
-    }
+    bool awaitingUser = false;
+    bool AwaitingAutoAdvance = false;
+    float AwaitingAutoAdvanceTimer = 0.0f;
 
     private void Awake()
     {
@@ -52,7 +51,6 @@ public class DialogueManager : MonoBehaviour
 
         OnDialogueEnded.AddListener(() =>
         {
-
             Debug.Log("TESTING DIALOGUE EVENT DEBUG - OnDialogueEnded");
         });
 
@@ -61,17 +59,68 @@ public class DialogueManager : MonoBehaviour
             Debug.Log("TESTING DIALOGUE EVENT DEBUG - OnDialogueAdvanced");
         });
 
-
         if (DEBUGDIALOGUESTAGE != null)
         {
             StartDialogue(DEBUGDIALOGUESTAGE);
         }
     }
 
+    private void Update()
+    {
+        if (AwaitingAutoAdvance)
+        {
+            AwaitingAutoAdvanceTimer += Time.deltaTime;
+            Debug.Log("Awaiting Auto Advance - " + AwaitingAutoAdvanceTimer);
+            DialogueStage_Line lineStage;
+            lineStage = (DialogueStage_Line)currentDialogueStage;
+
+            if (lineStage)
+            {
+                if (AwaitingAutoAdvanceTimer >= lineStage.AutoAdvanceDelay)
+                {
+                    TryAdvanceDialogue();
+                    AwaitingAutoAdvance = false;
+
+                    //Early return so we dont also check the player input on the same frame? not sure if this will impact anything.
+                    return;
+                }
+            }
+        }
+        
+
+        if (Input.anyKeyDown)
+        {
+            if (awaitingUser)
+            {
+                if (TryAdvanceDialogue())
+                {
+                    //there is a next dialogue
+                }
+                else
+                {
+                    // no next dialogue in chain, clear it up.
+                    UI_Dialogue_Container.Instance.Clear();
+                }
+            }
+            else
+            {
+                foreach (var f in FindObjectsByType<UI_Dialogue_Line_Panel>(FindObjectsSortMode.None))
+                {
+                    f.SkipText();
+                }
+            }
+
+            AwaitingAutoAdvance = false;
+        }
+    }
 
     public void HandleTypingComplete()
     {
         Debug.Log("Typing Complete!");
+
+        //start wait timer
+        AwaitingAutoAdvance = true;
+        AwaitingAutoAdvanceTimer = 0.0f;
     }
 
     public void StartDialogue(DialogueStage stage)
@@ -144,36 +193,6 @@ public class DialogueManager : MonoBehaviour
 
     }
 
-    bool awaitingUser = false;
-
-    private void Update()
-    {
-        if (Input.anyKeyDown)
-        {
-            if (awaitingUser)
-            {
-                if (TryAdvanceDialogue())
-                {
-                    //there is a next dialogue
-                }
-                else
-                {
-                    // no next dialogue in chain, clear it up.
-                    UI_Dialogue_Container.Instance.Clear();
-                }
-            }
-            else
-            {
-               foreach(var f in FindObjectsByType<UI_Dialogue_Line_Panel>(FindObjectsSortMode.None))
-                {
-                    f.SkipText();
-                }
-            }
-
-            
-        }
-        
-    }
 
     public void SetAwaitingUser(bool isAwaiting)
     {
@@ -224,7 +243,10 @@ public class DialogueManager : MonoBehaviour
         return false;
     }
 
-    
+    public int GetLastSelectedOption()
+    {
+        return lastSelectedOption;
+    }
     public void AdvanceDialogue(DialogueStage_Line line)
     {
         AdvanceDialogueStage(line.NextStage);
