@@ -208,13 +208,14 @@ public class DialogueManager : MonoBehaviour
     public bool TryAdvanceDialogue(int option)
     {
 
-        lastSelectedOption = option;
+        
         DialogueStage_Line dialogueStageLine;
 
         try
         {
             dialogueStageLine = (DialogueStage_Line)currentDialogueStage;
             AdvanceDialogue(dialogueStageLine);
+            lastSelectedOption = option;
             return true;
         }
         catch (Exception e)
@@ -231,6 +232,7 @@ public class DialogueManager : MonoBehaviour
                     if (dialogueStageAnswer.answers.Count > option)
                     {
                         AdvanceDialogue(dialogueStageAnswer.answers[option]);
+                        lastSelectedOption = option;
                         return true;
                     }
                 }

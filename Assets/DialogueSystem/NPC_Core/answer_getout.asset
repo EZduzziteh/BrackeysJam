@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99066965772588045a97e5a46a87e30f, type: 3}
   m_Name: answer_getout
   m_EditorClassIdentifier: Assembly-CSharp::DialogueStage_Answer
+  fireCustomEventOnAdvance: 0
   answers:
   - LineData:
-      text: I think its time for you to get out
+      text: we can keep chilling
       audioClip: {fileID: 0}
-    nextStage: {fileID: 11400000, guid: 69c12fc68a7f3d540965e970eda9694a, type: 2}
+    nextStage: {fileID: 0}
   - LineData:
       text: OUT! NOW!
       audioClip: {fileID: 0}

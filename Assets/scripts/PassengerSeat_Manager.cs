@@ -119,7 +119,18 @@ public class PassengerSeat_Manager : MonoBehaviour
     private void loadListener() { DM.OnDialogueEnded.RemoveListener(loadListener); controller.startNewTransition(car_interior_controller.transitionType.wide_blink, car_interior_controller.transitionGameEffect.passengerCutscene); }
 
     private void ejectListener()
-    { DM.OnDialogueEnded.RemoveListener(ejectListener); controller.startNewTransition(car_interior_controller.transitionType.wide_blink, car_interior_controller.transitionGameEffect.passengerCutscene); }
+    { 
+        DM.OnDialogueEnded.RemoveListener(ejectListener);
+        print(DM.GetLastSelectedOption());
+        switch (DM.GetLastSelectedOption())
+        {
+            case 1:
+                controller.startNewTransition(car_interior_controller.transitionType.wide_blink, car_interior_controller.transitionGameEffect.passengerCutscene);
+                break;
+            default:
+                break;
+        }  
+    }
 
     public void checkForDiscovery()
     {
