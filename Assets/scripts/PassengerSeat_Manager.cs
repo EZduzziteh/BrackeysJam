@@ -17,9 +17,17 @@ public class PassengerSeat_Manager : MonoBehaviour
     [SerializeField] private float silhouetteEventTimer;
     [SerializeField] private float silhouetteMaxDuration=3f;
 
+    //dialogue
+    private DialogueManager DM;
+    [SerializeField] private DialogueStage windowDialogue;
+    [SerializeField] private DialogueStage boardedDialogue;
+    [SerializeField] private DialogueStage bootDialogue;
+    [SerializeField] private DialogueStage finalDialogue;
+
     private void Start()
     {
         controller=  FindFirstObjectByType<car_interior_controller>();
+        DM = FindFirstObjectByType<DialogueManager>();
     }
     private void Update()
     {
@@ -30,6 +38,11 @@ public class PassengerSeat_Manager : MonoBehaviour
             if (passengerEventTimer >= 30f)
             {
                 print("event triggered");
+                if(bootDialogue)
+                {
+                    DM.StartDialogue(bootDialogue);
+                    DM.OnDialogueEnded.AddListener(ejectListener);
+                }   
                 passengerEventTimer = 0f;
             }
         }
@@ -44,7 +57,7 @@ public class PassengerSeat_Manager : MonoBehaviour
     }
     private void LoadPassenger()
     {
-        if(passenger.activeSelf)
+        if (passenger.activeSelf)
         {
             //create next passenger for later.
             debugFakeNextPassenger = Instantiate(passenger);
@@ -52,6 +65,7 @@ public class PassengerSeat_Manager : MonoBehaviour
             debugFakeNextPassenger.GetComponent<jimmy_face_swapper>().selectNewFace();
 
             //move passenger into car
+            
             SpriteRenderer [] sprites = passenger.GetComponentsInChildren<SpriteRenderer>();
             foreach (SpriteRenderer childrenSR in sprites)
             {
@@ -67,6 +81,10 @@ public class PassengerSeat_Manager : MonoBehaviour
             silhouetteEventTimer = 0f; // cleanup
             totalPassengersCollected++;
             seatOccupied = true;
+
+            //dialogue stuff
+            if(boardedDialogue)
+                DM.StartDialogue(boardedDialogue);
         }
         else
             discoverPassenger();
@@ -92,11 +110,23 @@ public class PassengerSeat_Manager : MonoBehaviour
     {
         passenger.SetActive(true);
         silhouetteModel.SetActive(false);
+        if (windowDialogue)
+        {
+            DM.StartDialogue(windowDialogue);
+            DM.OnDialogueEnded.AddListener(loadListener);
+        }
     }
+    private void loadListener() { DM.OnDialogueEnded.RemoveListener(loadListener); controller.startNewTransition(car_interior_controller.transitionType.wide_blink, car_interior_controller.transitionGameEffect.passengerCutscene); }
+
+    private void ejectListener()
+    { DM.OnDialogueEnded.RemoveListener(ejectListener); controller.startNewTransition(car_interior_controller.transitionType.wide_blink, car_interior_controller.transitionGameEffect.passengerCutscene); }
+
     public void checkForDiscovery()
     {
         if(needDiscovery())
+        {
             discoverPassenger();
+        } 
     }
     private bool needDiscovery()
     {
