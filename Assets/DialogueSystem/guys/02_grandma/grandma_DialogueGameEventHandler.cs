@@ -22,6 +22,7 @@ public class grandma_DialogueGameEventHandler : DialogueGameEventHandler
     }
     public override void dialogue_gameEvents()
     {
+        print("executing dialogue based game event" + DialogueManager.Instance.currentDialogueStage.customEventStepID);
         //intro & Grandma.
         switch (DialogueManager.Instance.currentDialogueStage.customEventStepID)
         {
