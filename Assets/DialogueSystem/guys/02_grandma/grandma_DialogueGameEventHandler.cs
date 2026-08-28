@@ -22,6 +22,7 @@ public class grandma_DialogueGameEventHandler : DialogueGameEventHandler
     }
     public override void dialogue_gameEvents()
     {
+        print("executing dialogue based game event" + DialogueManager.Instance.currentDialogueStage.customEventStepID);
         //intro & Grandma.
         switch (DialogueManager.Instance.currentDialogueStage.customEventStepID)
         {
@@ -41,14 +42,30 @@ public class grandma_DialogueGameEventHandler : DialogueGameEventHandler
                 controller.startNewTransition(default, car_interior_controller.transitionGameEffect.moveScene);
                 break;
             case 4:
-                //"interesting" dialogue -- activate timer, wait 5-10s
+                //"interesting" dialogue -- activate timer, wait 5-10s then start eject flow.
                 startTimer(startEjectWaitTime);
-                print("hit case 4");
                 break;
             default:
                 break;
         }
 
+    }
+    public override void timerTriggered()
+    {
+        base.timerTriggered();
+        timerIndex++;
+        switch (timerIndex)
+        {
+            case 1: //after first wait, "force look at grandma"
+                DialogueManager.Instance.StartDialogue(dialogueCalmTalismanMoment);
+                break;
+            case 2: //eject time
+                seat.startBootDialogue();
+                this.enabled = false;
+                break;
+            default:
+                break;
+        }
     }
     private void delaySilhouetteSpawn()
     {
@@ -62,21 +79,5 @@ public class grandma_DialogueGameEventHandler : DialogueGameEventHandler
         seat.lockTransitions(true);
         DialogueManager.Instance.StartDialogue(dialogueAfterHighlightTut);
     }
-    int timerIndex = 0;
-    public override void timerTriggered()
-    {
-        base.timerTriggered();
-        timerIndex++;
-        switch (timerIndex)
-        {
-            case 1: //after first wait, "force look at grandma"
-                DialogueManager.Instance.StartDialogue(dialogueCalmTalismanMoment);
-                break;
-            case 2: //eject time
-                seat.stepPassenger();
-                break;
-            default:
-                break;
-        }
-    }
+
 }

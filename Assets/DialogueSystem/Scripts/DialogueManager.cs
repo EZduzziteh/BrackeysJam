@@ -11,6 +11,7 @@ public class DialogueManager : MonoBehaviour
     public static DialogueManager Instance;
     public DialogueStage DEBUGDIALOGUESTAGE;
     public DialogueStage currentDialogueStage { get; private set; }
+    public DialogueStage lastEndDialogueStage { get; private set; }
     AudioSource aud;
 
     public UnityEvent OnDialogueAdvanced;
@@ -192,6 +193,7 @@ public class DialogueManager : MonoBehaviour
         {
             OnCustomDialogueEndEventTriggered?.Invoke();
         }
+        lastEndDialogueStage = currentDialogueStage;
         currentDialogueStage = null;
         UI_Dialogue_Container.Instance.Clear();
         OnDialogueEnded?.Invoke();

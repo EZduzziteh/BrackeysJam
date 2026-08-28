@@ -476,6 +476,10 @@ PrefabInstance:
       propertyPath: 'totem.Array.data[1]'
       value: 
       objectReference: {fileID: 1061225682}
+    - target: {fileID: 2885344101020575389, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
+      propertyPath: dialogueCalmTalismanMoment
+      value: 
+      objectReference: {fileID: 11400000, guid: 8b2386bfc9abba840b226e18f36f390b, type: 2}
     - target: {fileID: 3757422815117525739, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.78
@@ -907,7 +911,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3607576630590458684}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 85abaa3623c7f0644bf87de61306d875, type: 2}
   m_CullingMode: 0
@@ -933,6 +937,10 @@ PrefabInstance:
       propertyPath: passenger
       value: 
       objectReference: {fileID: 1185055837}
+    - target: {fileID: 3252273177361408844, guid: 3c5bdc0452903ce48a138ba53d751403, type: 3}
+      propertyPath: rogueBundle
+      value: 
+      objectReference: {fileID: 11400000, guid: f08dad2ce7dbba7498595d42c973ef62, type: 2}
     - target: {fileID: 3252273177361408844, guid: 3c5bdc0452903ce48a138ba53d751403, type: 3}
       propertyPath: dialogueBundle
       value: 

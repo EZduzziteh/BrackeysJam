@@ -20,6 +20,7 @@ public class PassengerSeat_Manager : MonoBehaviour
     //dialogue
     private DialogueManager DM;
     [SerializeField] private DialogueCoreBundle dialogueBundle;
+    [SerializeField] private DialogueCoreBundle rogueBundle;
 
     private void Start()
     {
@@ -86,6 +87,7 @@ public class PassengerSeat_Manager : MonoBehaviour
     {
         //cleanup passenger
         Destroy(passenger);
+        passenger = debugFakeNextPassenger; //update ref for new passenger.
         foreach (GameObject model in insideModel)
         {
             model.SetActive(false);
@@ -94,8 +96,14 @@ public class PassengerSeat_Manager : MonoBehaviour
         passengerTimer = 0f;
         passengerEventTimer = 0f;
 
-        //setup for next passenger -> transition into silhouette
-        passenger = debugFakeNextPassenger;
+        //play final dialogue
+        DialogueManager.Instance.StartDialogue(dialogueBundle.finalDialogue);
+        DialogueManager.Instance.OnDialogueEnded.AddListener(setupForNextPassenger);
+    }
+    private void setupForNextPassenger()
+    {//setup for next passenger -> transition into silhouette
+        DialogueManager.Instance.OnDialogueEnded.RemoveListener(setupForNextPassenger);
+        moveIntoBasicDialogue(); // this should load next passenger dialogue bundle, placeholder for now to turn off grandma dialogue.
         silhouetteModel.SetActive(true);
         controller.silentTransition();
     }
@@ -137,6 +145,7 @@ public class PassengerSeat_Manager : MonoBehaviour
         DM.OnDialogueEnded.RemoveListener(ejectListener);
         controller.startNewTransition(car_interior_controller.transitionType.wide_blink, car_interior_controller.transitionGameEffect.passengerCutscene);
         lockTransitions(false);
+
         /* used for only select answer to eject. probably can be refactored into dialogue event handler.
         print(DM.GetLastSelectedOption());
         switch (DM.GetLastSelectedOption())
@@ -153,7 +162,7 @@ public class PassengerSeat_Manager : MonoBehaviour
     public void stepPassenger()
     {
         if (seatOccupied)
-            startBootDialogue();
+            ejectPassenger();
         else
         {
             if (silhouetteModel.activeSelf || passenger.activeSelf)
@@ -169,5 +178,9 @@ public class PassengerSeat_Manager : MonoBehaviour
             if (interactee.effectName == interactable.interactableEffectType.transition)
                 interactee.gameObject.SetActive(!shouldLock);
         }
+    }
+    public void moveIntoBasicDialogue()
+    {
+        dialogueBundle = rogueBundle;
     }
 }
