@@ -119,6 +119,40 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &525382929
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 525382930}
+  m_Layer: 0
+  m_Name: Odo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &525382930
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525382929}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.9, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1321611424}
+  - {fileID: 2064299407}
+  - {fileID: 710849520}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &593895577
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,11 +296,67 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 525382930}
     m_Modifications:
     - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
       propertyPath: UsePlayerInput
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1936655025}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1936655025}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: IncreaseFullNumber
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DecreaseFullNumber
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Odometer_UI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Odometer_UI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
       propertyPath: m_LocalPosition.x
@@ -286,15 +376,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -328,6 +418,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42ac77fb712290e4095f439d5a2e7d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+--- !u!4 &710849520 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+  m_PrefabInstance: {fileID: 710849518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1232603616
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,8 +484,36 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 525382930}
     m_Modifications:
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1936655025}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DecreaseFullNumber
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Odometer_UI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.353
@@ -409,15 +532,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -451,17 +574,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42ac77fb712290e4095f439d5a2e7d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+--- !u!4 &1321611424 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+  m_PrefabInstance: {fileID: 1321611422}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1936655025 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+  m_PrefabInstance: {fileID: 2064299406}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42ac77fb712290e4095f439d5a2e7d50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1001 &2064299406
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 525382930}
     m_Modifications:
     - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
       propertyPath: UsePlayerInput
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
       propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.size
@@ -494,7 +633,7 @@ PrefabInstance:
     - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
       propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 710849519}
+      objectReference: {fileID: 1321611423}
     - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
       propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -597,15 +736,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -628,12 +767,15 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+--- !u!4 &2064299407 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+  m_PrefabInstance: {fileID: 2064299406}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 593895580}
   - {fileID: 1232603617}
-  - {fileID: 1321611422}
-  - {fileID: 2064299406}
-  - {fileID: 710849518}
+  - {fileID: 525382930}

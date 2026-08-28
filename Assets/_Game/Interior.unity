@@ -119,10 +119,111 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &143137796
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1499251249}
+    m_Modifications:
+    - target: {fileID: 273294047749950238, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1002563679158398339, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021127831226900713, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.247
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.247
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.475
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911701513997062776, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_Name
+      value: HundredsOdometer
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
 --- !u!1 &153966909 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4761320214304327713, guid: 881dedc10dd7ac24094696ea63b6ff65, type: 3}
   m_PrefabInstance: {fileID: 3607576630590458683}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &249629265 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+  m_PrefabInstance: {fileID: 1916556158}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42ac77fb712290e4095f439d5a2e7d50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+--- !u!4 &249629266 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+  m_PrefabInstance: {fileID: 1916556158}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &299771842
 GameObject:
@@ -165,6 +266,173 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4066794653851717856, guid: b06dd4061034d524bad6d86de45132b1, type: 3}
   m_PrefabInstance: {fileID: 1808414594}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &609602236 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+  m_PrefabInstance: {fileID: 2037550369}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42ac77fb712290e4095f439d5a2e7d50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+--- !u!4 &609602237 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+  m_PrefabInstance: {fileID: 2037550369}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &754192942
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 871959876}
+    m_Modifications:
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: UsePlayerInput
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 609602236}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 609602236}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: IncreaseFullNumber
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DecreaseFullNumber
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Odometer_UI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Odometer_UI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.359
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911701513997062776, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_Name
+      value: Odometer (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+--- !u!1 &871959875
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 871959876}
+  m_Layer: 0
+  m_Name: Odo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &871959876
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871959875}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.723, y: 0.62, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 249629266}
+  - {fileID: 609602237}
+  - {fileID: 1784390779}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &909629442 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4185407118268392855, guid: 337e50f87686cf547892a2afacac8d05, type: 3}
@@ -444,6 +712,54 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1152380200453290008, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152380200453290008, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152380200453290008, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152380200453290008, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152380200453290008, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152380200453290008, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152380200453290008, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152380200453290008, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152380200453290008, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152380200453290008, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152380200453290008, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152380200453290008, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1968213715611657434, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -476,6 +792,14 @@ PrefabInstance:
       propertyPath: 'totem.Array.data[1]'
       value: 
       objectReference: {fileID: 1061225682}
+    - target: {fileID: 3379073103141331363, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3379073103141331363, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
+      propertyPath: m_TargetDisplay
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3757422815117525739, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.78
@@ -568,6 +892,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4536535763427956011, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7588561469797693978, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
       propertyPath: m_Name
       value: Dialogue_Manager
@@ -601,6 +929,147 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
+--- !u!1001 &1380870753
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1499251249}
+    m_Modifications:
+    - target: {fileID: 273294047749950238, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1967423649}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1967423649}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: IncreaseFullNumber
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DecreaseFullNumber
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Odometer_UI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Odometer_UI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1002563679158398339, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021127831226900713, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.247
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.247
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.475
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911701513997062776, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_Name
+      value: TensOdometer
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
 --- !u!1 &1395535596 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8250989434395001628, guid: 881dedc10dd7ac24094696ea63b6ff65, type: 3}
@@ -611,11 +1080,61 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4066794653851717856, guid: b06dd4061034d524bad6d86de45132b1, type: 3}
   m_PrefabInstance: {fileID: 8357913741699715134}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1499251248
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1499251249}
+  m_Layer: 0
+  m_Name: Odometer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1499251249
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499251248}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1853034876}
+  - {fileID: 2088502261}
+  - {fileID: 1967423648}
+  m_Father: {fileID: 1599740713}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1599740713 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2124766336290729662, guid: 881dedc10dd7ac24094696ea63b6ff65, type: 3}
   m_PrefabInstance: {fileID: 3607576630590458683}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1784390779 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+  m_PrefabInstance: {fileID: 754192942}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1784390780 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+  m_PrefabInstance: {fileID: 754192942}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42ac77fb712290e4095f439d5a2e7d50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1001 &1808414594
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -685,11 +1204,455 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b06dd4061034d524bad6d86de45132b1, type: 3}
+--- !u!1001 &1853034875
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1499251249}
+    m_Modifications:
+    - target: {fileID: 273294047749950238, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: UsePlayerInput
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2088502262}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2088502262}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: IncreaseFullNumber
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DecreaseFullNumber
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Odometer_UI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Odometer_UI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1002563679158398339, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4021127831226900713, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.247
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.247
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.475
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911701513997062776, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_Name
+      value: OnesOdometer
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+--- !u!4 &1853034876 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+  m_PrefabInstance: {fileID: 1853034875}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1916556158
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 871959876}
+    m_Modifications:
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 609602236}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DecreaseFullNumber
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Odometer_UI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.353
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911701513997062776, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_Name
+      value: Odometer (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+--- !u!4 &1967423648 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+  m_PrefabInstance: {fileID: 143137796}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1967423649 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+  m_PrefabInstance: {fileID: 143137796}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42ac77fb712290e4095f439d5a2e7d50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+--- !u!1001 &2037550369
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 871959876}
+    m_Modifications:
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: UsePlayerInput
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerValueDecreased.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerValueIncreased.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 249629265}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 249629265}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: IncreaseFullNumber
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerValueDecreased.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerValueIncreased.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DecreaseFullNumber
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerValueDecreased.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 249629265}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerValueIncreased.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1784390780}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerValueDecreased.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerValueIncreased.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerValueDecreased.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DecreaseFullNumber
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerValueIncreased.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: IncreaseFullNumber
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Odometer_UI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Odometer_UI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerValueDecreased.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Odometer_UI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerValueIncreased.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Odometer_UI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerValueDecreased.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerValueIncreased.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0029999912
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911701513997062776, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_Name
+      value: Odometer (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
 --- !u!4 &2068714060 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3546797536795641944, guid: efea0b2f6fcca0645817a78b4c4dff19, type: 3}
   m_PrefabInstance: {fileID: 1077682589901985649}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &2088502261 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+  m_PrefabInstance: {fileID: 1380870753}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2088502262 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+  m_PrefabInstance: {fileID: 1380870753}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42ac77fb712290e4095f439d5a2e7d50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1001 &434733019586587020
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -889,6 +1852,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2124766336290729662, guid: 881dedc10dd7ac24094696ea63b6ff65, type: 3}
       insertIndex: 2
       addedObject: {fileID: 923517010}
+    - targetCorrespondingSourceObject: {fileID: 2124766336290729662, guid: 881dedc10dd7ac24094696ea63b6ff65, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1499251249}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5056175125880771663, guid: 881dedc10dd7ac24094696ea63b6ff65, type: 3}
       insertIndex: -1
@@ -1236,3 +2202,4 @@ SceneRoots:
   - {fileID: 3765083065053816052}
   - {fileID: 299771843}
   - {fileID: 1288909236}
+  - {fileID: 871959876}

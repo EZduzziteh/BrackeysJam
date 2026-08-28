@@ -173,9 +173,9 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_MaskInteraction: 1
-  m_Sprite: {fileID: -1398208445, guid: 1149d136b380e794cb468f71c0db93f1, type: 3}
+  m_Sprite: {fileID: 1702840456, guid: 7c85bc97133dc894090e0b6b8bafc917, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -234,25 +234,32 @@ MonoBehaviour:
   - {fileID: 4021127831226900713}
   - {fileID: 273294047749950238}
   - {fileID: 1002563679158398339}
-  activeOdometerNumber: 1
+  activeOdometerNumber: 0
   OdometerTickInterval: 0.02
-  OdometerSprites:
-  - {fileID: 217911643, guid: 1149d136b380e794cb468f71c0db93f1, type: 3}
-  - {fileID: 1702840456, guid: 1149d136b380e794cb468f71c0db93f1, type: 3}
-  - {fileID: -1398208445, guid: 1149d136b380e794cb468f71c0db93f1, type: 3}
-  - {fileID: -1383454883, guid: 1149d136b380e794cb468f71c0db93f1, type: 3}
-  - {fileID: -1556268789, guid: 1149d136b380e794cb468f71c0db93f1, type: 3}
-  - {fileID: 964101027, guid: 1149d136b380e794cb468f71c0db93f1, type: 3}
-  - {fileID: -1235089969, guid: 1149d136b380e794cb468f71c0db93f1, type: 3}
-  - {fileID: -210131680, guid: 1149d136b380e794cb468f71c0db93f1, type: 3}
-  - {fileID: -680359357, guid: 1149d136b380e794cb468f71c0db93f1, type: 3}
-  - {fileID: 1268529966, guid: 1149d136b380e794cb468f71c0db93f1, type: 3}
+  OnOdometerTickOver:
+    m_PersistentCalls:
+      m_Calls: []
+  OnOdometerTickUnder:
+    m_PersistentCalls:
+      m_Calls: []
   OnOdometerValueDecreased:
     m_PersistentCalls:
       m_Calls: []
   OnOdometerValueIncreased:
     m_PersistentCalls:
       m_Calls: []
+  OdometerSprites:
+  - {fileID: 217911643, guid: 7c85bc97133dc894090e0b6b8bafc917, type: 3}
+  - {fileID: 1702840456, guid: 7c85bc97133dc894090e0b6b8bafc917, type: 3}
+  - {fileID: -1398208445, guid: 7c85bc97133dc894090e0b6b8bafc917, type: 3}
+  - {fileID: -1383454883, guid: 7c85bc97133dc894090e0b6b8bafc917, type: 3}
+  - {fileID: -1556268789, guid: 7c85bc97133dc894090e0b6b8bafc917, type: 3}
+  - {fileID: 964101027, guid: 7c85bc97133dc894090e0b6b8bafc917, type: 3}
+  - {fileID: -1235089969, guid: 7c85bc97133dc894090e0b6b8bafc917, type: 3}
+  - {fileID: -210131680, guid: 7c85bc97133dc894090e0b6b8bafc917, type: 3}
+  - {fileID: -680359357, guid: 7c85bc97133dc894090e0b6b8bafc917, type: 3}
+  - {fileID: 1268529966, guid: 7c85bc97133dc894090e0b6b8bafc917, type: 3}
+  UsePlayerInput: 0
 --- !u!1 &8112158356636050353
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,9 +339,9 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_MaskInteraction: 1
-  m_Sprite: {fileID: 1702840456, guid: 1149d136b380e794cb468f71c0db93f1, type: 3}
+  m_Sprite: {fileID: 217911643, guid: 7c85bc97133dc894090e0b6b8bafc917, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -423,9 +430,9 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_MaskInteraction: 1
-  m_Sprite: {fileID: 217911643, guid: 1149d136b380e794cb468f71c0db93f1, type: 3}
+  m_Sprite: {fileID: 1268529966, guid: 7c85bc97133dc894090e0b6b8bafc917, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
