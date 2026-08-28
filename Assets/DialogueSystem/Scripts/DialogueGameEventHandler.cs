@@ -26,6 +26,7 @@ public class DialogueGameEventHandler : MonoBehaviour
     }
 
 
+
     //Transition watching functionality.
     private List<interactable> watchedTransitions = new List<interactable>();
     public virtual void watchForTransitions()
@@ -39,13 +40,6 @@ public class DialogueGameEventHandler : MonoBehaviour
             }
         }
 
-    }
-    public virtual void clearWatchedTransitions()
-    {
-        foreach (interactable interactee in watchedTransitions)
-        {
-            interactee.transitionedTriggered.RemoveListener(onPlayerTransition);
-        }
     }
     private void delayTransitionTrigger()
     {
@@ -61,10 +55,18 @@ public class DialogueGameEventHandler : MonoBehaviour
         clearWatchedTransitions();
         //called when transitions trigger, if the watch was setup.
     }
+    public virtual void clearWatchedTransitions()
+    {
+        foreach (interactable interactee in watchedTransitions)
+        {
+            interactee.transitionedTriggered.RemoveListener(delayTransitionTrigger);
+        }
+    }
 
 
     //general timer functionality.
     public float timerForEvents;
+    public int timerIndex = 0;
     [SerializeField] private bool _enableTimer = false;
     private float timerTriggerDuration = 5.0f;
     public bool enableTimer
