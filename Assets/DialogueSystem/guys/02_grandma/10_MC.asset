@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 10_MC
   m_EditorClassIdentifier: Assembly-CSharp::DialogueStage_Answer
   fireCustomEventOnAdvance: 0
+  customEventStepID: 0
   answers:
   - LineData:
       text: I think I've taken you far enough...

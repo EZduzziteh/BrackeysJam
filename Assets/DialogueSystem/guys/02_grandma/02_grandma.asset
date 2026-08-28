@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: 02_grandma
   m_EditorClassIdentifier: Assembly-CSharp::DialogueStage_Line
   fireCustomEventOnAdvance: 0
+  customEventStepID: 0
   NextStage: {fileID: 0}
   LineData:
     text: Would you be so kind and help me find it? It couldn't be far...
     audioClip: {fileID: 0}
   AutoAdvance: 1
-  AutoAdvanceDelay: 3
+  AutoAdvanceDelay: 10

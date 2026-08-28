@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: 06_MC
   m_EditorClassIdentifier: Assembly-CSharp::DialogueStage_Answer
   fireCustomEventOnAdvance: 0
+  customEventStepID: 0
   answers:
   - LineData:
       text: Yeah, people suck.
       audioClip: {fileID: 0}
-    nextStage: {fileID: 0}
+    nextStage: {fileID: 11400000, guid: a81e9d9ab1346e045b8cb8c61a1693fc, type: 2}
   - LineData:
       text: No, you're a stranger.
       audioClip: {fileID: 0}
-    nextStage: {fileID: 0}
+    nextStage: {fileID: 11400000, guid: a81e9d9ab1346e045b8cb8c61a1693fc, type: 2}

@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: 05_grandma
   m_EditorClassIdentifier: Assembly-CSharp::DialogueStage_Line
   fireCustomEventOnAdvance: 0
-  NextStage: {fileID: 0}
+  customEventStepID: 0
+  NextStage: {fileID: 11400000, guid: 2fbc19f07a7600f4ca8f7d8208a10588, type: 2}
   LineData:
     text: Not many people willing to help out an old woman these days. That just
       shows how much this world has changed, don't you agree?
     audioClip: {fileID: 0}
   AutoAdvance: 1
-  AutoAdvanceDelay: 3
+  AutoAdvanceDelay: 10

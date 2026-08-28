@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4d7e64a667b16d4b8342b418e4a3cf6, type: 3}
-  m_Name: 03_MC
+  m_Name: 09_grandma_boot
   m_EditorClassIdentifier: Assembly-CSharp::DialogueStage_Line
   fireCustomEventOnAdvance: 0
-  NextStage: {fileID: 0}
+  customEventStepID: 0
+  NextStage: {fileID: 11400000, guid: a889c2bbcdbb93e41ad9124254626201, type: 2}
   LineData:
-    text: What happened to just being a good person and helping out your neighbor
-      in their time of need?
+    text: Oh, honey... You've stopped the car... Do you want me to get out?
     audioClip: {fileID: 0}
   AutoAdvance: 1
-  AutoAdvanceDelay: 3
+  AutoAdvanceDelay: 10

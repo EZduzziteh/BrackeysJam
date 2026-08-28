@@ -35,12 +35,6 @@ public class PassengerSeat_Manager : MonoBehaviour
             if (passengerEventTimer >= 30f)
             {
                 print("event triggered");
-                if(dialogueBundle.bootDialogue)
-                {
-                    DM.StartDialogue(dialogueBundle.bootDialogue);
-                    lockTransitions(true);
-                    DM.OnDialogueEnded.AddListener(ejectListener);
-                }   
                 passengerEventTimer = 0f;
             }
         }
@@ -53,10 +47,12 @@ public class PassengerSeat_Manager : MonoBehaviour
             }
         }
     }
+
     private void LoadPassenger()
     {
         if (passenger.activeSelf)
         {
+            print("Loading Passenger");
             //create next passenger for later.
             debugFakeNextPassenger = Instantiate(passenger);
             debugFakeNextPassenger.SetActive(false);
@@ -75,7 +71,6 @@ public class PassengerSeat_Manager : MonoBehaviour
             }
 
             //system updates
-            silhouetteEventTimer = 0f; // cleanup
             totalPassengersCollected++;
             seatOccupied = true;
 
@@ -105,10 +100,12 @@ public class PassengerSeat_Manager : MonoBehaviour
     }
     public void checkForDiscovery()
     {
+        print("Discovering Passenger");
         if (needDiscovery())
         {
             passenger.SetActive(true);
             silhouetteModel.SetActive(false);
+            silhouetteEventTimer = 0f; // cleanup
             if (dialogueBundle.windowDialogue)
             {
                 DM.StartDialogue(dialogueBundle.windowDialogue);
@@ -118,9 +115,16 @@ public class PassengerSeat_Manager : MonoBehaviour
     }
     private bool needDiscovery()
     {
-        return !seatOccupied & !passenger.activeSelf;
+        return !seatOccupied & !passenger.activeSelf & silhouetteModel.activeSelf;
     }
     private void loadListener() { DM.OnDialogueEnded.RemoveListener(loadListener); controller.startNewTransition(car_interior_controller.transitionType.wide_blink, car_interior_controller.transitionGameEffect.passengerCutscene); }
+
+    public void startBootDialogue()
+    {
+        DM.StartDialogue(dialogueBundle.bootDialogue);
+        lockTransitions(true);
+        DM.OnDialogueEnded.AddListener(ejectListener);
+    }
 
     private void ejectListener()
     { 
@@ -140,11 +144,16 @@ public class PassengerSeat_Manager : MonoBehaviour
     public void stepPassenger()
     {
         if (seatOccupied)
-          ejectPassenger();
+            ejectPassenger();
         else
-          LoadPassenger();    
+        {
+            if (silhouetteModel.activeSelf || passenger.activeSelf)
+                LoadPassenger();
+            else
+                silhouetteModel.SetActive(true);
+        }
     }
-    private void lockTransitions(bool shouldLock)
+    public void lockTransitions(bool shouldLock)
     {
         foreach (interactable interactee in FindObjectsByType<interactable>(FindObjectsInactive.Include, FindObjectsSortMode.None))
         {

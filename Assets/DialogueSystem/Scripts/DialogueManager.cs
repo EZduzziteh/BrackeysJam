@@ -10,7 +10,7 @@ public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance;
     public DialogueStage DEBUGDIALOGUESTAGE;
-    DialogueStage currentDialogueStage;
+    public DialogueStage currentDialogueStage { get; private set; }
     AudioSource aud;
 
     public UnityEvent OnDialogueAdvanced;
@@ -70,7 +70,7 @@ public class DialogueManager : MonoBehaviour
         if (AwaitingAutoAdvance)
         {
             AwaitingAutoAdvanceTimer += Time.deltaTime;
-            Debug.Log("Awaiting Auto Advance - " + AwaitingAutoAdvanceTimer);
+            //Debug.Log("Awaiting Auto Advance - " + AwaitingAutoAdvanceTimer);
             DialogueStage_Line lineStage;
             lineStage = (DialogueStage_Line)currentDialogueStage;
 

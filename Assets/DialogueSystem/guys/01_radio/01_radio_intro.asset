@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: 01_radio_intro
   m_EditorClassIdentifier: Assembly-CSharp::DialogueStage_Line
   fireCustomEventOnAdvance: 0
+  customEventStepID: 0
   NextStage: {fileID: 11400000, guid: b1845052e86049c48a6b7676d87b22e8, type: 2}
   LineData:
     text: Citizens are----look out---last seen---Pine St.---suspect----highly dang--
     audioClip: {fileID: 0}
   AutoAdvance: 1
-  AutoAdvanceDelay: 3
+  AutoAdvanceDelay: 10

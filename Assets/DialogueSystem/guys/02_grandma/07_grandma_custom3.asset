@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4d7e64a667b16d4b8342b418e4a3cf6, type: 3}
-  m_Name: 01_grandma
+  m_Name: 07_grandma_custom3
   m_EditorClassIdentifier: Assembly-CSharp::DialogueStage_Line
-  fireCustomEventOnAdvance: 0
-  NextStage: {fileID: 11400000, guid: 3e4006b188242704db299c06f2ba4fb2, type: 2}
+  fireCustomEventOnAdvance: 1
+  customEventStepID: 3
+  NextStage: {fileID: 0}
   LineData:
-    text: Hello, dearie. Would you be so kind as to help an old woman? I was picking
-      blueberries, and next thing I knew, I couldn't find my car in the fog. Would
-      you be so kind and help me find it? It couldn't be far...
+    text: Well... I suppose you're right... Hehehe.
     audioClip: {fileID: 0}
   AutoAdvance: 1
-  AutoAdvanceDelay: 4
+  AutoAdvanceDelay: 10
