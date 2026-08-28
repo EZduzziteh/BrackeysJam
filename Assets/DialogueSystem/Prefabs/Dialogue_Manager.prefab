@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3757422815117525739}
   - component: {fileID: 1170261062621651723}
+  - component: {fileID: 2885344101020575389}
   - component: {fileID: 7552683369910014569}
   m_Layer: 0
   m_Name: Dialogue_Manager
@@ -59,6 +60,33 @@ MonoBehaviour:
   OnCustomDialogueEventTriggered:
     m_PersistentCalls:
       m_Calls: []
+  OnCustomDialogueEndEventTriggered:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2885344101020575389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7588561469797693978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e6c7f7d46ebb714698c05140999c1a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::grandma_DialogueGameEventHandler
+  controller: {fileID: 0}
+  seat: {fileID: 0}
+  playerTransitionDelay: 1.5
+  timerForEvents: 0
+  _enableTimer: 0
+  totem:
+  - {fileID: 0}
+  - {fileID: 0}
+  dialogueAfterHighlightTut: {fileID: 11400000, guid: c273a5284ac55a444b49708f9256a898, type: 2}
+  dialogueCalmTalismanMoment: {fileID: 11400000, guid: 800042cfde94cb546b9c609788c596b2, type: 2}
+  lookWaitTime: 8
+  startEjectWaitTime: 8
 --- !u!82 &7552683369910014569
 AudioSource:
   m_ObjectHideFlags: 0
