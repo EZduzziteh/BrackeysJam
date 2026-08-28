@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05e34b70ecf8427489501fab10c54134, type: 3}
   m_Name: grandma_passengerSO
   m_EditorClassIdentifier: Assembly-CSharp::passengerSO
-  faceSprite: {fileID: 0}
-  insideSeatSprite: {fileID: 0}
-  dialogueBundle: {fileID: 0}
-  dialogueEventScript: {fileID: 0}
+  faceSprite: {fileID: 3895373182742473504, guid: af192617093d9cc4aad1e31d63b870a0, type: 3}
+  insideSeatSprite: {fileID: 21300000, guid: 58180d02f31386741bada83d350359db, type: 3}
+  dialogueBundle: {fileID: 11400000, guid: 9beb2569232ca3e4f8e3a9e31c7cc759, type: 2}

@@ -119,6 +119,30 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &20209302 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1444394300575991125, guid: 3c5bdc0452903ce48a138ba53d751403, type: 3}
+  m_PrefabInstance: {fileID: 3765083065053816052}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &20209305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20209302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3e5d9424fd95c4d826483a0fcef733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpriteStateSwapper
+  sprites:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _spriteIndex: 0
 --- !u!1 &153966909 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4761320214304327713, guid: 881dedc10dd7ac24094696ea63b6ff65, type: 3}
@@ -445,6 +469,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1170261062621651723, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
+      propertyPath: introDialogue
+      value: 
+      objectReference: {fileID: 11400000, guid: 2e7abb9ff6e4f9d43a14e74692889607, type: 2}
+    - target: {fileID: 1170261062621651723, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
       propertyPath: DEBUGDIALOGUESTAGE
       value: 
       objectReference: {fileID: 0}
@@ -649,12 +677,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4066794653851717856, guid: b06dd4061034d524bad6d86de45132b1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.625625
+      objectReference: {fileID: 0}
+    - target: {fileID: 4066794653851717856, guid: b06dd4061034d524bad6d86de45132b1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.68
       objectReference: {fileID: 0}
     - target: {fileID: 4066794653851717856, guid: b06dd4061034d524bad6d86de45132b1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.11
+      value: -0.47
       objectReference: {fileID: 0}
     - target: {fileID: 4066794653851717856, guid: b06dd4061034d524bad6d86de45132b1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -945,6 +977,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2473061873840666969, guid: 3c5bdc0452903ce48a138ba53d751403, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3252273177361408844, guid: 3c5bdc0452903ce48a138ba53d751403, type: 3}
       propertyPath: passenger
       value: 
@@ -1012,7 +1048,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1444394300575991125, guid: 3c5bdc0452903ce48a138ba53d751403, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 20209305}
   m_SourcePrefab: {fileID: 100100000, guid: 3c5bdc0452903ce48a138ba53d751403, type: 3}
 --- !u!1001 &5645120683801800798
 PrefabInstance:
@@ -1061,6 +1100,10 @@ PrefabInstance:
     - target: {fileID: 458392161147337768, guid: d5b90d192c55bb44994fbdc7ad41fb26, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5969326602590645639, guid: d5b90d192c55bb44994fbdc7ad41fb26, type: 3}
+      propertyPath: skipTut
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6589696999808079272, guid: d5b90d192c55bb44994fbdc7ad41fb26, type: 3}
       propertyPath: m_Name

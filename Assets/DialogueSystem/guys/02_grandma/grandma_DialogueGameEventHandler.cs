@@ -35,6 +35,7 @@ public class grandma_DialogueGameEventHandler : DialogueGameEventHandler
                 //...looking at me line - activate highlight swapper. after clicking this, it triggers next line (05_grandma)
                 showTotem(true);
                 //activate transition highlight.
+                updateTransitionSpriteVisibility(true);
                 watchForTransitions();
                 break;
             case 3:
@@ -51,6 +52,16 @@ public class grandma_DialogueGameEventHandler : DialogueGameEventHandler
         }
 
     }
+
+    private void updateTransitionSpriteVisibility(bool enabledState=false)
+    {
+        foreach (interactable interactee in FindObjectsByType<interactable>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+        {
+            if (interactee.effectName == interactable.interactableEffectType.transition)
+                interactee.GetComponent<SpriteRenderer>().enabled = enabledState;
+        }
+    }
+
     public override void timerTriggered()
     {
         base.timerTriggered();
@@ -77,6 +88,7 @@ public class grandma_DialogueGameEventHandler : DialogueGameEventHandler
     public override void onPlayerTransition()
     {//start dialogue for grandma 05, after case 2.
         base.onPlayerTransition();
+        updateTransitionSpriteVisibility(false);
         controller.lockTransitions(true);
         DialogueManager.Instance.StartDialogue(dialogueAfterHighlightTut);
     }
