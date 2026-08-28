@@ -254,7 +254,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -9
+  m_SortingOrder: -5
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 6b311949eaa92eb4b9ecef131d3e5f92, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.3254902}
@@ -443,6 +443,10 @@ PrefabInstance:
     - target: {fileID: 1111125448955442532, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1170261062621651723, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
+      propertyPath: DEBUGDIALOGUESTAGE
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1968213715611657434, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
       propertyPath: m_AnchorMax.y
@@ -824,6 +828,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1734567152211808072, guid: 881dedc10dd7ac24094696ea63b6ff65, type: 3}
+      propertyPath: m_SortingOrder
+      value: -7
+      objectReference: {fileID: 0}
     - target: {fileID: 2124766336290729662, guid: 881dedc10dd7ac24094696ea63b6ff65, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -863,6 +871,10 @@ PrefabInstance:
     - target: {fileID: 2124766336290729662, guid: 881dedc10dd7ac24094696ea63b6ff65, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2750797558244496937, guid: 881dedc10dd7ac24094696ea63b6ff65, type: 3}
+      propertyPath: m_SortingOrder
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 4761320214304327713, guid: 881dedc10dd7ac24094696ea63b6ff65, type: 3}
       propertyPath: m_IsActive
@@ -911,7 +923,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3607576630590458684}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 85abaa3623c7f0644bf87de61306d875, type: 2}
   m_CullingMode: 0

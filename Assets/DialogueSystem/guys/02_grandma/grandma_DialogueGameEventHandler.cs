@@ -11,7 +11,8 @@ public class grandma_DialogueGameEventHandler : DialogueGameEventHandler
     protected override void Start()
     {
         base.Start();
-        showTotem(false);
+        if(!controller.skipTut)
+            showTotem(false);
     }
     private void showTotem(bool enabled)
     {
@@ -71,12 +72,12 @@ public class grandma_DialogueGameEventHandler : DialogueGameEventHandler
     {
         DialogueManager.Instance.OnDialogueEnded.RemoveListener(delaySilhouetteSpawn);
         seat.stepPassenger();
-        seat.lockTransitions(false);
+        controller.lockTransitions(false);
     }
     public override void onPlayerTransition()
     {//start dialogue for grandma 05, after case 2.
         base.onPlayerTransition();
-        seat.lockTransitions(true);
+        controller.lockTransitions(true);
         DialogueManager.Instance.StartDialogue(dialogueAfterHighlightTut);
     }
 

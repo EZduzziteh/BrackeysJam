@@ -9,7 +9,7 @@ using static DialogueStage_Answer;
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance;
-    public DialogueStage DEBUGDIALOGUESTAGE;
+    public DialogueStage introDialogue; //renamed debug value to be used for intro kick-off.
     public DialogueStage currentDialogueStage { get; private set; }
     public DialogueStage lastEndDialogueStage { get; private set; }
     AudioSource aud;
@@ -61,9 +61,17 @@ public class DialogueManager : MonoBehaviour
             Debug.Log("TESTING DIALOGUE EVENT DEBUG - OnDialogueAdvanced");
         });
 
-        if (DEBUGDIALOGUESTAGE != null)
+        if (introDialogue != null)
         {
-            StartDialogue(DEBUGDIALOGUESTAGE);
+            if(FindFirstObjectByType<car_interior_controller>().skipTut)
+            {
+                //skip intro if we're skipping the tutorial.
+                Destroy(GetComponent<grandma_DialogueGameEventHandler>());
+            }
+            else
+            {
+                StartDialogue(introDialogue);
+            }
         }
     }
 
