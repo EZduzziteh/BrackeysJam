@@ -24,6 +24,9 @@ public class Odometer_UI : MonoBehaviour
 
     public bool UsePlayerInput = false; //#TODO remove this, this is just for debugging
     bool isMoving;
+
+    private float YScale => Mathf.Abs(transform.lossyScale.y);
+
     // Update is called once per frame
     void Update()
     {
@@ -95,14 +98,14 @@ public class Odometer_UI : MonoBehaviour
     {
         foreach(var o in OdometerObjects)
         {
-            o.transform.Translate(0, -0.01f, 0);
+            o.transform.Translate(0, -0.01f * YScale, 0);
         }
 
 
         float distToCenter = Vector3.Distance(OdometerObjects[0].transform.position, transform.position);
 
 
-        if (distToCenter <= 0.005f)
+        if (distToCenter <= 0.005f * YScale)
         {
             activeOdometerNumber--;
             if (activeOdometerNumber < 0)
@@ -117,7 +120,7 @@ public class Odometer_UI : MonoBehaviour
             //get the last object in odometer
             var temp = OdometerObjects[2];
             //move it up 2x odometer positions
-            temp.transform.Translate(0, 0.96f, 0);
+            temp.transform.Translate(0, 0.96f * YScale, 0);
 
             //shift odometer list
             OdometerObjects[2] = OdometerObjects[1];
@@ -165,14 +168,14 @@ public class Odometer_UI : MonoBehaviour
     {
         foreach (var o in OdometerObjects)
         {
-            o.transform.Translate(0, 0.01f, 0);
+            o.transform.Translate(0, 0.01f * YScale, 0);
         }
 
-
+    
         float distToCenter = Vector3.Distance(OdometerObjects[2].transform.position, transform.position);
 
 
-        if (distToCenter <= 0.005f)
+        if (distToCenter <= 0.005f * YScale)
         {
             activeOdometerNumber++;
             if (activeOdometerNumber > 9)
@@ -186,7 +189,7 @@ public class Odometer_UI : MonoBehaviour
             //get the first object in odometer
             var temp = OdometerObjects[0];
             //move it down 3x odometer positions
-            temp.transform.Translate(0, -0.96f, 0);
+            temp.transform.Translate(0, -0.96f * YScale, 0);
 
             //shift odometer list
             OdometerObjects[0] = OdometerObjects[1];
