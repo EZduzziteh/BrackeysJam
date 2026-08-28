@@ -5,5 +5,6 @@ using UnityEngine;
 public partial class DialogueStage : ScriptableObject
 {
     public bool fireCustomEventOnAdvance = false;
+    public bool fireCustomEventBeforeDialogueEnd = false;
     public int customEventStepID=0;
 }

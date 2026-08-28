@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class interactable : MonoBehaviour
 {
@@ -6,6 +7,7 @@ public class interactable : MonoBehaviour
 
     [Header("Functionality")]
     public interactableEffectType effectName =interactableEffectType.none;
+    public UnityEvent transitionedTriggered;
 
     [Header("highlight settings")]
     SpriteRenderer sr; Color defaultColor;
@@ -36,6 +38,7 @@ public class interactable : MonoBehaviour
         {
             case interactableEffectType.transition:
                 interiorController.startNewTransition(car_interior_controller.transitionType.full_blink, car_interior_controller.transitionGameEffect.moveScene);
+                transitionedTriggered.Invoke();
                 break;
             case interactableEffectType.radio:
                 print("jamming jamming jamming, what's brackening party ppl?");

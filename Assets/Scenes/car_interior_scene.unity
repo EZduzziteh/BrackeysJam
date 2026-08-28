@@ -182,9 +182,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e6c7f7d46ebb714698c05140999c1a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::grandma_DialogueGameEventHandler
+  controller: {fileID: 0}
+  seat: {fileID: 0}
+  playerTransitionDelay: 1.5
+  timerForEvents: 0
+  _enableTimer: 0
   totem:
   - {fileID: 909629442}
   - {fileID: 1061225682}
+  dialogueAfterHighlightTut: {fileID: 11400000, guid: c273a5284ac55a444b49708f9256a898, type: 2}
+  dialogueCalmTalismanMoment: {fileID: 11400000, guid: 800042cfde94cb546b9c609788c596b2, type: 2}
+  lookWaitTime: 8
+  startEjectWaitTime: 8
 --- !u!1 &909629442 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4185407118268392855, guid: 337e50f87686cf547892a2afacac8d05, type: 3}
@@ -899,18 +908,6 @@ PrefabInstance:
     - target: {fileID: 1724253413688378662, guid: b06dd4061034d524bad6d86de45132b1, type: 3}
       propertyPath: m_Name
       value: transition_clicky
-      objectReference: {fileID: 0}
-    - target: {fileID: 1724253413688378662, guid: b06dd4061034d524bad6d86de45132b1, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4066794653851717856, guid: b06dd4061034d524bad6d86de45132b1, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.52
-      objectReference: {fileID: 0}
-    - target: {fileID: 4066794653851717856, guid: b06dd4061034d524bad6d86de45132b1, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.72
       objectReference: {fileID: 0}
     - target: {fileID: 4066794653851717856, guid: b06dd4061034d524bad6d86de45132b1, type: 3}
       propertyPath: m_LocalPosition.x

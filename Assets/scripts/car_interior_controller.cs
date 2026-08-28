@@ -56,7 +56,11 @@ public class car_interior_controller : MonoBehaviour
                 break;
         }
     }
-    private void hotkeyTransition(InputAction.CallbackContext context) { startNewTransition(default,transitionGameEffect.moveScene); }
+    private void hotkeyTransition(InputAction.CallbackContext context)
+    { 
+        //TODO: add validation to respect Locks. (check if transitions are active before transitioniong).
+        startNewTransition(default,transitionGameEffect.moveScene);
+    }
 
     public void animPerformTransition()
     {

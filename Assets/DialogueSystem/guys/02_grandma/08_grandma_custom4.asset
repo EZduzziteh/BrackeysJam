@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 08_grandma_custom4
   m_EditorClassIdentifier: Assembly-CSharp::DialogueStage_Line
   fireCustomEventOnAdvance: 1
+  fireCustomEventBeforeDialogueEnd: 0
   customEventStepID: 4
   NextStage: {fileID: 0}
   LineData:

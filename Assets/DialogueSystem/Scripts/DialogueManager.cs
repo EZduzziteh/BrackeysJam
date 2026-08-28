@@ -17,6 +17,7 @@ public class DialogueManager : MonoBehaviour
     public UnityEvent OnDialogueStarted;
     public UnityEvent OnDialogueEnded;
     public UnityEvent OnCustomDialogueEventTriggered;
+    public UnityEvent OnCustomDialogueEndEventTriggered;
     private int lastSelectedOption;
 
     bool awaitingUser = false;
@@ -187,6 +188,10 @@ public class DialogueManager : MonoBehaviour
 
     private void EndDialogue()
     {
+        if (currentDialogueStage.fireCustomEventBeforeDialogueEnd)
+        {
+            OnCustomDialogueEndEventTriggered?.Invoke();
+        }
         currentDialogueStage = null;
         UI_Dialogue_Container.Instance.Clear();
         OnDialogueEnded?.Invoke();

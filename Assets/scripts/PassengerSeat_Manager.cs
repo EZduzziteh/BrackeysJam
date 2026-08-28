@@ -43,6 +43,7 @@ public class PassengerSeat_Manager : MonoBehaviour
             silhouetteEventTimer += Time.deltaTime;
             if (silhouetteEventTimer >= silhouetteMaxDuration)
             {
+                silhouetteEventTimer = 0f;
                 controller.startNewTransition(car_interior_controller.transitionType.full_blink, car_interior_controller.transitionGameEffect.moveScene);
             }
         }
@@ -121,16 +122,23 @@ public class PassengerSeat_Manager : MonoBehaviour
 
     public void startBootDialogue()
     {
-        DM.StartDialogue(dialogueBundle.bootDialogue);
-        lockTransitions(true);
-        DM.OnDialogueEnded.AddListener(ejectListener);
+        if (dialogueBundle.bootDialogue)
+        {
+            DM.StartDialogue(dialogueBundle.bootDialogue);
+            lockTransitions(true);
+            DM.OnDialogueEnded.AddListener(ejectListener);
+        }
+        else
+            ejectListener();
     }
 
     private void ejectListener()
     { 
         DM.OnDialogueEnded.RemoveListener(ejectListener);
-        print(DM.GetLastSelectedOption());
+        controller.startNewTransition(car_interior_controller.transitionType.wide_blink, car_interior_controller.transitionGameEffect.passengerCutscene);
         lockTransitions(false);
+        /* used for only select answer to eject. probably can be refactored into dialogue event handler.
+        print(DM.GetLastSelectedOption());
         switch (DM.GetLastSelectedOption())
         {
             case 1:
@@ -138,13 +146,14 @@ public class PassengerSeat_Manager : MonoBehaviour
                 break;
             default:
                 break;
-        }  
+        } 
+        */
     }
 
     public void stepPassenger()
     {
         if (seatOccupied)
-            ejectPassenger();
+            startBootDialogue();
         else
         {
             if (silhouetteModel.activeSelf || passenger.activeSelf)
