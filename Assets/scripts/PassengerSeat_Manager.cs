@@ -37,6 +37,8 @@ public class PassengerSeat_Manager : MonoBehaviour
             if (passengerEventTimer >= 30f)
             {
                 print("event triggered");
+                FindObjectOfType<StressSystem>().ModifyStress(25);
+
                 passengerEventTimer = 0f;
                 if(shouldTriggerBootEvent)
                 {
