@@ -200,6 +200,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6666532788837214764, guid: 337e50f87686cf547892a2afacac8d05, type: 3}
   m_PrefabInstance: {fileID: 7020610133408891157}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &909629446
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909629442}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f57748b73eebfa647b54416030e91375, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &909629447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909629442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbc0b39bf7ad1f147a467882f99643a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::totem_anim_handler
+  sideViewController: {fileID: 1061225688}
 --- !u!1 &923517009
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,6 +336,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5499026342109559901, guid: 3c7e93437f7152f47bfb53eca2b087f0, type: 3}
   m_PrefabInstance: {fileID: 434733019586587020}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1061225688
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061225682}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 09665eb3cd8b6574884a1b2d942b744d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1096155146
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,6 +796,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 299771843}
     m_Modifications:
+    - target: {fileID: 1930779894326481733, guid: 3c7e93437f7152f47bfb53eca2b087f0, type: 3}
+      propertyPath: sprites.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1930779894326481733, guid: 3c7e93437f7152f47bfb53eca2b087f0, type: 3}
+      propertyPath: 'sprites.Array.data[0]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 61e98c4d3414d2048a0daa5059140b0e, type: 3}
+    - target: {fileID: 1930779894326481733, guid: 3c7e93437f7152f47bfb53eca2b087f0, type: 3}
+      propertyPath: 'sprites.Array.data[1]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 13a2bd1879849d6499245b6884e868de, type: 3}
+    - target: {fileID: 1930779894326481733, guid: 3c7e93437f7152f47bfb53eca2b087f0, type: 3}
+      propertyPath: 'sprites.Array.data[2]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 7b4cb33368468b64da7a4fe2a7ae9446, type: 3}
+    - target: {fileID: 1930779894326481733, guid: 3c7e93437f7152f47bfb53eca2b087f0, type: 3}
+      propertyPath: 'sprites.Array.data[3]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 141ea4753a1353049a207b9614c3675a, type: 3}
+    - target: {fileID: 1930779894326481733, guid: 3c7e93437f7152f47bfb53eca2b087f0, type: 3}
+      propertyPath: 'sprites.Array.data[4]'
+      value: 
+      objectReference: {fileID: 21300000, guid: bcf019e8b2323b5458c791f341cda22d, type: 3}
     - target: {fileID: 2472301154189893217, guid: 3c7e93437f7152f47bfb53eca2b087f0, type: 3}
       propertyPath: m_Name
       value: 'Totem Side View '
@@ -786,11 +867,14 @@ PrefabInstance:
     - target: {fileID: 7702540639366190349, guid: 3c7e93437f7152f47bfb53eca2b087f0, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 4ab2fb0c15667944ebff2a927b181a23, type: 3}
+      objectReference: {fileID: 21300000, guid: 61e98c4d3414d2048a0daa5059140b0e, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2472301154189893217, guid: 3c7e93437f7152f47bfb53eca2b087f0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1061225688}
   m_SourcePrefab: {fileID: 100100000, guid: 3c7e93437f7152f47bfb53eca2b087f0, type: 3}
 --- !u!1001 &1077682589901985649
 PrefabInstance:
@@ -1136,7 +1220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5969326602590645639, guid: d5b90d192c55bb44994fbdc7ad41fb26, type: 3}
       propertyPath: skipTut
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6589696999808079272, guid: d5b90d192c55bb44994fbdc7ad41fb26, type: 3}
       propertyPath: m_Name
@@ -1155,10 +1239,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 299771843}
     m_Modifications:
+    - target: {fileID: 3848718428850854414, guid: 337e50f87686cf547892a2afacac8d05, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3848718428850854414, guid: 337e50f87686cf547892a2afacac8d05, type: 3}
+      propertyPath: _spriteIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3848718428850854414, guid: 337e50f87686cf547892a2afacac8d05, type: 3}
+      propertyPath: sprites.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3848718428850854414, guid: 337e50f87686cf547892a2afacac8d05, type: 3}
+      propertyPath: 'sprites.Array.data[1]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 6ca9fa9b6528576458dda6b870d06547, type: 3}
+    - target: {fileID: 3848718428850854414, guid: 337e50f87686cf547892a2afacac8d05, type: 3}
+      propertyPath: 'sprites.Array.data[2]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 82be0cf82f4c8f8448586544471d2728, type: 3}
+    - target: {fileID: 3848718428850854414, guid: 337e50f87686cf547892a2afacac8d05, type: 3}
+      propertyPath: 'sprites.Array.data[3]'
+      value: 
+      objectReference: {fileID: 21300000, guid: 0e4cc3724abedeb4b9487946ff1c95a8, type: 3}
+    - target: {fileID: 3848718428850854414, guid: 337e50f87686cf547892a2afacac8d05, type: 3}
+      propertyPath: 'sprites.Array.data[4]'
+      value: 
+      objectReference: {fileID: 21300000, guid: edd412e3273adf542aaf38ec3f4a3c0d, type: 3}
     - target: {fileID: 4185407118268392855, guid: 337e50f87686cf547892a2afacac8d05, type: 3}
       propertyPath: m_Name
       value: Totem_front
       objectReference: {fileID: 0}
+    - target: {fileID: 4381390785960079975, guid: 337e50f87686cf547892a2afacac8d05, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0f3a6d5b9b1d6924493357556be4507f, type: 3}
     - target: {fileID: 6666532788837214764, guid: 337e50f87686cf547892a2afacac8d05, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.32
@@ -1202,7 +1318,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4185407118268392855, guid: 337e50f87686cf547892a2afacac8d05, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 909629446}
+    - targetCorrespondingSourceObject: {fileID: 4185407118268392855, guid: 337e50f87686cf547892a2afacac8d05, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 909629447}
   m_SourcePrefab: {fileID: 100100000, guid: 337e50f87686cf547892a2afacac8d05, type: 3}
 --- !u!1001 &8357913741699715134
 PrefabInstance:
