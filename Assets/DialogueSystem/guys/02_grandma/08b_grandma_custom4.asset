@@ -10,16 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4d7e64a667b16d4b8342b418e4a3cf6, type: 3}
-  m_Name: 03_grandma_boarded_custom2
+  m_Name: 08b_grandma_custom4
   m_EditorClassIdentifier: Assembly-CSharp::DialogueStage_Line
-  fireCustomEventOnAdvance: 0
+  fireCustomEventOnAdvance: 1
   fireCustomEventBeforeDialogueEnd: 0
-  customEventStepID: 0
-  NextStage: {fileID: 11400000, guid: ffb6cb6ca92e18c4cbdb8ff9be14fe3d, type: 2}
+  customEventStepID: 4
+  NextStage: {fileID: 0}
   LineData:
-    text: For your good deed, I'd like to give you a little gift. It's not much,
-      but it will protect you from harm. Use it wisely! Here, you can hang it from
-      your mirror.
+    text: The talisman calmed down when you looked at me.
     audioClip: {fileID: 0}
   AutoAdvance: 1
   AutoAdvanceDelay: 10

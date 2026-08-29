@@ -10,6 +10,7 @@ public class DialogueGameEventHandler : MonoBehaviour
     protected virtual void Start()
     {
         DialogueManager.Instance.OnCustomDialogueEventTriggered.AddListener(dialogueHandler);
+        DialogueManager.Instance.OnCustomDialogueEndEventTriggered.AddListener(dialogueHandler);
         //DialogueManager.Instance.OnCustomDialogueEndEventTriggered.AddListener(dialogueHandler);
         controller = FindFirstObjectByType<car_interior_controller>();
         seat = FindFirstObjectByType<PassengerSeat_Manager>();
@@ -29,6 +30,7 @@ public class DialogueGameEventHandler : MonoBehaviour
 
     //Transition watching functionality.
     private List<interactable> watchedTransitions = new List<interactable>();
+    public int transitionIndex;
     public virtual void watchForTransitions()
     {
         foreach (interactable interactee in FindObjectsByType<interactable>(FindObjectsInactive.Include, FindObjectsSortMode.None))
@@ -36,6 +38,7 @@ public class DialogueGameEventHandler : MonoBehaviour
             if (interactee.effectName == interactable.interactableEffectType.transition)
             {
                 interactee.transitionedTriggered.AddListener(delayTransitionTrigger);
+                interactee.transitionedTriggered.AddListener(onPlayerTransitionInstant);
                 watchedTransitions.Add(interactee);
             }
         }
@@ -48,18 +51,23 @@ public class DialogueGameEventHandler : MonoBehaviour
     IEnumerator waitToTriggerTransition()
     {
         yield return new WaitForSeconds(playerTransitionDelay);
-        onPlayerTransition();
+        onPlayerTransitionDelayed();
     }
-    public virtual void onPlayerTransition()
+    public virtual void onPlayerTransitionDelayed()
     {
         clearWatchedTransitions();
         //called when transitions trigger, if the watch was setup.
+    }
+    public virtual void onPlayerTransitionInstant()
+    {
+        clearWatchedTransitions();
     }
     public virtual void clearWatchedTransitions()
     {
         foreach (interactable interactee in watchedTransitions)
         {
             interactee.transitionedTriggered.RemoveListener(delayTransitionTrigger);
+            interactee.transitionedTriggered.RemoveListener(onPlayerTransitionInstant);
         }
     }
 
@@ -93,7 +101,8 @@ public class DialogueGameEventHandler : MonoBehaviour
         }
     }
     public virtual void timerTriggered()
-    { 
+    {
+        timerIndex++;
         //called when the timer trigger duration is met.
     }
     private void OnValidate()

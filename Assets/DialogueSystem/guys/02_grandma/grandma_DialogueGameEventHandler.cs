@@ -39,9 +39,9 @@ public class grandma_DialogueGameEventHandler : DialogueGameEventHandler
                 watchForTransitions();
                 break;
             case 3:
-                //Hehehe line -- tunable timer/wait 15s. tut: force player to look at grandma. start "interesting" dialogue
-                startTimer(lookWaitTime); // wait 15 eventually.
-                controller.startNewTransition(default, car_interior_controller.transitionGameEffect.moveScene);
+                //Hehehe line -- tunable timer/wait 15s. tut: teach player to look at grandma. start "interesting" dialogue
+                watchForTransitions();
+                updateTransitionSpriteVisibility(true);
                 break;
             case 4:
                 //"interesting" dialogue -- activate timer, wait 5-10s then start eject flow.
@@ -65,13 +65,9 @@ public class grandma_DialogueGameEventHandler : DialogueGameEventHandler
     public override void timerTriggered()
     {
         base.timerTriggered();
-        timerIndex++;
         switch (timerIndex)
         {
-            case 1: //after first wait, "force look at grandma"
-                DialogueManager.Instance.StartDialogue(dialogueCalmTalismanMoment);
-                break;
-            case 2: //eject time
+            case 1: //eject time
                 seat.startBootDialogue();
                 this.enabled = false;
                 break;
@@ -85,12 +81,26 @@ public class grandma_DialogueGameEventHandler : DialogueGameEventHandler
         seat.stepPassenger();
         controller.lockTransitions(false);
     }
-    public override void onPlayerTransition()
-    {//start dialogue for grandma 05, after case 2.
-        base.onPlayerTransition();
+    public override void onPlayerTransitionDelayed()
+    {
+        base.onPlayerTransitionDelayed();
+        transitionIndex++;
+        switch (transitionIndex)
+        {
+            case 1://start dialogue for grandma 05, after case 2 in main switch.
+                //controller.lockTransitions(true);
+                DialogueManager.Instance.StartDialogue(dialogueAfterHighlightTut);
+                break;
+            case 2://after case 3 in main switch, start calm talisman dialogue.
+                DialogueManager.Instance.StartDialogue(dialogueCalmTalismanMoment);
+                break;
+        }
+        
+        
+    }
+    public override void onPlayerTransitionInstant()
+    {
         updateTransitionSpriteVisibility(false);
-        controller.lockTransitions(true);
-        DialogueManager.Instance.StartDialogue(dialogueAfterHighlightTut);
     }
 
 }

@@ -50,6 +50,10 @@ public class DialogueManager : MonoBehaviour
         {
             Debug.Log("TESTING DIALOGUE EVENT DEBUG - OnCustomFireEventOnAdvanceDialogue");
         });
+        OnCustomDialogueEndEventTriggered.AddListener(() =>
+        {
+            Debug.Log("TESTING DIALOGUE EVENT DEBUG - OnCustomDialogueEndEventTriggered");
+        });
 
         OnDialogueEnded.AddListener(() =>
         {
