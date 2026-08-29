@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b3e99d70b057574a881a411104080fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  DEBUGDIALOGUESTAGE: {fileID: 11400000, guid: 2e7abb9ff6e4f9d43a14e74692889607, type: 2}
+  introDialogue: {fileID: 11400000, guid: 2e7abb9ff6e4f9d43a14e74692889607, type: 2}
   OnDialogueAdvanced:
     m_PersistentCalls:
       m_Calls: []
@@ -78,13 +78,15 @@ MonoBehaviour:
   controller: {fileID: 0}
   seat: {fileID: 0}
   playerTransitionDelay: 1.5
+  transitionIndex: 0
   timerForEvents: 0
+  timerIndex: 0
   _enableTimer: 0
   totem:
   - {fileID: 0}
   - {fileID: 0}
   dialogueAfterHighlightTut: {fileID: 11400000, guid: c273a5284ac55a444b49708f9256a898, type: 2}
-  dialogueCalmTalismanMoment: {fileID: 11400000, guid: 800042cfde94cb546b9c609788c596b2, type: 2}
+  dialogueCalmTalismanMoment: {fileID: 11400000, guid: 8b2386bfc9abba840b226e18f36f390b, type: 2}
   lookWaitTime: 8
   startEjectWaitTime: 8
 --- !u!82 &7552683369910014569

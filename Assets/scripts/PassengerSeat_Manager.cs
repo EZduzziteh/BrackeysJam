@@ -95,7 +95,7 @@ public class PassengerSeat_Manager : MonoBehaviour
     private void setupForNextPassenger()
     {//setup for next passenger -> transition into silhouette
         DialogueManager.Instance.OnDialogueEnded.RemoveListener(setupForNextPassenger);
-        moveIntoBasicDialogue(); // this should load next passenger dialogue bundle, placeholder for now to turn off grandma dialogue.
+        setupNextDialogueBundle(); // this should load next passenger dialogue bundle, placeholder for now to turn off grandma dialogue.
         silhouetteModel.SetActive(true);
         controller.silentTransition();
     }
@@ -170,8 +170,13 @@ public class PassengerSeat_Manager : MonoBehaviour
         }
     }
 
-    public void moveIntoBasicDialogue()
+    public void setupNextDialogueBundle(bool rogue = false)
     {
-        dialogueBundle = rogueBundle;
+        if (rogue)
+            dialogueBundle = rogueBundle;
+        else
+        {
+            dialogueBundle = passenger.GetComponent<jimmy_face_swapper>().getDialogueBundle();
+        }      
     }
 }

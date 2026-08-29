@@ -38,7 +38,7 @@ public class car_interior_controller : MonoBehaviour
         {
             lockTransitions(false);
             FindFirstObjectByType<PassengerSeat_Manager>().checkForDiscovery();
-            FindFirstObjectByType<PassengerSeat_Manager>().moveIntoBasicDialogue();
+            FindFirstObjectByType<PassengerSeat_Manager>().setupNextDialogueBundle();
         }
     }
     //car scene transitions

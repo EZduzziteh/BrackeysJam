@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5499026342109559901}
   - component: {fileID: 7702540639366190349}
   - component: {fileID: 1930779894326481733}
+  - component: {fileID: 5744421693635150482}
   m_Layer: 0
   m_Name: 'Totem Side View '
   m_TagString: Untagged
@@ -82,7 +83,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: d6f999d021e37ed45b3c9c189e4c374f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 13a2bd1879849d6499245b6884e868de, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -105,7 +106,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteStateSwapper
   sprites:
-  - {fileID: 21300000, guid: 4ab2fb0c15667944ebff2a927b181a23, type: 3}
-  - {fileID: 21300000, guid: d6f999d021e37ed45b3c9c189e4c374f, type: 3}
-  - {fileID: 21300000, guid: 231aa998b23ade841a998828ede443c9, type: 3}
+  - {fileID: 21300000, guid: 61e98c4d3414d2048a0daa5059140b0e, type: 3}
+  - {fileID: 21300000, guid: 13a2bd1879849d6499245b6884e868de, type: 3}
+  - {fileID: 21300000, guid: 7b4cb33368468b64da7a4fe2a7ae9446, type: 3}
+  - {fileID: 21300000, guid: 141ea4753a1353049a207b9614c3675a, type: 3}
+  - {fileID: 21300000, guid: bcf019e8b2323b5458c791f341cda22d, type: 3}
   _spriteIndex: 1
+--- !u!95 &5744421693635150482
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2472301154189893217}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 09665eb3cd8b6574884a1b2d942b744d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
