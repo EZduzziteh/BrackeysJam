@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4d7e64a667b16d4b8342b418e4a3cf6, type: 3}
-  m_Name: 08_grandma_custom4
+  m_Name: 04_grandma_custom2
   m_EditorClassIdentifier: Assembly-CSharp::DialogueStage_Line
-  fireCustomEventOnAdvance: 1
-  fireCustomEventBeforeDialogueEnd: 0
-  customEventStepID: 4
+  fireCustomEventOnAdvance: 0
+  fireCustomEventBeforeDialogueEnd: 1
+  customEventStepID: 2
   NextStage: {fileID: 0}
   LineData:
-    text: The talisman calmed down when you looked at me.
+    text: You won't get very far looking at me.
     audioClip: {fileID: 0}
   AutoAdvance: 1
   AutoAdvanceDelay: 10

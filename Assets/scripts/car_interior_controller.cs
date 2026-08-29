@@ -11,6 +11,7 @@ public class car_interior_controller : MonoBehaviour
     [SerializeField] private GameObject SceneCamera;
     [SerializeField] private float cameraOffset=5f;
     [SerializeField] private bool debugStartOnSideView = false;
+    public bool skipTut = true;
     private Vector3 pos;
 
     private interactable highlightedElement;
@@ -33,6 +34,12 @@ public class car_interior_controller : MonoBehaviour
     {
         if (debugStartOnSideView)
             silentTransition();
+        if(skipTut)
+        {
+            lockTransitions(false);
+            FindFirstObjectByType<PassengerSeat_Manager>().checkForDiscovery();
+            FindFirstObjectByType<PassengerSeat_Manager>().moveIntoBasicDialogue();
+        }
     }
     //car scene transitions
 
@@ -58,8 +65,8 @@ public class car_interior_controller : MonoBehaviour
     }
     private void hotkeyTransition(InputAction.CallbackContext context)
     { 
-        //TODO: add validation to respect Locks. (check if transitions are active before transitioniong).
-        startNewTransition(default,transitionGameEffect.moveScene);
+        if(canTransition())
+            startNewTransition(default,transitionGameEffect.moveScene);
     }
 
     public void animPerformTransition()
@@ -97,6 +104,26 @@ public class car_interior_controller : MonoBehaviour
         animPerformTransition();
     }
     private void loadPass(InputAction.CallbackContext context) { startNewTransition(transitionType.wide_blink, transitionGameEffect.passengerCutscene); }
+    public void lockTransitions(bool shouldLock)
+    {
+        foreach (interactable interactee in FindObjectsByType<interactable>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+        {
+            if (interactee.effectName == interactable.interactableEffectType.transition)
+                interactee.gameObject.SetActive(!shouldLock);
+        }
+    }
+    private bool canTransition()
+    {
+        foreach (interactable interactee in FindObjectsByType<interactable>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+        {
+            if (interactee.effectName == interactable.interactableEffectType.transition)
+            {
+                if (!interactee.gameObject.activeSelf)
+                    return false; //block transition if any are deactivated.
+            }   
+        }
+        return true;
+    }
 
     //interaction
     private void checkInteraction(InputAction.CallbackContext context)

@@ -55,22 +55,16 @@ public class PassengerSeat_Manager : MonoBehaviour
         if (passenger.activeSelf)
         {
             print("Loading Passenger");
-            //create next passenger for later.
-            debugFakeNextPassenger = Instantiate(passenger);
-            debugFakeNextPassenger.SetActive(false);
-            debugFakeNextPassenger.GetComponent<jimmy_face_swapper>().selectNewFace();
-
             //move passenger into car
-            SpriteRenderer[] sprites = passenger.GetComponentsInChildren<SpriteRenderer>();
-            foreach (SpriteRenderer childrenSR in sprites)
-            {
-                childrenSR.sortingOrder += sortingOrderShift;
-            }
-            passenger.transform.position = gameObject.transform.position;
             foreach (GameObject model in insideModel)
             {
                 model.SetActive(true);
+                if(model.GetComponent<SpriteStateSwapper>())
+                    model.GetComponent<SpriteStateSwapper>().spriteIndex = passenger.GetComponent<jimmy_face_swapper>().selectedFace;
             }
+            //update passenger for next time.
+            passenger.SetActive(false);
+            passenger.GetComponent<jimmy_face_swapper>().selectNewFace();
 
             //system updates
             totalPassengersCollected++;
@@ -86,8 +80,6 @@ public class PassengerSeat_Manager : MonoBehaviour
     private void ejectPassenger()
     {
         //cleanup passenger
-        Destroy(passenger);
-        passenger = debugFakeNextPassenger; //update ref for new passenger.
         foreach (GameObject model in insideModel)
         {
             model.SetActive(false);
@@ -109,9 +101,10 @@ public class PassengerSeat_Manager : MonoBehaviour
     }
     public void checkForDiscovery()
     {
-        print("Discovering Passenger");
+        print("attempting discover");
         if (needDiscovery())
         {
+            print("Discovering Passenger");
             passenger.SetActive(true);
             silhouetteModel.SetActive(false);
             silhouetteEventTimer = 0f; // cleanup
@@ -120,6 +113,11 @@ public class PassengerSeat_Manager : MonoBehaviour
                 DM.StartDialogue(dialogueBundle.windowDialogue);
                 DM.OnDialogueEnded.AddListener(loadListener);
             }
+        }
+        else
+        {//activate silhouette 
+            if(!silhouetteModel.activeSelf & !seatOccupied & !passenger.activeSelf)
+                silhouetteModel.SetActive(true);
         }
     }
     private bool needDiscovery()
@@ -133,7 +131,7 @@ public class PassengerSeat_Manager : MonoBehaviour
         if (dialogueBundle.bootDialogue)
         {
             DM.StartDialogue(dialogueBundle.bootDialogue);
-            lockTransitions(true);
+            controller.lockTransitions(true);
             DM.OnDialogueEnded.AddListener(ejectListener);
         }
         else
@@ -144,7 +142,7 @@ public class PassengerSeat_Manager : MonoBehaviour
     { 
         DM.OnDialogueEnded.RemoveListener(ejectListener);
         controller.startNewTransition(car_interior_controller.transitionType.wide_blink, car_interior_controller.transitionGameEffect.passengerCutscene);
-        lockTransitions(false);
+        controller.lockTransitions(false);
 
         /* used for only select answer to eject. probably can be refactored into dialogue event handler.
         print(DM.GetLastSelectedOption());
@@ -171,14 +169,7 @@ public class PassengerSeat_Manager : MonoBehaviour
                 silhouetteModel.SetActive(true);
         }
     }
-    public void lockTransitions(bool shouldLock)
-    {
-        foreach (interactable interactee in FindObjectsByType<interactable>(FindObjectsInactive.Include, FindObjectsSortMode.None))
-        {
-            if (interactee.effectName == interactable.interactableEffectType.transition)
-                interactee.gameObject.SetActive(!shouldLock);
-        }
-    }
+
     public void moveIntoBasicDialogue()
     {
         dialogueBundle = rogueBundle;

@@ -11,6 +11,7 @@ public class interactable : MonoBehaviour
 
     [Header("highlight settings")]
     SpriteRenderer sr; Color defaultColor;
+    [SerializeField] private Color objectColor;
 
     [Header("Cursor settings")]
     [SerializeField] private cursorPackage defaultCursor;
@@ -42,6 +43,7 @@ public class interactable : MonoBehaviour
                 break;
             case interactableEffectType.radio:
                 print("jamming jamming jamming, what's brackening party ppl?");
+                GetComponent<SpriteStateSwapper>().spriteIndex++;
                 break;
             case interactableEffectType.none:
                 print("you interacted to no effect!");
@@ -56,8 +58,8 @@ public class interactable : MonoBehaviour
     public void showOutline()
     {
         //color change
-        Color outline = Color.red;
-        outline.a = sr.color.a;
+        Color outline = objectColor;
+        //outline.a = sr.color.a;
         sr.color = outline;
 
         if (!myOutline)
