@@ -450,6 +450,97 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &3121636543460795516
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6917384440159411688}
+  - component: {fileID: 2544547199809614880}
+  m_Layer: 0
+  m_Name: BackDrop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6917384440159411688
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3121636543460795516}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.01, z: 0}
+  m_LocalScale: {x: 1.09, y: 0.36, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4519069794543306737}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &2544547199809614880
+SpriteRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3121636543460795516}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 2
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
 --- !u!1 &3280786888929002547
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,6 +632,85 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &4293998636431231012
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4519069794543306737}
+  - component: {fileID: 8911936348936095325}
+  - component: {fileID: 6536408081220183084}
+  m_Layer: 0
+  m_Name: Odo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4519069794543306737
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4293998636431231012}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.79, y: -0.48, z: 0}
+  m_LocalScale: {x: 0.25, y: 0.28125, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6917384440159411688}
+  - {fileID: 4251182802485888357}
+  - {fileID: 7847608068706648532}
+  - {fileID: 1035083610570999132}
+  m_Father: {fileID: 2124766336290729662}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8911936348936095325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4293998636431231012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7636881c22cd96459f0f338600ddf62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CarSpeedOdometerAdapter
+  carSpeedSystem: {fileID: 6536408081220183084}
+  odometer: {fileID: 6349778800184012813}
+  kilometersPerOdometerNumber: 0.01
+--- !u!114 &6536408081220183084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4293998636431231012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5006e5aba157de7479b7d57fa96d861b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CarSpeedSystem
+  OnDestinationReached:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCarStopped:
+    m_PersistentCalls:
+      m_Calls: []
+  maxSpeed: 100
+  maxSpeedModifier: 0
+  currentSpeed: 0
+  targetDistance: 100
+  canDrive: 1
+  baseDeceleration: 8
+  baseAcceleration: 5
+  accelerationMultiplier: 1
+  decelerationMultiplier: 1
 --- !u!1 &4761320214304327713
 GameObject:
   m_ObjectHideFlags: 0
@@ -1006,6 +1176,7 @@ Transform:
   - {fileID: 1950836619614826210}
   - {fileID: 7329094551019350639}
   - {fileID: 5346702206402619382}
+  - {fileID: 4519069794543306737}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1008953790859579565
@@ -1289,7 +1460,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6968232860372159475}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -1328,10 +1499,10 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.96470594, g: 0.69411767, b: 0.5686275, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1628,7 +1799,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4622432546461917240
 Transform:
   m_ObjectHideFlags: 0
@@ -1644,6 +1815,7 @@ Transform:
   m_Children:
   - {fileID: 2651301274034156599}
   - {fileID: 4197001777146117863}
+  - {fileID: 2377255457782982449}
   m_Father: {fileID: 2124766336290729662}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8309315386817603140
@@ -1686,6 +1858,98 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8309315386817603140}
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 2
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 2}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
+--- !u!1 &8642988449434518301
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2377255457782982449}
+  - component: {fileID: 4222009451967314654}
+  - component: {fileID: 8918092076084574168}
+  m_Layer: 0
+  m_Name: Passenger_DriverView
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2377255457782982449
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8642988449434518301}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.536, y: 0.131, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4622432546461917240}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &4222009451967314654
+SpriteRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8642988449434518301}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -1725,18 +1989,231 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0.96470594, g: 0.69411767, b: 0.5686275, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 94b4d52c1c5995d458910a08c47033fa, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 0.62, y: 0.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &8918092076084574168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8642988449434518301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3e5d9424fd95c4d826483a0fcef733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpriteStateSwapper
+  sprites:
+  - {fileID: 21300000, guid: 94b4d52c1c5995d458910a08c47033fa, type: 3}
+  - {fileID: 21300000, guid: 5a09a0acc8d803a47aeb1a4dbfad3ef1, type: 3}
+  - {fileID: 21300000, guid: 6b58ac46fb8725948935c8d94ce7d29f, type: 3}
+  - {fileID: 21300000, guid: db6ce7c7031bae9438125fea0ac8ee75, type: 3}
+  - {fileID: 21300000, guid: 9b819b0a00eeb3f448631aaa18c9414b, type: 3}
+  - {fileID: 21300000, guid: 2c600d19d0fe5cb4dad5ba077479cbc6, type: 3}
+  _spriteIndex: 0
+--- !u!1001 &4015644973129746569
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4519069794543306737}
+    m_Modifications:
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: UsePlayerInput
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerValueDecreased.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerValueIncreased.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7835301409456402484}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7835301409456402484}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: IncreaseFullNumber
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerValueDecreased.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerValueIncreased.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DecreaseFullNumber
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerValueDecreased.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7835301409456402484}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerValueIncreased.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6349778800184012813}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerValueDecreased.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerValueIncreased.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerValueDecreased.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DecreaseFullNumber
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerValueIncreased.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: IncreaseFullNumber
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Odometer_UI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Odometer_UI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerValueDecreased.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Odometer_UI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerValueIncreased.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Odometer_UI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerValueDecreased.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerValueIncreased.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911701513997062776, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_Name
+      value: Odometer (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+--- !u!114 &4227724289770534021 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+  m_PrefabInstance: {fileID: 4015644973129746569}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42ac77fb712290e4095f439d5a2e7d50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+--- !u!4 &7847608068706648532 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+  m_PrefabInstance: {fileID: 4015644973129746569}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4737121474087391526
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1808,3 +2285,241 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2543158135610304911, guid: e95dd255f86cf7c46a42d5ee97db4e43, type: 3}
   m_PrefabInstance: {fileID: 4737121474087391526}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6129250836086082561
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4519069794543306737}
+    m_Modifications:
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: UsePlayerInput
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4227724289770534021}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4227724289770534021}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: IncreaseFullNumber
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DecreaseFullNumber
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Odometer_UI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Odometer_UI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickOver.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911701513997062776, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_Name
+      value: Odometer (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+--- !u!4 &1035083610570999132 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+  m_PrefabInstance: {fileID: 6129250836086082561}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6349778800184012813 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+  m_PrefabInstance: {fileID: 6129250836086082561}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42ac77fb712290e4095f439d5a2e7d50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+--- !u!1001 &7038314890501508152
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4519069794543306737}
+    m_Modifications:
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4227724289770534021}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DecreaseFullNumber
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Odometer_UI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: OnOdometerTickUnder.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911701513997062776, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+      propertyPath: m_Name
+      value: Odometer (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+--- !u!4 &4251182802485888357 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6580359552158697821, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+  m_PrefabInstance: {fileID: 7038314890501508152}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7835301409456402484 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 941686647792827404, guid: e19ab6cf53c3bfd478bb1da611aa6c91, type: 3}
+  m_PrefabInstance: {fileID: 7038314890501508152}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42ac77fb712290e4095f439d5a2e7d50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
