@@ -9,7 +9,6 @@ public class SpriteStateSwapper : MonoBehaviour
         get { return _spriteIndex; }
         set 
         { 
-            _spriteIndex = Mathf.Clamp(value, 0, sprites.Length-1);
             if (value > sprites.Length - 1)
                 _spriteIndex = 0;
             else
