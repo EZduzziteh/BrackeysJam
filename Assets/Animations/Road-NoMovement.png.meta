@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 731be1502b5e937439b716fcc815ae49
+guid: b468216c38a3aba4a975176cd95a967c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7011661911796687584
-    second: Road_0
+      213: 4349131555735499999
+    second: Road-NoMovement_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
