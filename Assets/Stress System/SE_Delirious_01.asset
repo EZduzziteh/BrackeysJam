@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b5be56102b137d4ea527aac1dd8aee7, type: 3}
-  m_Name: SE_Hallucinations
+  m_Name: SE_Delirious_01
   m_EditorClassIdentifier: Assembly-CSharp::StressEventData
-  stressEventID: 'You are Hallucinating: You could swear you just saw your passenger
-    out on the road...'
+  stressEventID: Voices in my head
+  soundEffect: {fileID: 8300000, guid: bcc53fbf2a659b64ca32a8007b5ab41a, type: 3}
+  ScreenEffect: {fileID: 0}

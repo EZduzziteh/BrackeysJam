@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: SE_Nodding_Off
   m_EditorClassIdentifier: Assembly-CSharp::StressEventData
   stressEventID: ZZZZZZZZZzzzzzzzzZZZZZZ
+  soundEffect: {fileID: 8300000, guid: bcc53fbf2a659b64ca32a8007b5ab41a, type: 3}
+  ScreenEffect: {fileID: 0}

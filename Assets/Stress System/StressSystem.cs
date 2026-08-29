@@ -61,7 +61,6 @@ public class StressSystem : MonoBehaviour
             TrackStress(stressor.amount);
         }
 
-        Debug.Log("Tick stress: "+currentStress);
         CheckStressLevel();
     }
     private void CheckStressLevel()
@@ -105,6 +104,10 @@ public class StressSystem : MonoBehaviour
 
     public void RemoveStressor(int index)
     {
+        if(index < 0)
+        {
+            return;
+        }
         StressSources.RemoveAt(index);
         Debug.Log("Stress removed!");
     }
@@ -132,5 +135,20 @@ public class StressSystem : MonoBehaviour
         currentStressState--;
         currentStress += stressThreshold;
         OnStressDecreased?.Invoke();
+    }
+
+    internal int IndexOfGameObjectStressor(GameObject gameObject)
+    {
+
+        for(int i = 0;i <   StressSources.Count; i++) {
+            if (StressSources[i].gameObjectReference == gameObject) {
+
+                return i;
+            }
+        
+        }
+
+        return -1;
+
     }
 }

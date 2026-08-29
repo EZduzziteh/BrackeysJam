@@ -37,7 +37,12 @@ public class PassengerSeat_Manager : MonoBehaviour
             if (passengerEventTimer >= 30f)
             {
                 print("event triggered");
-                FindObjectOfType<StressSystem>().ModifyStress(25);
+                FindFirstObjectByType<StressSystem>().AddStressor(new StressSource()
+                {
+                    amount = 1.0f,
+                    gameObjectReference = this.gameObject
+
+                });
 
                 passengerEventTimer = 0f;
                 if(shouldTriggerBootEvent)
@@ -147,6 +152,8 @@ public class PassengerSeat_Manager : MonoBehaviour
 
     public void startBootDialogue()
     {
+        var stressSystem = FindFirstObjectByType<StressSystem>();
+        stressSystem.RemoveStressor(stressSystem.IndexOfGameObjectStressor(gameObject)); // NOTE - This should happen when the passenger is ejected #TODO check with ergale to see where this should actually be
         controller.checkExpectedScene(false);
         if (dialogueBundle.bootDialogue)
         {

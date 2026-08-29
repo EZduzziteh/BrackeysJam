@@ -67,6 +67,12 @@ public class StressEventManager : MonoBehaviour
 
     private void CheckForStressEvent()
     {
+        if (FindFirstObjectByType<CarSpeedSystem>().GetLookingAtPassenger() == true)
+        {
+            return;
+        }
+
+
         Debug.Log("Checking for stress event");
         if (stressSystem)
         {
@@ -122,8 +128,13 @@ public class StressEventManager : MonoBehaviour
                 }
 
                 int r = UnityEngine.Random.Range(0, eventTable.Count);
+                var stressEvent = eventTable[r];
+                Debug.Log("Stress Event: " + stressEvent.stressEventID);
+                if (stressEvent.soundEffect)
+                {
+                    SoundEffectManager.PlaySoundEffectWithRandomPitchLowVolume(stressEvent.soundEffect);
+                }
 
-                Debug.Log("Event: " + eventTable[r].stressEventID);
                 timeSinceLastStressEvent = 0.0f;
             }
 
