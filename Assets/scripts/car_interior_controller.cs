@@ -121,6 +121,7 @@ public class car_interior_controller : MonoBehaviour
     private void loadPass(InputAction.CallbackContext context) { startNewTransition(transitionType.wide_blink, transitionGameEffect.passengerCutscene); }
     public void lockTransitions(bool shouldLock)
     {
+        print("request to update Transition State, Locked bool:" + shouldLock);
         foreach (interactable interactee in FindObjectsByType<interactable>(FindObjectsInactive.Include, FindObjectsSortMode.None))
         {
             if (interactee.effectName == interactable.interactableEffectType.transition)
