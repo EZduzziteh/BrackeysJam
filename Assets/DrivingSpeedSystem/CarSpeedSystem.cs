@@ -71,7 +71,7 @@ public class CarSpeedSystem : MonoBehaviour
                     OnDestinationReached?.Invoke();
                 }
             }
-            else
+            else if (lookingAtPassenger && canDrive)
             {
                 if (currentSpeed > 0)
                 {

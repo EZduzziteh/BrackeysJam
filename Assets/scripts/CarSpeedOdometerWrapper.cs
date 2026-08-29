@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class CarSpeedOdometerAdapter : MonoBehaviour
+public class CarSpeedOdometerWrapper : MonoBehaviour
 {
     [SerializeField] CarSpeedSystem carSpeedSystem;
     [SerializeField] Odometer_UI odometer;
