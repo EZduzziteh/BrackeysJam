@@ -10,12 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4d7e64a667b16d4b8342b418e4a3cf6, type: 3}
-  m_Name: DialogueStage_Line
+  m_Name: 02_tony
   m_EditorClassIdentifier: Assembly-CSharp::DialogueStage_Line
   fireCustomEventOnAdvance: 0
+  fireCustomEventBeforeDialogueEnd: 0
+  customEventStepID: 0
   NextStage: {fileID: 0}
   LineData:
-    text: 
+    text: Can you give me a ride to my buddy's house?
     audioClip: {fileID: 0}
   AutoAdvance: 1
   AutoAdvanceDelay: 3

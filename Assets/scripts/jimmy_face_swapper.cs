@@ -3,6 +3,7 @@ using UnityEngine;
 public class jimmy_face_swapper : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer[] faces;
+    [SerializeField] private DialogueCoreBundle[] coreDialogues;
     [SerializeField] public int selectedFace = 0;
 
     private void Start()
@@ -28,6 +29,14 @@ public class jimmy_face_swapper : MonoBehaviour
         {
             selectedFace++;
         }
+        swapSprite();
+    }
+    public DialogueCoreBundle getDialogueBundle() 
+    {
+        return coreDialogues[selectedFace];
+    }
+    private void OnValidate()
+    {
         swapSprite();
     }
 }

@@ -52,8 +52,8 @@ public class interactable : MonoBehaviour
     }
 
     private GameObject myOutline;
-    [SerializeField]
-    private float highlightThickness=1.1f;
+    [SerializeField] private Color outlineColor=Color.yellow;
+    [SerializeField] private float highlightThickness=1.1f;
 
     public void showOutline()
     {
@@ -76,8 +76,8 @@ public class interactable : MonoBehaviour
             myOutline.transform.localScale = myOutline.transform.localScale * highlightThickness;
             SpriteRenderer outlineSR = myOutline.GetComponent<SpriteRenderer>();
             outlineSR.sortingOrder -= 1;
-            Color highlightColor = Color.yellow;
-            highlightColor.a = outlineSR.color.a; //transfer alpha channel
+            Color highlightColor = outlineColor;
+            //highlightColor.a = outlineSR.color.a; //transfer alpha channel
             outlineSR.color = highlightColor;
             
         }

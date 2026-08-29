@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4066794653851717856
 Transform:
   m_ObjectHideFlags: 0
@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.66, y: 0.04, z: 0}
-  m_LocalScale: {x: 1.52, y: 2.72, z: 1}
+  m_LocalScale: {x: 1.52, y: 1.625625, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -81,10 +81,10 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 4
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0.92890745, b: 0.11792451, a: 0.19607843}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -109,9 +109,11 @@ MonoBehaviour:
   transitionedTriggered:
     m_PersistentCalls:
       m_Calls: []
+  objectColor: {r: 1, g: 0.96567404, b: 0, a: 0.19607843}
   defaultCursor: {fileID: 11400000, guid: 57519c4a18ecf574481f62b59bc2820b, type: 2}
   altCursor: {fileID: 11400000, guid: dbf976ebdb956e9499ade5d6cebd8b3e, type: 2}
   shouldHideCursorAfterUse: 1
+  outlineColor: {r: 1, g: 0.73034364, b: 0.015686274, a: 0.5019608}
   highlightThickness: 1.1
 --- !u!70 &542791007974464222
 CapsuleCollider2D:

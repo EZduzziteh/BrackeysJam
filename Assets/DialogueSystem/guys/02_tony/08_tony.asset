@@ -10,12 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4d7e64a667b16d4b8342b418e4a3cf6, type: 3}
-  m_Name: DialogueStage_Line 4
+  m_Name: 08_tony
   m_EditorClassIdentifier: Assembly-CSharp::DialogueStage_Line
   fireCustomEventOnAdvance: 0
-  NextStage: {fileID: 0}
+  fireCustomEventBeforeDialogueEnd: 0
+  customEventStepID: 0
+  NextStage: {fileID: 11400000, guid: 3f7b95e2e813b5e49a8a061840366ee2, type: 2}
   LineData:
-    text: 
+    text: My bad, dude... I was just jokin'... Didn't mean to harsh the vibe.
     audioClip: {fileID: 0}
   AutoAdvance: 1
   AutoAdvanceDelay: 3

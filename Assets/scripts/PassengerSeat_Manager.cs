@@ -21,6 +21,7 @@ public class PassengerSeat_Manager : MonoBehaviour
     private DialogueManager DM;
     [SerializeField] private DialogueCoreBundle dialogueBundle;
     [SerializeField] private DialogueCoreBundle rogueBundle;
+    [SerializeField] private bool shouldTriggerBootEvent = false;
 
     private void Start()
     {
@@ -37,6 +38,11 @@ public class PassengerSeat_Manager : MonoBehaviour
             {
                 print("event triggered");
                 passengerEventTimer = 0f;
+                if(shouldTriggerBootEvent)
+                {
+                    //look at side if not already? (move condtional into boot dialogue.)
+                    startBootDialogue();
+                }
             }
         }
         if (needDiscovery())
@@ -89,13 +95,22 @@ public class PassengerSeat_Manager : MonoBehaviour
         passengerEventTimer = 0f;
 
         //play final dialogue
-        DialogueManager.Instance.StartDialogue(dialogueBundle.finalDialogue);
-        DialogueManager.Instance.OnDialogueEnded.AddListener(setupForNextPassenger);
+        try
+        {
+            DialogueManager.Instance.StartDialogue(dialogueBundle.finalDialogue);
+            DialogueManager.Instance.OnDialogueEnded.AddListener(setupForNextPassenger);
+        }
+        catch
+        {
+            setupForNextPassenger();
+        }
+
     }
     private void setupForNextPassenger()
     {//setup for next passenger -> transition into silhouette
-        DialogueManager.Instance.OnDialogueEnded.RemoveListener(setupForNextPassenger);
-        moveIntoBasicDialogue(); // this should load next passenger dialogue bundle, placeholder for now to turn off grandma dialogue.
+        try { DialogueManager.Instance.OnDialogueEnded.RemoveListener(setupForNextPassenger); }
+        catch { }
+        setupNextDialogueBundle(); // this should load next passenger dialogue bundle, placeholder for now to turn off grandma dialogue.
         silhouetteModel.SetActive(true);
         controller.silentTransition();
     }
@@ -128,6 +143,7 @@ public class PassengerSeat_Manager : MonoBehaviour
 
     public void startBootDialogue()
     {
+        controller.checkExpectedScene(false);
         if (dialogueBundle.bootDialogue)
         {
             DM.StartDialogue(dialogueBundle.bootDialogue);
@@ -170,8 +186,15 @@ public class PassengerSeat_Manager : MonoBehaviour
         }
     }
 
-    public void moveIntoBasicDialogue()
+    public void setupNextDialogueBundle(bool rogue = false)
     {
-        dialogueBundle = rogueBundle;
+        if (rogue)
+            dialogueBundle = rogueBundle;
+        else
+        {
+            dialogueBundle = passenger.GetComponent<jimmy_face_swapper>().getDialogueBundle();
+            if (passenger.GetComponent<jimmy_face_swapper>().selectedFace >= 1 || FindFirstObjectByType<car_interior_controller>().skipTut)
+                shouldTriggerBootEvent = true;
+        }      
     }
 }

@@ -38,7 +38,7 @@ public class car_interior_controller : MonoBehaviour
         {
             lockTransitions(false);
             FindFirstObjectByType<PassengerSeat_Manager>().checkForDiscovery();
-            FindFirstObjectByType<PassengerSeat_Manager>().moveIntoBasicDialogue();
+            FindFirstObjectByType<PassengerSeat_Manager>().setupNextDialogueBundle();
         }
     }
     //car scene transitions
@@ -102,6 +102,19 @@ public class car_interior_controller : MonoBehaviour
     {
         currentEffect = transitionGameEffect.moveScene;
         animPerformTransition();
+    }
+    public void checkExpectedScene(bool expectingDriverView)
+    {
+        if (SceneCamera.transform.position.x == 0 && expectingDriverView || SceneCamera.transform.position.x > 0 && !expectingDriverView)
+        {
+            //matching, need driver view, is driver view. no issue.
+        }
+        else if (SceneCamera.transform.position.x == 0 && !expectingDriverView || SceneCamera.transform.position.x > 0 && expectingDriverView)
+        {
+            //is driver, expecting side || is side, expecting driver
+            startNewTransition(default, transitionGameEffect.moveScene);
+        }
+
     }
     private void loadPass(InputAction.CallbackContext context) { startNewTransition(transitionType.wide_blink, transitionGameEffect.passengerCutscene); }
     public void lockTransitions(bool shouldLock)
