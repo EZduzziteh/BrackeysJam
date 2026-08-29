@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4d7e64a667b16d4b8342b418e4a3cf6, type: 3}
   m_Name: 07_grandma_custom3
   m_EditorClassIdentifier: Assembly-CSharp::DialogueStage_Line
-  fireCustomEventOnAdvance: 1
+  fireCustomEventOnAdvance: 0
+  fireCustomEventBeforeDialogueEnd: 1
   customEventStepID: 3
   NextStage: {fileID: 0}
   LineData:

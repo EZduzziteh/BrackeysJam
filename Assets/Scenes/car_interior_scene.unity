@@ -137,11 +137,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteStateSwapper
   sprites:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 58180d02f31386741bada83d350359db, type: 3}
+  - {fileID: 21300000, guid: 6c10312c3a26e0e459f218eef3475e3d, type: 3}
+  - {fileID: 21300000, guid: e07c325e798972747b429ebf65707d73, type: 3}
+  - {fileID: 21300000, guid: a2d12f8048dc2e245ba1785b08a1fd64, type: 3}
+  - {fileID: 21300000, guid: f331ab92c8cc0ed48b0152bf2831dd0d, type: 3}
+  - {fileID: 9147523878405589340, guid: 093a0b8a0d125b14aabf3b0ba2ea9248, type: 3}
   _spriteIndex: 0
 --- !u!1 &153966909 stripped
 GameObject:
@@ -977,9 +978,41 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1444394300575991125, guid: 3c5bdc0452903ce48a138ba53d751403, type: 3}
+      propertyPath: m_Name
+      value: passengerSprite_inSeat
+      objectReference: {fileID: 0}
+    - target: {fileID: 1444394300575991125, guid: 3c5bdc0452903ce48a138ba53d751403, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2473061873840666969, guid: 3c5bdc0452903ce48a138ba53d751403, type: 3}
+      propertyPath: m_Size.x
+      value: 4.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2473061873840666969, guid: 3c5bdc0452903ce48a138ba53d751403, type: 3}
+      propertyPath: m_Size.y
+      value: 2.7
+      objectReference: {fileID: 0}
     - target: {fileID: 2473061873840666969, guid: 3c5bdc0452903ce48a138ba53d751403, type: 3}
       propertyPath: m_Sprite
       value: 
+      objectReference: {fileID: 21300000, guid: 58180d02f31386741bada83d350359db, type: 3}
+    - target: {fileID: 2473061873840666969, guid: 3c5bdc0452903ce48a138ba53d751403, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2473061873840666969, guid: 3c5bdc0452903ce48a138ba53d751403, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3032289862430884143, guid: 3c5bdc0452903ce48a138ba53d751403, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.212
+      objectReference: {fileID: 0}
+    - target: {fileID: 3032289862430884143, guid: 3c5bdc0452903ce48a138ba53d751403, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.093
       objectReference: {fileID: 0}
     - target: {fileID: 3252273177361408844, guid: 3c5bdc0452903ce48a138ba53d751403, type: 3}
       propertyPath: passenger
@@ -1103,7 +1136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5969326602590645639, guid: d5b90d192c55bb44994fbdc7ad41fb26, type: 3}
       propertyPath: skipTut
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6589696999808079272, guid: d5b90d192c55bb44994fbdc7ad41fb26, type: 3}
       propertyPath: m_Name
@@ -1238,11 +1271,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1274750968842842943, guid: 71dae62085f2b8e4eaa29636198c0a0c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.99
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1274750968842842943, guid: 71dae62085f2b8e4eaa29636198c0a0c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.19
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1274750968842842943, guid: 71dae62085f2b8e4eaa29636198c0a0c, type: 3}
       propertyPath: m_LocalPosition.z

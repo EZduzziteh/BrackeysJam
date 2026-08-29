@@ -45,6 +45,7 @@ public class grandma_DialogueGameEventHandler : DialogueGameEventHandler
                 break;
             case 4:
                 //"interesting" dialogue -- activate timer, wait 5-10s then start eject flow.
+                controller.lockTransitions(true);
                 startTimer(startEjectWaitTime);
                 break;
             default:

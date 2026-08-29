@@ -55,22 +55,16 @@ public class PassengerSeat_Manager : MonoBehaviour
         if (passenger.activeSelf)
         {
             print("Loading Passenger");
-            //create next passenger for later.
-            debugFakeNextPassenger = Instantiate(passenger);
-            debugFakeNextPassenger.SetActive(false);
-            debugFakeNextPassenger.GetComponent<jimmy_face_swapper>().selectNewFace();
-
             //move passenger into car
-            SpriteRenderer[] sprites = passenger.GetComponentsInChildren<SpriteRenderer>();
-            foreach (SpriteRenderer childrenSR in sprites)
-            {
-                childrenSR.sortingOrder += sortingOrderShift;
-            }
-            passenger.transform.position = gameObject.transform.position;
             foreach (GameObject model in insideModel)
             {
                 model.SetActive(true);
+                if(model.GetComponent<SpriteStateSwapper>())
+                    model.GetComponent<SpriteStateSwapper>().spriteIndex = passenger.GetComponent<jimmy_face_swapper>().selectedFace;
             }
+            //update passenger for next time.
+            passenger.SetActive(false);
+            passenger.GetComponent<jimmy_face_swapper>().selectNewFace();
 
             //system updates
             totalPassengersCollected++;
@@ -86,8 +80,6 @@ public class PassengerSeat_Manager : MonoBehaviour
     private void ejectPassenger()
     {
         //cleanup passenger
-        Destroy(passenger);
-        passenger = debugFakeNextPassenger; //update ref for new passenger.
         foreach (GameObject model in insideModel)
         {
             model.SetActive(false);
