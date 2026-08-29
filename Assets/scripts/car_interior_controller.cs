@@ -49,6 +49,7 @@ public class car_interior_controller : MonoBehaviour
     [Header("transition animators")]
     [SerializeField] private Animator full_blink_animator;
     [SerializeField] private Animator wide_blink_animator;
+    [SerializeField]AudioClip swapViewSoundEffect;
 
     public void startNewTransition(transitionType style=transitionType.full_blink, transitionGameEffect effect=transitionGameEffect.none)
     {
@@ -83,6 +84,7 @@ public class car_interior_controller : MonoBehaviour
                 SceneCamera.transform.position = pos;
 
                 FindFirstObjectByType<CarSpeedSystem>()?.SetCanDrive(!(pos.x > 0));
+                SoundEffectManager.PlaySoundEffectWithRandomPitch(swapViewSoundEffect);
 
                 if (pos.x > 0) //check for discovery on side scene.
                     FindFirstObjectByType<PassengerSeat_Manager>().checkForDiscovery();

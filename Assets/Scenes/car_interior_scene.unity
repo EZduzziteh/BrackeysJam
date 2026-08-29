@@ -1087,6 +1087,10 @@ PrefabInstance:
       propertyPath: skipTut
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5969326602590645639, guid: d5b90d192c55bb44994fbdc7ad41fb26, type: 3}
+      propertyPath: swapViewSoundEffect
+      value: 
+      objectReference: {fileID: 8300000, guid: e039fd7b9256f3447a0d0b4ace71a6e5, type: 3}
     - target: {fileID: 6589696999808079272, guid: d5b90d192c55bb44994fbdc7ad41fb26, type: 3}
       propertyPath: m_Name
       value: Main Camera
