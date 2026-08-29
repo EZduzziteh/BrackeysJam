@@ -35,4 +35,8 @@ public class jimmy_face_swapper : MonoBehaviour
     {
         return coreDialogues[selectedFace];
     }
+    private void OnValidate()
+    {
+        swapSprite();
+    }
 }
