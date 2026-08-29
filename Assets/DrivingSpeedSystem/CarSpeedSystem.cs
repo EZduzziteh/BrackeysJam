@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class CarSpeedSystem : MonoBehaviour
 {
     public UnityEvent OnDestinationReached;
+    public UnityEvent OnCarStopped;
     [SerializeField] float maxSpeed = 100.0f;
     [SerializeField] float maxSpeedModifier = 0.0f;
     [SerializeField] float currentSpeed = 0.0f; // in km/hr
@@ -15,6 +16,7 @@ public class CarSpeedSystem : MonoBehaviour
     float drivingTime = 0.0f;
     bool destinationReached = false;
     bool lookingAtPassenger = false;
+    [SerializeField] bool canDrive = true;
     [SerializeField] float baseDeceleration = 8.0f;
     [SerializeField] float  baseAcceleration = 5.0f;
 
@@ -33,18 +35,18 @@ public class CarSpeedSystem : MonoBehaviour
         acceleration = baseAcceleration * accelerationMultiplier;
         deceleration = baseDeceleration * decelerationMultiplier;
 
-        if (Input.GetKey(KeyCode.D))
+        /* if (Input.GetKey(KeyCode.D))
         {
             lookingAtPassenger = true;
         }
         else
         {
             lookingAtPassenger = false;
-        }
+        } */
 
         if (!destinationReached)
         {
-            if (lookingAtPassenger)
+            if (!lookingAtPassenger && canDrive)
             {
                 if (distanceRemaining > 0)
                 {
@@ -71,10 +73,15 @@ public class CarSpeedSystem : MonoBehaviour
             }
             else
             {
-                currentSpeed -= Time.deltaTime * deceleration;
-                if(currentSpeed <= 0)
+                if (currentSpeed > 0)
                 {
-                    currentSpeed = 0.0f;
+                    currentSpeed -= Time.deltaTime * deceleration;
+
+                    if (currentSpeed <= 0)
+                    {
+                        currentSpeed = 0.0f;
+                        OnCarStopped?.Invoke();
+                    }
                 }
             }
         }
@@ -93,5 +100,19 @@ public class CarSpeedSystem : MonoBehaviour
     private void DriveForward()
     {
         distanceRemaining -= Time.deltaTime / 3600f * currentSpeed;
+    }
+
+    public float CurrentSpeed => currentSpeed;
+
+    public void SetLookingAtPassenger(bool value)
+    {
+        lookingAtPassenger = value;
+    }
+
+    public bool CanDrive => canDrive;
+
+    public void SetCanDrive(bool value)
+    {
+        canDrive = value;
     }
 }

@@ -74,6 +74,9 @@ public class car_interior_controller : MonoBehaviour
                 pos = SceneCamera.transform.position;
                 pos.x = getNextTransitionPosition();
                 SceneCamera.transform.position = pos;
+
+                FindFirstObjectByType<CarSpeedSystem>()?.SetLookingAtPassenger(pos.x > 0);
+
                 if (pos.x > 0) //check for discovery on side scene.
                     FindFirstObjectByType<PassengerSeat_Manager>().checkForDiscovery();
                 break;
