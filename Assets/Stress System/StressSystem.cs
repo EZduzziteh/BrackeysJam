@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class StressSystem : MonoBehaviour
 {
-    StressState currentStressState;
+    [SerializeField]StressState currentStressState;
 
     float currentStress;
     [SerializeField] float stressThreshold = 100.0f;

@@ -361,6 +361,121 @@ Transform:
   - {fileID: 1061225685}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &332681304
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 332681306}
+  - component: {fileID: 332681305}
+  m_Layer: 0
+  m_Name: StressEventManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &332681305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332681304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6954f2a759d590f4a8ed0821e2b236b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StressEventManager
+  stressEventsEnabled: 0
+  stressEventCheckInterval: 1
+  minTimeBetweenEvents: 3
+  maxTimeBetweenEvents: 10
+  StressLevelNoneEvents:
+  - {fileID: 11400000, guid: 1160af7ed71b9744596fe9163d86f0b6, type: 2}
+  StressLevelUneasyEvents:
+  - {fileID: 11400000, guid: 435955d358880224a9bad37750e6bd13, type: 2}
+  StressLevelAnxiousEvents:
+  - {fileID: 11400000, guid: e6f50f9cfced6d04ab71388774d71484, type: 2}
+  StressLevelPanickingEvents:
+  - {fileID: 11400000, guid: 3fbb3215a5f23374faf206728902ad18, type: 2}
+  StressLevelDeliriousEvents:
+  - {fileID: 11400000, guid: 3fbb3215a5f23374faf206728902ad18, type: 2}
+--- !u!4 &332681306
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332681304}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.34298, y: -0.87716, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &476186262
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 476186264}
+  - component: {fileID: 476186263}
+  m_Layer: 0
+  m_Name: StressSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &476186263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476186262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 328d02ddc74d6384bb46fa625c571735, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StressSystem
+  currentStressState: 0
+  stressThreshold: 100
+  StressSources: []
+  StressTickInterval: 1
+  OnMaxStressAchieved:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStressIncreased:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStressDecreased:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!4 &476186264
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476186262}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.5, y: -0.02141, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &490968086 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4066794653851717856, guid: b06dd4061034d524bad6d86de45132b1, type: 3}
@@ -939,7 +1054,7 @@ GameObject:
   - component: {fileID: 1529053851}
   - component: {fileID: 1529053850}
   m_Layer: 0
-  m_Name: Odo
+  m_Name: Car Speed System (Odometer)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1749,3 +1864,5 @@ SceneRoots:
   - {fileID: 3765083065053816052}
   - {fileID: 299771843}
   - {fileID: 1288909236}
+  - {fileID: 476186264}
+  - {fileID: 332681306}
