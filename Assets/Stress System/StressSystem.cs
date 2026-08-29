@@ -112,7 +112,7 @@ public class StressSystem : MonoBehaviour
     public void IncreaseStressLevel()
     {
         if (currentStressState == StressState.Delirious) {
-            currentStress = 100;
+            currentStress = 99;
             OnMaxStressAchieved?.Invoke();
             return; //return becasue we arealready max stress
         }
@@ -125,7 +125,7 @@ public class StressSystem : MonoBehaviour
     public void DecreaseStressLevel()
     {
         if (currentStressState == StressState.None) {
-            currentStress = 0;
+            currentStress = 1;
             return; //return because we arealready min stress
         }
 

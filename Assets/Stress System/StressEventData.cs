@@ -4,4 +4,6 @@ using UnityEngine;
 public class StressEventData : ScriptableObject
 {
     public string stressEventID;
+    public AudioClip soundEffect;
+    public Sprite ScreenEffect;
 }

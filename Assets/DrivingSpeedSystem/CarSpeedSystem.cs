@@ -15,8 +15,9 @@ public class CarSpeedSystem : MonoBehaviour
     float elapsedTime = 0.0f;
     float drivingTime = 0.0f;
     bool destinationReached = false;
-    bool lookingAtPassenger = false;
+    bool decelerating = false;
     [SerializeField] bool canDrive = true;
+    public bool CanDrive => canDrive;
     [SerializeField] float baseDeceleration = 8.0f;
     [SerializeField] float  baseAcceleration = 5.0f;
 
@@ -27,32 +28,69 @@ public class CarSpeedSystem : MonoBehaviour
     float acceleration;
 
 
+    float distanceTravelled = 0.0f;
+
+
+    AudioSource aud;
+
+    private void Start()
+    {
+        aud = GetComponent<AudioSource>();
+    }
+
+    float motorVolumeMax = 1.0f;
+    float motorVolumeMin = 0.0f;
+    float motorVolume = 0.0f;
+    [SerializeField] float motorVolumeIncreaseRate = 0.1f;
+    [SerializeField] float motorVolumeDecreaseRate = 0.1f;
+
     // Update is called once per frame
     void Update()
     {
         CalculateAccelerationMultiplier();
 
-        acceleration = baseAcceleration * accelerationMultiplier;
         deceleration = baseDeceleration * decelerationMultiplier;
+        acceleration = baseAcceleration * accelerationMultiplier;
 
-        /* if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.W) && canDrive)
         {
-            lookingAtPassenger = true;
+            decelerating = false;
         }
         else
         {
-            lookingAtPassenger = false;
-        } */
+            decelerating = true;
+        }
+
+        if (!decelerating)
+        {
+            motorVolume += motorVolumeIncreaseRate * Time.deltaTime;
+            if(motorVolume > motorVolumeMax)
+            {
+                motorVolume = motorVolumeMax;
+            }
+        }
+        else
+        {
+            motorVolume -= motorVolumeDecreaseRate*Time.deltaTime;
+            if (motorVolume < motorVolumeMin)
+            {
+                motorVolume = motorVolumeMin;
+            }
+        }
+
+        aud.volume = motorVolume;
+
+
 
         if (!destinationReached)
         {
-            if (!lookingAtPassenger && canDrive)
+            if (!decelerating && canDrive)
             {
                 if (distanceRemaining > 0)
                 {
                     currentSpeed += Time.deltaTime * acceleration;
 
-                    if(currentSpeed > maxSpeed)
+                    if (currentSpeed > maxSpeed)
                     {
                         currentSpeed = maxSpeed;
                     }
@@ -71,7 +109,7 @@ public class CarSpeedSystem : MonoBehaviour
                     OnDestinationReached?.Invoke();
                 }
             }
-            else if (lookingAtPassenger && canDrive)
+            else if (decelerating && canDrive)
             {
                 if (currentSpeed > 0)
                 {
@@ -99,6 +137,7 @@ public class CarSpeedSystem : MonoBehaviour
 
     private void DriveForward()
     {
+        distanceTravelled += Time.deltaTime / 3600f * currentSpeed;
         distanceRemaining -= Time.deltaTime / 3600f * currentSpeed;
     }
 
@@ -106,13 +145,17 @@ public class CarSpeedSystem : MonoBehaviour
 
     public void SetLookingAtPassenger(bool value)
     {
-        lookingAtPassenger = value;
+        decelerating = value;
     }
 
-    public bool CanDrive => canDrive;
 
     public void SetCanDrive(bool value)
     {
         canDrive = value;
+    }
+
+    public float GetMaxSpeed()
+    {
+        return maxSpeed;
     }
 }
