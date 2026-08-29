@@ -6,13 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Game/Menu_Main.unity
+    path: Assets/Scenes/Menu_Main.unity
     guid: c2e39682a0fca9e4191fc948117d090e
   - enabled: 1
-    path: Assets/_Game/Interior.unity
-    guid: 73a5fa8756051a943927052887ed8dcf
+    path: Assets/Scenes/car_interior_scene.unity
+    guid: 9f21bb1dbdb5ae24eb0f421753815f8a
   - enabled: 1
-    path: Assets/_Game/Menu_Credits.unity
+    path: Assets/Scenes/Menu_Credits.unity
     guid: 6eb9fb60d44a8b84e9f731b79a33ed56
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
