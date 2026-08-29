@@ -10,11 +10,8 @@ public class CarSpeedSystem : MonoBehaviour
     [SerializeField] float maxSpeed = 100.0f;
     [SerializeField] float maxSpeedModifier = 0.0f;
     [SerializeField] float currentSpeed = 0.0f; // in km/hr
-    [SerializeField] float targetDistance = 100.0f;
-    float distanceRemaining = 100.0f; //in km
     float elapsedTime = 0.0f;
     float drivingTime = 0.0f;
-    bool destinationReached = false;
     bool lookingAtPassenger = false;
     [SerializeField] bool canDrive = true;
     public bool CanDrive => canDrive;
@@ -56,6 +53,13 @@ public class CarSpeedSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
+        
+
+
+
+
         CalculateAccelerationMultiplier();
 
         deceleration = baseDeceleration * decelerationMultiplier;
@@ -71,7 +75,7 @@ public class CarSpeedSystem : MonoBehaviour
                 motorVolume = motorVolumeMax;
             }
 
-            roadVolume += roadVolumeDecreaseRate * Time.deltaTime;
+            roadVolume += roadVolumeIncreaseRate * Time.deltaTime;
             if (roadVolume > roadVolumeMax)
             {
                 roadVolume = roadVolumeMax;
@@ -94,12 +98,10 @@ public class CarSpeedSystem : MonoBehaviour
         aud.volume = motorVolume;
         roadAudioSource.volume = roadVolume;
 
-        if (!destinationReached)
-        {
+        
             if (!lookingAtPassenger && canDrive)
             {
-                if (distanceRemaining > 0)
-                {
+                
                     currentSpeed += Time.deltaTime * acceleration;
 
                     if (currentSpeed > maxSpeed)
@@ -110,16 +112,9 @@ public class CarSpeedSystem : MonoBehaviour
                     DriveForward();
                     drivingTime += Time.deltaTime;
 
-                    Debug.Log(distanceRemaining);
+                   // Debug.Log(distanceRemaining);
                     elapsedTime += Time.deltaTime;
-                }
-                else
-                {
-                    destinationReached = true;
-                    distanceRemaining = 0;
-                    Debug.Log("Destination Reached!");
-                    OnDestinationReached?.Invoke();
-                }
+               
             }
             else
             {
@@ -135,11 +130,7 @@ public class CarSpeedSystem : MonoBehaviour
                 }
             }
         }
-        else
-        {
-            StopDriving();
-        }
-    }
+    
 
 
 
@@ -162,16 +153,23 @@ public class CarSpeedSystem : MonoBehaviour
     private void DriveForward()
     {
         distanceTravelled += Time.deltaTime / 3600f * currentSpeed;
-        distanceRemaining -= Time.deltaTime / 3600f * currentSpeed;
     }
 
     public float CurrentSpeed => currentSpeed;
 
- 
+    public bool GetLookingAtPassenger()  {
+        return lookingAtPassenger;
+    }
 
     public void SetCanDrive(bool value)
     {
         canDrive = value;
+        SetLookingAtPassenger(!value);
+    }
+
+    public void SetLookingAtPassenger(bool value)
+    {
+        lookingAtPassenger = value;
     }
 
     public float GetMaxSpeed()

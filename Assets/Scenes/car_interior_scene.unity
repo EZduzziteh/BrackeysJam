@@ -273,6 +273,17 @@ Transform:
   - {fileID: 1061225685}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &489665429 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1255346608444099123, guid: 3565bae06902e724eb2337ff5341f2c7, type: 3}
+  m_PrefabInstance: {fileID: 122250353}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcf95388402f6aa4ca9e519146407465, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!4 &490968086 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4066794653851717856, guid: b06dd4061034d524bad6d86de45132b1, type: 3}
@@ -565,6 +576,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2962929148281869091, guid: e1c014536bbc25f4a976d87190543902, type: 3}
+      propertyPath: maxTimeBetweenEvents
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2962929148281869091, guid: e1c014536bbc25f4a976d87190543902, type: 3}
+      propertyPath: minTimeBetweenEvents
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2962929148281869091, guid: e1c014536bbc25f4a976d87190543902, type: 3}
+      propertyPath: stressEventCheckInterval
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4897556066585066039, guid: e1c014536bbc25f4a976d87190543902, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.44713
@@ -745,6 +768,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: StressSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 2499008235869304702, guid: 9654aa622f9bc8946ada7bad2b670c09, type: 3}
+      propertyPath: StressSources.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2499008235869304702, guid: 9654aa622f9bc8946ada7bad2b670c09, type: 3}
+      propertyPath: StressSources.Array.data[0].amount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2499008235869304702, guid: 9654aa622f9bc8946ada7bad2b670c09, type: 3}
+      propertyPath: OnStressDecreased.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 489665429}
+    - target: {fileID: 2499008235869304702, guid: 9654aa622f9bc8946ada7bad2b670c09, type: 3}
+      propertyPath: OnStressIncreased.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 489665429}
+    - target: {fileID: 2499008235869304702, guid: 9654aa622f9bc8946ada7bad2b670c09, type: 3}
+      propertyPath: OnMaxStressAchieved.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 489665429}
     - target: {fileID: 5232992399283985424, guid: 9654aa622f9bc8946ada7bad2b670c09, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.44713
@@ -855,6 +898,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 736639343545623423, guid: 881dedc10dd7ac24094696ea63b6ff65, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2124766336290729662, guid: 881dedc10dd7ac24094696ea63b6ff65, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1040,6 +1087,10 @@ PrefabInstance:
       propertyPath: skipTut
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5969326602590645639, guid: d5b90d192c55bb44994fbdc7ad41fb26, type: 3}
+      propertyPath: swapViewSoundEffect
+      value: 
+      objectReference: {fileID: 8300000, guid: e039fd7b9256f3447a0d0b4ace71a6e5, type: 3}
     - target: {fileID: 6589696999808079272, guid: d5b90d192c55bb44994fbdc7ad41fb26, type: 3}
       propertyPath: m_Name
       value: Main Camera

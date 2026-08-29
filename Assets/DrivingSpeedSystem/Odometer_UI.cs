@@ -12,8 +12,6 @@ public class Odometer_UI : MonoBehaviour
     public List<SpriteRenderer> OdometerObjects = new();
 
     [SerializeField] int activeOdometerNumber = 1;
-    [SerializeField] float OdometerTickInterval = 0.5f;
-    float timeSinceLastOdometerTick = 0.0f;
 
     public UnityEvent OnOdometerTickOver;
     public UnityEvent OnOdometerTickUnder;

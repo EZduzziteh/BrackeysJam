@@ -10,6 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b5be56102b137d4ea527aac1dd8aee7, type: 3}
-  m_Name: SE_Bump in the road
+  m_Name: SE_Uneasy_01
   m_EditorClassIdentifier: Assembly-CSharp::StressEventData
-  stressEventID: Theres a bump in the road
+  stressEventID: Your Passenger goes into a coughing fit
+  soundEffect: {fileID: 8300000, guid: 24a11262df16f0c4e9afdbc76e9401aa, type: 3}
+  ScreenEffect: {fileID: 0}
