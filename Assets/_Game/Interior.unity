@@ -1031,7 +1031,7 @@ PrefabInstance:
       objectReference: {fileID: 153966909}
     - target: {fileID: 3252273177361408844, guid: 3c5bdc0452903ce48a138ba53d751403, type: 3}
       propertyPath: silhouetteMaxDuration
-      value: 600
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3252273177361408844, guid: 3c5bdc0452903ce48a138ba53d751403, type: 3}
       propertyPath: 'insideModel.Array.data[0]'
@@ -1170,6 +1170,10 @@ PrefabInstance:
       propertyPath: OnMaxStressAchieved.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1227267829}
+    - target: {fileID: 2499008235869304702, guid: 9654aa622f9bc8946ada7bad2b670c09, type: 3}
+      propertyPath: OnMaxStressAchieved.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySoundEffectLowVolume
+      objectReference: {fileID: 0}
     - target: {fileID: 5232992399283985424, guid: 9654aa622f9bc8946ada7bad2b670c09, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.5
