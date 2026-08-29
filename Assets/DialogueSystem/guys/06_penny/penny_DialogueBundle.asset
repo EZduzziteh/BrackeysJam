@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f2b6a989e7a63741a2914cffa3f2c8f, type: 3}
   m_Name: penny_DialogueBundle
   m_EditorClassIdentifier: Assembly-CSharp::DialogueCoreBundle
-  windowDialogue: {fileID: 0}
-  boardedDialogue: {fileID: 0}
-  bootDialogue: {fileID: 0}
+  windowDialogue: {fileID: 11400000, guid: f4be822b4af18214b8ec4a70facf35d0, type: 2}
+  boardedDialogue: {fileID: 11400000, guid: 1885bf3fc18e7674a967841c24ab2295, type: 2}
+  bootDialogue: {fileID: 11400000, guid: a4adb46c79665c8459e75bddb2d6c9f7, type: 2}
   finalDialogue: {fileID: 0}

@@ -188,7 +188,7 @@ public class PassengerSeat_Manager : MonoBehaviour
 
     public void setupNextDialogueBundle(bool rogue = false)
     {
-        if (rogue)
+        if (rogue || passenger.GetComponent<jimmy_face_swapper>().getDialogueBundle().windowDialogue==null)
             dialogueBundle = rogueBundle;
         else
         {
