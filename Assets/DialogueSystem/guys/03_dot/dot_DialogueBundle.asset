@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f2b6a989e7a63741a2914cffa3f2c8f, type: 3}
   m_Name: dot_DialogueBundle
   m_EditorClassIdentifier: Assembly-CSharp::DialogueCoreBundle
-  windowDialogue: {fileID: 0}
-  boardedDialogue: {fileID: 0}
-  bootDialogue: {fileID: 0}
+  windowDialogue: {fileID: 11400000, guid: 32cdf88487461984d962cc603a07f24f, type: 2}
+  boardedDialogue: {fileID: 11400000, guid: d3159d6dcbd3f184db800e57e7b3d9ee, type: 2}
+  bootDialogue: {fileID: 11400000, guid: 21f34fab258a1424491caf5e7bff8e98, type: 2}
   finalDialogue: {fileID: 0}
