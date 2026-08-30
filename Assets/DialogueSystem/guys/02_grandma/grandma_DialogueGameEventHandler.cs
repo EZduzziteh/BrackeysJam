@@ -5,7 +5,7 @@ public class grandma_DialogueGameEventHandler : DialogueGameEventHandler
     [SerializeField] private GameObject[] totem;
     [SerializeField] private DialogueStage dialogueAfterHighlightTut;
     [SerializeField] private DialogueStage dialogueCalmTalismanMoment;
-    [SerializeField] private float lookWaitTime = 3.0f;
+    //[SerializeField] private float lookWaitTime = 3.0f;
     [SerializeField] private float startEjectWaitTime = 3.0f;
 
     protected override void Start()
@@ -29,7 +29,9 @@ public class grandma_DialogueGameEventHandler : DialogueGameEventHandler
         {
             case 1:
                 //radio ends - silly spawn (at the end of dialogue.
-                DialogueManager.Instance.OnDialogueEnded.AddListener(delaySilhouetteSpawn);
+                //DialogueManager.Instance.OnDialogueEnded.AddListener(delaySilhouetteSpawn);
+                seat.stepPassenger();
+                controller.lockTransitions(false);
                 break;
             case 2:
                 //...looking at me line - activate highlight swapper. after clicking this, it triggers next line (05_grandma)
@@ -39,12 +41,15 @@ public class grandma_DialogueGameEventHandler : DialogueGameEventHandler
                 watchForTransitions();
                 break;
             case 3:
-                //Hehehe line -- tunable timer/wait 15s. tut: teach player to look at grandma. start "interesting" dialogue
+                //Hehehe line -- tunable timer/wait 15s. tut: teach player to look at grandma. start "interesting" dialogue after
+                totem_anim_handler.Instance.updateState(4);
                 watchForTransitions();
                 updateTransitionSpriteVisibility(true);
+                controller.lockTransitions(false);
                 break;
             case 4:
                 //"interesting" dialogue -- activate timer, wait 5-10s then start eject flow.
+                
                 controller.lockTransitions(true);
                 startTimer(startEjectWaitTime);
                 break;
@@ -76,12 +81,13 @@ public class grandma_DialogueGameEventHandler : DialogueGameEventHandler
                 break;
         }
     }
+    /*
     private void delaySilhouetteSpawn()
     {
         DialogueManager.Instance.OnDialogueEnded.RemoveListener(delaySilhouetteSpawn);
         seat.stepPassenger();
         controller.lockTransitions(false);
-    }
+    }*/
     public override void onPlayerTransitionDelayed()
     {
         base.onPlayerTransitionDelayed();
@@ -89,11 +95,13 @@ public class grandma_DialogueGameEventHandler : DialogueGameEventHandler
         switch (transitionIndex)
         {
             case 1://start dialogue for grandma 05, after case 2 in main switch.
-                //controller.lockTransitions(true);
+                controller.lockTransitions(true); //lock until next transition watcher.
                 DialogueManager.Instance.StartDialogue(dialogueAfterHighlightTut);
                 break;
             case 2://after case 3 in main switch, start calm talisman dialogue.
+                totem_anim_handler.Instance.updateState(0);
                 DialogueManager.Instance.StartDialogue(dialogueCalmTalismanMoment);
+                controller.lockTransitions(true); //lock until kick out.
                 break;
         }
         

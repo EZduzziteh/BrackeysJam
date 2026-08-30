@@ -6,7 +6,7 @@ public class PassengerSeat_Manager : MonoBehaviour
     [SerializeField] private GameObject passenger;
     [SerializeField] private GameObject[] insideModel;
     [SerializeField] private GameObject silhouetteModel;
-    [SerializeField] private int sortingOrderShift=3;
+    //[SerializeField] private int sortingOrderShift=3;
     private GameObject debugFakeNextPassenger;
     private bool seatOccupied = false;
     car_interior_controller controller;
@@ -47,7 +47,6 @@ public class PassengerSeat_Manager : MonoBehaviour
                 passengerEventTimer = 0f;
                 if(shouldTriggerBootEvent)
                 {
-                    //look at side if not already? (move condtional into boot dialogue.)
                     startBootDialogue();
                 }
             }
@@ -73,7 +72,7 @@ public class PassengerSeat_Manager : MonoBehaviour
             foreach (GameObject model in insideModel)
             {
                 model.SetActive(true);
-                if(model.GetComponent<SpriteStateSwapper>())
+                if (model.GetComponent<SpriteStateSwapper>())
                     model.GetComponent<SpriteStateSwapper>().spriteIndex = passenger.GetComponent<jimmy_face_swapper>().selectedFace;
             }
             //update passenger for next time.
@@ -86,10 +85,18 @@ public class PassengerSeat_Manager : MonoBehaviour
 
             //dialogue stuff
             if (dialogueBundle.boardedDialogue)
+            { 
                 DM.StartDialogue(dialogueBundle.boardedDialogue);
+                DM.OnDialogueEnded.AddListener(enableTransitionAfterBoardDialogue); //allow transition after boarded dialogue ends.
+            }
         }
         else
             checkForDiscovery();
+    }
+    private void enableTransitionAfterBoardDialogue()
+    {
+        DM.OnDialogueEnded.RemoveListener(enableTransitionAfterBoardDialogue);
+        controller.lockTransitions(false);
     }
     private void ejectPassenger()
     {
@@ -118,7 +125,7 @@ public class PassengerSeat_Manager : MonoBehaviour
     {//setup for next passenger -> transition into silhouette
         try { DialogueManager.Instance.OnDialogueEnded.RemoveListener(setupForNextPassenger); }
         catch { }
-        setupNextDialogueBundle(); // this should load next passenger dialogue bundle, placeholder for now to turn off grandma dialogue.
+        setupNextDialogueBundle();
         silhouetteModel.SetActive(true);
         controller.silentTransition();
     }
@@ -135,6 +142,7 @@ public class PassengerSeat_Manager : MonoBehaviour
             {
                 DM.StartDialogue(dialogueBundle.windowDialogue);
                 DM.OnDialogueEnded.AddListener(loadListener);
+                controller.lockTransitions(true); // lock transition until after boarded dialogue ends..
             }
         }
         else
@@ -147,12 +155,15 @@ public class PassengerSeat_Manager : MonoBehaviour
     {
         return !seatOccupied & !passenger.activeSelf & silhouetteModel.activeSelf;
     }
-    private void loadListener() { DM.OnDialogueEnded.RemoveListener(loadListener); controller.startNewTransition(car_interior_controller.transitionType.wide_blink, car_interior_controller.transitionGameEffect.passengerCutscene); }
+    private void loadListener() 
+    { 
+        DM.OnDialogueEnded.RemoveListener(loadListener); 
+        controller.startNewTransition(car_interior_controller.transitionType.wide_blink, car_interior_controller.transitionGameEffect.passengerCutscene); 
+        //controller.lockTransitions(false); idk if lock/unlock should be here.
+    }
 
     public void startBootDialogue()
     {
-        var stressSystem = FindFirstObjectByType<StressSystem>();
-        stressSystem.RemoveStressor(stressSystem.IndexOfGameObjectStressor(gameObject)); // NOTE - This should happen when the passenger is ejected #TODO check with ergale to see where this should actually be
         controller.checkExpectedScene(false);
         if (dialogueBundle.bootDialogue)
         {
@@ -169,6 +180,8 @@ public class PassengerSeat_Manager : MonoBehaviour
         DM.OnDialogueEnded.RemoveListener(ejectListener);
         controller.startNewTransition(car_interior_controller.transitionType.wide_blink, car_interior_controller.transitionGameEffect.passengerCutscene);
         controller.lockTransitions(false);
+        var stressSystem = FindFirstObjectByType<StressSystem>();
+        stressSystem.RemoveStressor(stressSystem.IndexOfGameObjectStressor(gameObject));
 
         /* used for only select answer to eject. probably can be refactored into dialogue event handler.
         print(DM.GetLastSelectedOption());

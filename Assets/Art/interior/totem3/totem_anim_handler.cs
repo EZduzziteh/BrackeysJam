@@ -22,7 +22,7 @@ public class totem_anim_handler : MonoBehaviour
     void Start()
     {
         animController = GetComponent<Animator>();
-        StartCoroutine(showStates());
+        //StartCoroutine(showStates());
     }
 
     IEnumerator showStates()
