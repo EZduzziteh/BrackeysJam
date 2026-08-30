@@ -1525,7 +1525,9 @@ PrefabInstance:
       value: Dashboard
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 736639343545623423, guid: 881dedc10dd7ac24094696ea63b6ff65, type: 3}
+    - {fileID: 4293998636431231012, guid: 881dedc10dd7ac24094696ea63b6ff65, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 881dedc10dd7ac24094696ea63b6ff65, type: 3}
