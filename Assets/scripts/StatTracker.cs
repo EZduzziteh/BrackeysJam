@@ -5,8 +5,11 @@ public class StatTracker : MonoBehaviour
 {
     public static StatTracker Instance;
     public float distanceTravelled;
-    public int totalPassengersCollected;
     public float murders;
+
+    //collected from PassengerSeat_Manager during eject.
+    public int totalPassengersCollected;
+    public float totalPassengerTime;
 
     private void Awake()
     {
