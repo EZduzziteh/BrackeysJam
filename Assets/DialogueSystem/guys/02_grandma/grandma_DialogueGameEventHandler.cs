@@ -35,7 +35,8 @@ public class grandma_DialogueGameEventHandler : DialogueGameEventHandler
                 //radio ends - silly spawn (at the end of dialogue.
                 seat.stepPassenger();
                 controller.lockTransitions(false);
-                radioRef.GetComponent<SpriteStateSwapper>().spriteIndex = 0; // turn off radio after dialogue ends.
+                if(radioRef.GetComponent<SpriteStateSwapper>())
+                    radioRef.GetComponent<SpriteStateSwapper>().spriteIndex = 0; // turn off radio after dialogue ends.
                 break;
             case 2:
                 //...looking at me line - activate highlight swapper. after clicking this, it triggers next line (05_grandma)
