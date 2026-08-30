@@ -176,11 +176,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3565bae06902e724eb2337ff5341f2c7, type: 3}
---- !u!1 &153966909 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4761320214304327713, guid: 881dedc10dd7ac24094696ea63b6ff65, type: 3}
-  m_PrefabInstance: {fileID: 3607576630590458683}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &185986330
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -242,6 +237,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4066794653851717856, guid: b06dd4061034d524bad6d86de45132b1, type: 3}
   m_PrefabInstance: {fileID: 502489207}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &291038802 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6949714194478311233, guid: 881dedc10dd7ac24094696ea63b6ff65, type: 3}
+  m_PrefabInstance: {fileID: 3607576630590458683}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &299771842
 GameObject:
@@ -388,6 +388,23 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b06dd4061034d524bad6d86de45132b1, type: 3}
+--- !u!1 &723075881 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6589696999808079272, guid: d5b90d192c55bb44994fbdc7ad41fb26, type: 3}
+  m_PrefabInstance: {fileID: 5645120683801800798}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &723075888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723075881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec75543379c9efa4eb53ae028c8b7156, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelManager
 --- !u!1 &909629442 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4185407118268392855, guid: 337e50f87686cf547892a2afacac8d05, type: 3}
@@ -1002,7 +1019,7 @@ PrefabInstance:
     - target: {fileID: 3252273177361408844, guid: 3c5bdc0452903ce48a138ba53d751403, type: 3}
       propertyPath: silhouetteModel
       value: 
-      objectReference: {fileID: 153966909}
+      objectReference: {fileID: 291038802}
     - target: {fileID: 3252273177361408844, guid: 3c5bdc0452903ce48a138ba53d751403, type: 3}
       propertyPath: 'insideModel.Array.data[0]'
       value: 
@@ -1123,7 +1140,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6589696999808079272, guid: d5b90d192c55bb44994fbdc7ad41fb26, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 723075888}
   m_SourcePrefab: {fileID: 100100000, guid: d5b90d192c55bb44994fbdc7ad41fb26, type: 3}
 --- !u!1001 &7020610133408891157
 PrefabInstance:

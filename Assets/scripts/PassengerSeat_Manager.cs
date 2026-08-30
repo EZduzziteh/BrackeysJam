@@ -125,6 +125,10 @@ public class PassengerSeat_Manager : MonoBehaviour
     {//setup for next passenger -> transition into silhouette
         try { DialogueManager.Instance.OnDialogueEnded.RemoveListener(setupForNextPassenger); }
         catch { }
+        if(passenger.GetComponent<jimmy_face_swapper>().selectedFace==0)
+        {//if we've looped the circuit, go to win condition.
+            FindAnyObjectByType<LevelManager>().LoadScene("Menu_EndGame");
+        }
         setupNextDialogueBundle();
         silhouetteModel.SetActive(true);
         controller.silentTransition();
@@ -134,6 +138,7 @@ public class PassengerSeat_Manager : MonoBehaviour
         print("attempting discover");
         if (needDiscovery())
         {
+            controller.checkExpectedScene(false);
             print("Discovering Passenger");
             passenger.SetActive(true);
             silhouetteModel.SetActive(false);
