@@ -33,13 +33,17 @@ public class PassengerSeat_Manager : MonoBehaviour
     {
         controller=  FindFirstObjectByType<car_interior_controller>();
         DM = FindFirstObjectByType<DialogueManager>();
+
     }
     private void Update()
     {
         if(seatOccupied)
         {
             passengerTimer += Time.deltaTime;
-            passengerEventTimer += Time.deltaTime;
+
+            if(!DM.currentDialogueStage)
+                passengerEventTimer += Time.deltaTime;
+            
             if (passengerEventTimer >= 30f)
             {
                 print("event triggered");
