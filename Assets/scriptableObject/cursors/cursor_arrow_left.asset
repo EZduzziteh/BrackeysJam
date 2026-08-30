@@ -17,5 +17,5 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 1c760f29435312e418925a60790fbda4, type: 3}
   - {fileID: 2800000, guid: 9432152c1d312964f910bed8a5e81054, type: 3}
   hotSpot: {x: 0, y: 0}
-  animated: 0
+  animated: 1
   animFrameRate: 0.1
