@@ -58,16 +58,18 @@ public class StressSystem : MonoBehaviour
     public void TickStress()
     {
         
-
-
         foreach (var stressor in StressSources)
         {
+            float stressAmount = 0.0f;
+            stressAmount = MathF.Abs(stressor.amount);
+
             if (FindFirstObjectByType<CarSpeedSystem>().GetLookingAtPassenger() == true)
             {
-                return;
+                stressAmount *= -1;
             }
-            currentStress += stressor.amount;
-            TrackStress(stressor.amount);
+
+            currentStress += stressAmount;
+            TrackStress(stressAmount);
         }
 
         CheckStressLevel();
