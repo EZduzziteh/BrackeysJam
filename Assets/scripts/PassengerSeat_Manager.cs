@@ -48,7 +48,7 @@ public class PassengerSeat_Manager : MonoBehaviour
             {
                 print("event triggered");
                 passengerEventTimer = 0f;
-                if(shouldTriggerBootEvent)
+                if(shouldTriggerBootEvent && DM.currentDialogueStage != dialogueBundle.bootDialogue)
                 {
                     startBootDialogue();
                 }
