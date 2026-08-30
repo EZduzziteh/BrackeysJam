@@ -152,7 +152,9 @@ public class CarSpeedSystem : MonoBehaviour
 
     private void DriveForward()
     {
-        distanceTravelled += Time.deltaTime / 3600f * currentSpeed;
+        float dist = Time.deltaTime / 3600f * currentSpeed;
+        distanceTravelled += dist;
+        StatTracker.Instance.distanceTravelled += dist;
     }
 
     public float CurrentSpeed => currentSpeed;

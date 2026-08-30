@@ -415,54 +415,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6666532788837214764, guid: 337e50f87686cf547892a2afacac8d05, type: 3}
   m_PrefabInstance: {fileID: 7020610133408891157}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &930720648
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 930720650}
-  - component: {fileID: 930720649}
-  m_Layer: 0
-  m_Name: StatTracker
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &930720649
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 930720648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abe440ecefeab8840a76fc94da677590, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StatTracker
-  distanceTravelled: 0
-  murders: 0
-  totalPassengersCollected: 0
-  totalPassengerTime: 0
---- !u!4 &930720650
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 930720648}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.32163, y: -0.44439, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1061225682 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2472301154189893217, guid: 3c7e93437f7152f47bfb53eca2b087f0, type: 3}
@@ -1254,6 +1206,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 337e50f87686cf547892a2afacac8d05, type: 3}
+--- !u!1001 &7887608707268348266
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1792070288468587846, guid: 20a05615f64913a4c8c4598c5c283968, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.32163
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792070288468587846, guid: 20a05615f64913a4c8c4598c5c283968, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.44439
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792070288468587846, guid: 20a05615f64913a4c8c4598c5c283968, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792070288468587846, guid: 20a05615f64913a4c8c4598c5c283968, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792070288468587846, guid: 20a05615f64913a4c8c4598c5c283968, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792070288468587846, guid: 20a05615f64913a4c8c4598c5c283968, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792070288468587846, guid: 20a05615f64913a4c8c4598c5c283968, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792070288468587846, guid: 20a05615f64913a4c8c4598c5c283968, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792070288468587846, guid: 20a05615f64913a4c8c4598c5c283968, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792070288468587846, guid: 20a05615f64913a4c8c4598c5c283968, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076797841923395636, guid: 20a05615f64913a4c8c4598c5c283968, type: 3}
+      propertyPath: m_Name
+      value: StatTracker
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 20a05615f64913a4c8c4598c5c283968, type: 3}
 --- !u!1001 &8357913741699715134
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1414,4 +1423,4 @@ SceneRoots:
   - {fileID: 122250353}
   - {fileID: 1565152021}
   - {fileID: 1979668792}
-  - {fileID: 930720650}
+  - {fileID: 7887608707268348266}
