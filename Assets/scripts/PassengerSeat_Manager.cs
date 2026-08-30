@@ -48,7 +48,7 @@ public class PassengerSeat_Manager : MonoBehaviour
             {
                 print("event triggered");
                 passengerEventTimer = 0f;
-                if(shouldTriggerBootEvent && DM.currentDialogueStage != dialogueBundle.bootDialogue)
+                if(shouldTriggerBootEvent)
                 {
                     startBootDialogue();
                 }
@@ -165,15 +165,18 @@ public class PassengerSeat_Manager : MonoBehaviour
     
     public void startBootDialogue()
     {
-        controller.checkExpectedScene(false);
-        if (dialogueBundle.bootDialogue)
-        {
-            DM.StartDialogue(dialogueBundle.bootDialogue);
-            controller.lockTransitions(true);
-            DM.OnDialogueEnded.AddListener(ejectListener);
+        if (DM.currentDialogueStage != dialogueBundle.bootDialogue)//ignore if boot dialogue is already triggered.
+        { 
+            controller.checkExpectedScene(false);
+            if (dialogueBundle.bootDialogue)
+            {
+                DM.StartDialogue(dialogueBundle.bootDialogue);
+                controller.lockTransitions(true);
+                DM.OnDialogueEnded.AddListener(ejectListener);
+            }
+            else
+                ejectListener();
         }
-        else
-            ejectListener();
     }
 
     private void ejectListener()
