@@ -1,10 +1,43 @@
 fileFormatVersion: 2
-guid: 58c13e62838ce064db6b6f30dfe027f2
+guid: 81f004c2d5becff4b99c87f964b8ec64
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6656196228613741781
-    second: normalarrow_0
+      213: 5402205027339204360
+    second: titlescreen 1_0
+  - first:
+      213: 3017679227573918185
+    second: titlescreen 1_1
+  - first:
+      213: 5151249129728001986
+    second: titlescreen 1_2
+  - first:
+      213: 2072188629635315648
+    second: titlescreen 1_3
+  - first:
+      213: -3959779248414224407
+    second: titlescreen 1_4
+  - first:
+      213: -8098523052078163315
+    second: titlescreen 1_5
+  - first:
+      213: -6875609111077683310
+    second: titlescreen 1_6
+  - first:
+      213: 2833731817098460422
+    second: titlescreen 1_7
+  - first:
+      213: 1875662709331397751
+    second: titlescreen 1_8
+  - first:
+      213: 2276964468102669373
+    second: titlescreen 1_9
+  - first:
+      213: 64808632876098617
+    second: titlescreen 1_10
+  - first:
+      213: 4653565191690217199
+    second: titlescreen 1_11
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
