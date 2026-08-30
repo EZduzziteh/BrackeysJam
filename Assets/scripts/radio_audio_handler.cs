@@ -9,13 +9,13 @@ public class radio_audio_handler : MonoBehaviour
    
     private void Start()
     {
-        radioSFX = GetComponent<AudioSource>();
         swapperRef = GetComponent<SpriteStateSwapper>();
         swapperRef.spriteChanged.AddListener(updateRadioSound);
     }
 
     private void updateRadioSound()
     {
+        print("update for radio sound heard");
         onOffSFX.Play();
         switch (swapperRef.spriteIndex)
         {

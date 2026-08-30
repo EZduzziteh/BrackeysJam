@@ -528,7 +528,7 @@ PrefabInstance:
       objectReference: {fileID: 1503517315}
     - target: {fileID: 609809687385650768, guid: b06dd4061034d524bad6d86de45132b1, type: 3}
       propertyPath: lockoutHoverSoundDuration
-      value: 15
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1724253413688378662, guid: b06dd4061034d524bad6d86de45132b1, type: 3}
       propertyPath: m_Name
@@ -1551,6 +1551,14 @@ PrefabInstance:
     - target: {fileID: 2124766336290729662, guid: 881dedc10dd7ac24094696ea63b6ff65, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4811391779785997975, guid: 881dedc10dd7ac24094696ea63b6ff65, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4811391779785997975, guid: 881dedc10dd7ac24094696ea63b6ff65, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5831581405517564726, guid: 881dedc10dd7ac24094696ea63b6ff65, type: 3}
       propertyPath: m_Name
