@@ -16,9 +16,7 @@ public class SpriteStateSwapper : MonoBehaviour
             else
                 _spriteIndex = value;
             GetComponent<SpriteRenderer>().sprite = sprites[_spriteIndex];
-#if UNITY_EDITOR
             spriteChanged.Invoke();
-#endif
         }
     }
     /*
