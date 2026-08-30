@@ -213,12 +213,12 @@ public class PassengerSeat_Manager : MonoBehaviour
         passengerEventTimer = 0f;
 
         //play final dialogue
-        try
+        if(dialogueBundle.finalDialogue)
         {
             DialogueManager.Instance.StartDialogue(dialogueBundle.finalDialogue);
             DialogueManager.Instance.OnDialogueEnded.AddListener(setupForNextPassenger);
         }
-        catch
+        else
         {
             print("skipping final dialogue");
             setupForNextPassenger();
