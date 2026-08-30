@@ -15,4 +15,4 @@ MonoBehaviour:
   windowDialogue: {fileID: 11400000, guid: 724284c58d05ca64098af47973c56fde, type: 2}
   boardedDialogue: {fileID: 11400000, guid: de6a53aaa8f6caa418aee3ff2ed2f57a, type: 2}
   bootDialogue: {fileID: 11400000, guid: d1caa00b8eebbd241bde04e102e5a0cd, type: 2}
-  finalDialogue: {fileID: 0}
+  finalDialogue: {fileID: 11400000, guid: 926a775fcff3195489b25681223ec773, type: 2}

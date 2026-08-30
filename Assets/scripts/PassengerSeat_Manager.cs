@@ -220,21 +220,22 @@ public class PassengerSeat_Manager : MonoBehaviour
         }
         catch
         {
+            print("skipping final dialogue");
             setupForNextPassenger();
         }
 
     }
     private void setupForNextPassenger()
     {//setup for next passenger -> transition into silhouette
-        try { DialogueManager.Instance.OnDialogueEnded.RemoveListener(setupForNextPassenger); }
-        catch { }
+        DialogueManager.Instance.OnDialogueEnded.RemoveListener(setupForNextPassenger);
+        print("starting next passenger setup");
+        setupNextDialogueBundle();
+        silhouetteModel.SetActive(true);
+        controller.silentTransition();
         if (passenger.GetComponent<jimmy_face_swapper>().selectedFace == 0)
         {//if we've looped the circuit, go to win condition.
             FindAnyObjectByType<LevelManager>().LoadScene("Menu_EndGame");
         }
-        setupNextDialogueBundle();
-        silhouetteModel.SetActive(true);
-        controller.silentTransition();
     }
 
     public void setupNextDialogueBundle(bool rogue = false)
