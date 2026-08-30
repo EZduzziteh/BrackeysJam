@@ -24,6 +24,11 @@ public class PassengerSeat_Manager : MonoBehaviour
     [SerializeField] private DialogueCoreBundle rogueBundle;
     [SerializeField] private bool shouldTriggerBootEvent = false;
 
+    //audio
+    [SerializeField] private AudioSource doorCloseSFX;
+    [SerializeField] private AudioSource doorOpenSFX;
+
+
     private void Start()
     {
         controller=  FindFirstObjectByType<car_interior_controller>();
@@ -100,6 +105,8 @@ public class PassengerSeat_Manager : MonoBehaviour
     private void loadListener()
     {
         DM.OnDialogueEnded.RemoveListener(loadListener);
+        if (doorOpenSFX) //play door open sound.
+            doorOpenSFX.Play();
         controller.startNewTransition(car_interior_controller.transitionType.wide_blink, car_interior_controller.transitionGameEffect.passengerCutscene);
         //controller.lockTransitions(false); idk if lock/unlock should be here.
     }
@@ -109,12 +116,15 @@ public class PassengerSeat_Manager : MonoBehaviour
         {
             print("Loading Passenger");
             //move passenger into car
+
+
             foreach (GameObject model in insideModel)
             {
                 model.SetActive(true);
                 if (model.GetComponent<SpriteStateSwapper>())
                     model.GetComponent<SpriteStateSwapper>().spriteIndex = passenger.GetComponent<jimmy_face_swapper>().selectedFace;
             }
+
             if (passenger.GetComponent<jimmy_face_swapper>().selectedFace>0 || controller.skipTut)
             { 
                 FindFirstObjectByType<StressSystem>().AddStressor(new StressSource()
@@ -169,8 +179,9 @@ public class PassengerSeat_Manager : MonoBehaviour
         controller.lockTransitions(false);
         StressSystem stressSystem = FindFirstObjectByType<StressSystem>();
         stressSystem.RemoveStressor(stressSystem.IndexOfGameObjectStressor(gameObject));
-
-        /* used for only select answer to eject. probably can be refactored into dialogue event handler.
+        if (doorCloseSFX) //play door close sound.
+            doorCloseSFX.Play();
+        /* used for only select answer to eject. probably can be refactored into dialogue event handler if needed.
         print(DM.GetLastSelectedOption());
         switch (DM.GetLastSelectedOption())
         {

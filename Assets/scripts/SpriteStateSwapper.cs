@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SpriteStateSwapper : MonoBehaviour
 {
     [SerializeField] private Sprite[] sprites;
     [SerializeField] private int _spriteIndex;
+    public UnityEvent spriteChanged;
     public int spriteIndex
     {
         get { return _spriteIndex; }
@@ -14,11 +16,16 @@ public class SpriteStateSwapper : MonoBehaviour
             else
                 _spriteIndex = value;
             GetComponent<SpriteRenderer>().sprite = sprites[_spriteIndex];
+#if UNITY_EDITOR
+            //spriteChanged.Invoke();
+#endif
         }
     }
+    /*
     private void OnValidate()
     {
         if(sprites.Length>0)
             spriteIndex = _spriteIndex;
     }
+    */
 }

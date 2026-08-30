@@ -18,10 +18,11 @@ public class totem_anim_handler : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        animController = GetComponent<Animator>();
     }
     void Start()
     {
-        animController = GetComponent<Animator>();
+        //animController = GetComponent<Animator>();
         //StartCoroutine(showStates());
     }
 

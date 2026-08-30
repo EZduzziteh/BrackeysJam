@@ -8,6 +8,10 @@ public class grandma_DialogueGameEventHandler : DialogueGameEventHandler
     //[SerializeField] private float lookWaitTime = 3.0f;
     [SerializeField] private float startEjectWaitTime = 3.0f;
 
+    [SerializeField] private AudioSource totemUp;
+    [SerializeField] private AudioSource totemDown;
+
+    [SerializeField] private GameObject radioRef;
     protected override void Start()
     {
         base.Start();
@@ -29,9 +33,9 @@ public class grandma_DialogueGameEventHandler : DialogueGameEventHandler
         {
             case 1:
                 //radio ends - silly spawn (at the end of dialogue.
-                //DialogueManager.Instance.OnDialogueEnded.AddListener(delaySilhouetteSpawn);
                 seat.stepPassenger();
                 controller.lockTransitions(false);
+                radioRef.GetComponent<SpriteStateSwapper>().spriteIndex = 0; // turn off radio after dialogue ends.
                 break;
             case 2:
                 //...looking at me line - activate highlight swapper. after clicking this, it triggers next line (05_grandma)
@@ -43,6 +47,7 @@ public class grandma_DialogueGameEventHandler : DialogueGameEventHandler
             case 3:
                 //Hehehe line -- tunable timer/wait 15s. tut: teach player to look at grandma. start "interesting" dialogue after
                 totem_anim_handler.Instance.updateState(4);
+                totemUp.Play();
                 watchForTransitions();
                 updateTransitionSpriteVisibility(true);
                 controller.lockTransitions(false);
@@ -81,13 +86,6 @@ public class grandma_DialogueGameEventHandler : DialogueGameEventHandler
                 break;
         }
     }
-    /*
-    private void delaySilhouetteSpawn()
-    {
-        DialogueManager.Instance.OnDialogueEnded.RemoveListener(delaySilhouetteSpawn);
-        seat.stepPassenger();
-        controller.lockTransitions(false);
-    }*/
     public override void onPlayerTransitionDelayed()
     {
         base.onPlayerTransitionDelayed();
@@ -100,6 +98,7 @@ public class grandma_DialogueGameEventHandler : DialogueGameEventHandler
                 break;
             case 2://after case 3 in main switch, start calm talisman dialogue.
                 totem_anim_handler.Instance.updateState(0);
+                totemDown.Play();
                 DialogueManager.Instance.StartDialogue(dialogueCalmTalismanMoment);
                 controller.lockTransitions(true); //lock until kick out.
                 break;
