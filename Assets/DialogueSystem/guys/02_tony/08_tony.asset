@@ -20,4 +20,4 @@ MonoBehaviour:
     text: My bad, dude... I was just jokin'... Didn't mean to harsh the vibe.
     audioClip: {fileID: 0}
   AutoAdvance: 1
-  AutoAdvanceDelay: 3
+  AutoAdvanceDelay: 10

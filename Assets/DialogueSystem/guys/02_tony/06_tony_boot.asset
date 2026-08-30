@@ -20,4 +20,4 @@ MonoBehaviour:
     text: Yeah, I mean, I could be a crazy serial killer, ya know? Haha.
     audioClip: {fileID: 0}
   AutoAdvance: 1
-  AutoAdvanceDelay: 3
+  AutoAdvanceDelay: 10

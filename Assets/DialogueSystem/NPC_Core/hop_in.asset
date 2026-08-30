@@ -20,4 +20,4 @@ MonoBehaviour:
     text: You look friendly! Hop in!
     audioClip: {fileID: 0}
   AutoAdvance: 1
-  AutoAdvanceDelay: 3
+  AutoAdvanceDelay: 10

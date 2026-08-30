@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 09_grandma_boot
   m_EditorClassIdentifier: Assembly-CSharp::DialogueStage_Line
   fireCustomEventOnAdvance: 0
+  fireCustomEventBeforeDialogueEnd: 0
   customEventStepID: 0
   NextStage: {fileID: 11400000, guid: a889c2bbcdbb93e41ad9124254626201, type: 2}
   LineData:

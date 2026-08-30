@@ -20,4 +20,4 @@ MonoBehaviour:
     text: Oh, hey there. Didn't expect to see anyone else out here tonight...
     audioClip: {fileID: 0}
   AutoAdvance: 1
-  AutoAdvanceDelay: 3
+  AutoAdvanceDelay: 10

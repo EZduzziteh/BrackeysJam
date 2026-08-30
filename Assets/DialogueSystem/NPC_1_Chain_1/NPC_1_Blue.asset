@@ -12,7 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4d7e64a667b16d4b8342b418e4a3cf6, type: 3}
   m_Name: NPC_1_Blue
   m_EditorClassIdentifier: Assembly-CSharp::DialogueStage_Line
+  fireCustomEventOnAdvance: 0
+  fireCustomEventBeforeDialogueEnd: 0
+  customEventStepID: 0
   NextStage: {fileID: 11400000, guid: 71d6c936240902e468b001ec2f4874eb, type: 2}
   LineData:
     text: Blue, an excellent choice!
     audioClip: {fileID: 0}
+  AutoAdvance: 1
+  AutoAdvanceDelay: 10

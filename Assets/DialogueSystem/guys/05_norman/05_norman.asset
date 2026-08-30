@@ -20,4 +20,4 @@ MonoBehaviour:
     text: I guess you're right... Hehe. You can never be too sure these days.
     audioClip: {fileID: 0}
   AutoAdvance: 1
-  AutoAdvanceDelay: 3
+  AutoAdvanceDelay: 10

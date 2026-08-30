@@ -20,4 +20,4 @@ MonoBehaviour:
     text: I'm sneaky like that, I guess... Did you need a ride?
     audioClip: {fileID: 0}
   AutoAdvance: 1
-  AutoAdvanceDelay: 3
+  AutoAdvanceDelay: 10

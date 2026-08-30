@@ -20,4 +20,4 @@ MonoBehaviour:
     text: OMG, you actually stopped! Thank you so much!
     audioClip: {fileID: 0}
   AutoAdvance: 1
-  AutoAdvanceDelay: 3
+  AutoAdvanceDelay: 10

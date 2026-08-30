@@ -21,4 +21,4 @@ MonoBehaviour:
       I turned around and lost her in the fog. '
     audioClip: {fileID: 0}
   AutoAdvance: 1
-  AutoAdvanceDelay: 3
+  AutoAdvanceDelay: 10

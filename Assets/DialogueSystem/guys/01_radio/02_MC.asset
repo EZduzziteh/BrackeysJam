@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 02_MC
   m_EditorClassIdentifier: Assembly-CSharp::DialogueStage_Line
   fireCustomEventOnAdvance: 0
+  fireCustomEventBeforeDialogueEnd: 0
   customEventStepID: 0
   NextStage: {fileID: 11400000, guid: 87306f546e266164fabf581b9a51ed16, type: 2}
   LineData:

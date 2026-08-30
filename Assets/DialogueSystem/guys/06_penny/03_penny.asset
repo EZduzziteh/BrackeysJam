@@ -20,4 +20,4 @@ MonoBehaviour:
     text: Have you seen an old woman with a headscarf?
     audioClip: {fileID: 0}
   AutoAdvance: 1
-  AutoAdvanceDelay: 3
+  AutoAdvanceDelay: 10

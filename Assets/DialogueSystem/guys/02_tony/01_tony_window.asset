@@ -21,4 +21,4 @@ MonoBehaviour:
       tuck, but had to bail and totally cruuushed my phone.
     audioClip: {fileID: 0}
   AutoAdvance: 1
-  AutoAdvanceDelay: 3
+  AutoAdvanceDelay: 10

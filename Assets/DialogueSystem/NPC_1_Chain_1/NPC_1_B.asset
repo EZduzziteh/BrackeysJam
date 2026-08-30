@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: NPC_1_B
   m_EditorClassIdentifier: Assembly-CSharp::DialogueStage_Line
   fireCustomEventOnAdvance: 1
+  fireCustomEventBeforeDialogueEnd: 0
+  customEventStepID: 0
   NextStage: {fileID: 11400000, guid: c69f4a50faf390a43aaf7f80ccf7ae80, type: 2}
   LineData:
     text: Do you want red or blue?
     audioClip: {fileID: 0}
+  AutoAdvance: 1
+  AutoAdvanceDelay: 10

@@ -20,4 +20,4 @@ MonoBehaviour:
     text: I want to get away from you.
     audioClip: {fileID: 0}
   AutoAdvance: 1
-  AutoAdvanceDelay: 3
+  AutoAdvanceDelay: 10

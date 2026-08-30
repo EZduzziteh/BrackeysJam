@@ -20,4 +20,4 @@ MonoBehaviour:
     text: Yooo, that thing is siiick. Looks like a creepy bird skull.
     audioClip: {fileID: 0}
   AutoAdvance: 1
-  AutoAdvanceDelay: 3
+  AutoAdvanceDelay: 10
