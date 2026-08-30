@@ -67,7 +67,7 @@ public class StressEventManager : MonoBehaviour
 
     private void CheckForStressEvent()
     {
-        if (FindFirstObjectByType<CarSpeedSystem>().GetLookingAtPassenger() == true)
+        if (FindFirstObjectByType<CarSpeedSystem>().GetLookingAtPassenger() == true) // only check stress events when looking at passenger
         {
             return;
         }
@@ -100,12 +100,12 @@ public class StressEventManager : MonoBehaviour
             float random = UnityEngine.Random.Range(0, 100.0f);
 
 
-            Debug.Log("rolled: " + random + " | Chance: + "+eventChance);
+           // Debug.Log("rolled: " + random + " | Chance: + "+eventChance);
 
 
             if (random <= eventChance || timeSinceLastStressEvent > maxTimeBetweenEvents)
             {
-                Debug.Log("Stress EVENT!: Rolling on stress table: "+stressState);
+              //  Debug.Log("Stress EVENT!: Rolling on stress table: "+stressState);
 
                 List<StressEventData> eventTable = new List<StressEventData>();
                 switch (stressState)

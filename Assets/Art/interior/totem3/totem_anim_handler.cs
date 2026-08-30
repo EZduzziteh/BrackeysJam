@@ -38,6 +38,8 @@ public class totem_anim_handler : MonoBehaviour
     {
         animController.SetInteger("state", state);
         sideViewController.SetInteger("state", state);
+
+        Debug.Log("UPDATED STATE: " + state);
     }
 
 }
