@@ -6,7 +6,7 @@ public class interactable : MonoBehaviour
     public enum interactableEffectType { none, transition, radio }
 
     [Header("Functionality")]
-    public interactableEffectType effectName =interactableEffectType.none;
+    public interactableEffectType effectName = interactableEffectType.none;
     public UnityEvent transitionedTriggered;
 
     [Header("highlight settings")]
@@ -16,15 +16,22 @@ public class interactable : MonoBehaviour
     [Header("Cursor settings")]
     [SerializeField] private cursorPackage defaultCursor;
     [SerializeField] private cursorPackage altCursor;
-    public bool shouldHideCursorAfterUse=false;
-    private float cursorTimer; private int cursorIndex; private bool doAnim=false;
+    public bool shouldHideCursorAfterUse = false;
+    private float cursorTimer; private int cursorIndex; private bool doAnim = false;
     private car_interior_controller interiorController;
+
+    //audio
+    [SerializeField] private AudioSource interactAudioSource;
+    [SerializeField] private AudioSource interactHoverAudioSource;
+    private float timerHoverSound;
+    [SerializeField] private float lockoutHoverSoundDuration; // prevent sound for x seconds.
+    private bool hoverSoundLocked=false;
 
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
-        defaultColor= sr.color;
-        interiorController=FindFirstObjectByType<car_interior_controller>();
+        defaultColor = sr.color;
+        interiorController = FindFirstObjectByType<car_interior_controller>();
     }
     private void Update()
     {
@@ -32,10 +39,21 @@ public class interactable : MonoBehaviour
         {
             cursorUpdate(altCursor);
         }
+        if (hoverSoundLocked)
+            { 
+                timerHoverSound += Time.deltaTime;
+                if (timerHoverSound >= lockoutHoverSoundDuration)
+                    {//allow sound to fire again after duratoin is reached.
+                        hoverSoundLocked = false;
+                        timerHoverSound = 0f;
+                    }
+            }
     }
     public void triggerEffect()
     {
-        switch(effectName)
+        if (interactAudioSource)
+            interactAudioSource.Play();
+        switch (effectName)
         {
             case interactableEffectType.transition:
                 interiorController.startNewTransition(car_interior_controller.transitionType.full_blink, car_interior_controller.transitionGameEffect.moveScene);
@@ -52,11 +70,21 @@ public class interactable : MonoBehaviour
     }
 
     private GameObject myOutline;
-    [SerializeField] private Color outlineColor=Color.yellow;
-    [SerializeField] private float highlightThickness=1.1f;
+    [SerializeField] private Color outlineColor = Color.yellow;
+    [SerializeField] private float highlightThickness = 1.1f;
 
-    public void showOutline()
+    public void showOutline() //triggers on hover.
     {
+        if (interactHoverAudioSource)
+        {
+            if(!interactHoverAudioSource.isPlaying && !hoverSoundLocked)
+            { 
+                hoverSoundLocked = true;
+                interactHoverAudioSource.Play();
+            }
+                
+        }
+            
         //color change
         Color outline = objectColor;
         //outline.a = sr.color.a;
@@ -79,7 +107,7 @@ public class interactable : MonoBehaviour
             Color highlightColor = outlineColor;
             //highlightColor.a = outlineSR.color.a; //transfer alpha channel
             outlineSR.color = highlightColor;
-            
+
         }
         //update cursor.
         if (altCursor)
@@ -102,11 +130,11 @@ public class interactable : MonoBehaviour
 
         //update cursor.
         if (altCursor)
-        { 
+        {
             if (altCursor.animated)
-                {
-                    doAnim = false;
-                }
+            {
+                doAnim = false;
+            }
             Cursor.SetCursor(defaultCursor.cursorFrames[0], defaultCursor.hotSpot, CursorMode.Auto);
         }
     }
@@ -120,5 +148,4 @@ public class interactable : MonoBehaviour
         }
         Cursor.SetCursor(cursor.cursorFrames[cursorIndex], cursor.hotSpot, CursorMode.Auto);
     }
-
 }

@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: cursor_ciggy
   m_EditorClassIdentifier: Assembly-CSharp::cursorPackage
   cursorFrames:
-  - {fileID: 2800000, guid: 8f707c9b69ee3364fb94128ef5a5df9f, type: 3}
+  - {fileID: 2800000, guid: 14391707544f4d54a9fe007260dc69af, type: 3}
+  - {fileID: 2800000, guid: 5a2ed3a4cb48cc2438a2346434f822fe, type: 3}
+  - {fileID: 2800000, guid: 46b5829fc607f734eb7067c4688d3d56, type: 3}
+  - {fileID: 2800000, guid: a29e393abc8deae4eb1004e8951a546c, type: 3}
   hotSpot: {x: 0, y: 0}
-  animated: 0
+  animated: 1
   animFrameRate: 0.1
