@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: answer_getout
   m_EditorClassIdentifier: Assembly-CSharp::DialogueStage_Answer
   fireCustomEventOnAdvance: 0
+  fireCustomEventBeforeDialogueEnd: 0
+  customEventStepID: 0
   answers:
   - LineData:
-      text: we can keep chilling
+      text: You seem cool, but I must ask you to depart.
       audioClip: {fileID: 0}
     nextStage: {fileID: 0}
   - LineData:
-      text: OUT! NOW!
+      text: Hey pal, your time's up.
       audioClip: {fileID: 0}
     nextStage: {fileID: 11400000, guid: 69c12fc68a7f3d540965e970eda9694a, type: 2}

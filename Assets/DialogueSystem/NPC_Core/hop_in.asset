@@ -12,7 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4d7e64a667b16d4b8342b418e4a3cf6, type: 3}
   m_Name: hop_in
   m_EditorClassIdentifier: Assembly-CSharp::DialogueStage_Line
+  fireCustomEventOnAdvance: 0
+  fireCustomEventBeforeDialogueEnd: 0
+  customEventStepID: 0
   NextStage: {fileID: 0}
   LineData:
-    text: hop in pal
+    text: You look friendly! Hop in!
     audioClip: {fileID: 0}
+  AutoAdvance: 1
+  AutoAdvanceDelay: 3
