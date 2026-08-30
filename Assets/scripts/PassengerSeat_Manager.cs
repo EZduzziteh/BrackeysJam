@@ -58,7 +58,6 @@ public class PassengerSeat_Manager : MonoBehaviour
             {
                 silhouetteEventTimer = 0f;
                 controller.startNewTransition(car_interior_controller.transitionType.full_blink, car_interior_controller.transitionGameEffect.moveScene);
-
                 FindFirstObjectByType<CarSpeedSystem>().StopDriving(); //This triggers the car to stop driving immediately and also sets candrive to false.
             }
         }

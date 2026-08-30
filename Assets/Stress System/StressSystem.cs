@@ -27,6 +27,16 @@ public class StressSystem : MonoBehaviour
         currentStress = 0.0f;
         timeSinceLastTick = 0.0f;
         currentStressState = StressState.None;
+        OnStressDecreased.AddListener(UpdateTotemBasedOnStress);
+        OnStressIncreased.AddListener(UpdateTotemBasedOnStress);
+
+        OnMaxStressAchieved.AddListener(() =>
+        {
+            FindFirstObjectByType<PassengerSeat_Manager>().startBootDialogue();
+        });
+
+        UpdateTotemBasedOnStress();
+
     }
 
     private void Update()
@@ -39,14 +49,6 @@ public class StressSystem : MonoBehaviour
             timeSinceLastTick = 0.0f;
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            ModifyStress(-25.0f);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            ModifyStress(25.0f);
-        }
     }
 
     public StressState GetStressState()
@@ -55,8 +57,15 @@ public class StressSystem : MonoBehaviour
     }
     public void TickStress()
     {
-        foreach(var stressor in StressSources)
+        
+
+
+        foreach (var stressor in StressSources)
         {
+            if (FindFirstObjectByType<CarSpeedSystem>().GetLookingAtPassenger() == true)
+            {
+                return;
+            }
             currentStress += stressor.amount;
             TrackStress(stressor.amount);
         }
@@ -112,10 +121,13 @@ public class StressSystem : MonoBehaviour
         Debug.Log("Stress removed!");
     }
 
+
     public void IncreaseStressLevel()
     {
         if (currentStressState == StressState.Delirious) {
-            currentStress = 99;
+            currentStress = 0;
+            currentStressState = 0;
+            StressSources.Clear();
             OnMaxStressAchieved?.Invoke();
             return; //return becasue we arealready max stress
         }
@@ -124,6 +136,7 @@ public class StressSystem : MonoBehaviour
         currentStress -= stressThreshold;
         OnStressIncreased?.Invoke();
     }
+
 
     public void DecreaseStressLevel()
     {
@@ -136,6 +149,13 @@ public class StressSystem : MonoBehaviour
         currentStress += stressThreshold;
         OnStressDecreased?.Invoke();
     }
+
+
+    public void UpdateTotemBasedOnStress()
+    {
+        totem_anim_handler.Instance.updateState((int)currentStressState);
+    }
+
 
     internal int IndexOfGameObjectStressor(GameObject gameObject)
     {
