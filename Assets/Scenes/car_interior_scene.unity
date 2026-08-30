@@ -746,6 +746,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 119124181}
     - target: {fileID: 2885344101020575389, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
+      propertyPath: radioRef
+      value: 
+      objectReference: {fileID: 3607576630590458684}
+    - target: {fileID: 2885344101020575389, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
       propertyPath: totemDown
       value: 
       objectReference: {fileID: 119124180}
@@ -1531,6 +1535,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 881dedc10dd7ac24094696ea63b6ff65, type: 3}
+--- !u!1 &3607576630590458684 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2367141602157522962, guid: 881dedc10dd7ac24094696ea63b6ff65, type: 3}
+  m_PrefabInstance: {fileID: 3607576630590458683}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3765083065053816052
 PrefabInstance:
   m_ObjectHideFlags: 0
