@@ -56,7 +56,53 @@ public class PassengerSeat_Manager : MonoBehaviour
             }
         }
     }
+    public void stepPassenger()
+    {
+        if (seatOccupied)
+            ejectPassenger();
+        else
+        {
+            if (silhouetteModel.activeSelf || passenger.activeSelf)
+                LoadPassenger();
+            else
+                silhouetteModel.SetActive(true);
+        }
+    }
+    private bool needDiscovery()
+    {
+        return !seatOccupied & !passenger.activeSelf & silhouetteModel.activeSelf;
+    }
 
+    public void checkForDiscovery()
+    {
+        print("attempting discover");
+        if (needDiscovery())
+        {
+            controller.checkExpectedScene(false);
+            print("Discovering Passenger");
+            passenger.SetActive(true);
+            silhouetteModel.SetActive(false);
+            silhouetteEventTimer = 0f; // cleanup
+            if (dialogueBundle.windowDialogue)
+            {
+                DM.StartDialogue(dialogueBundle.windowDialogue);
+                DM.OnDialogueEnded.AddListener(loadListener);
+                controller.lockTransitions(true); // lock transition until after boarded dialogue ends..
+            }
+        }
+        else
+        {//activate silhouette 
+            if (!silhouetteModel.activeSelf & !seatOccupied & !passenger.activeSelf)
+                silhouetteModel.SetActive(true);
+        }
+    }
+
+    private void loadListener()
+    {
+        DM.OnDialogueEnded.RemoveListener(loadListener);
+        controller.startNewTransition(car_interior_controller.transitionType.wide_blink, car_interior_controller.transitionGameEffect.passengerCutscene);
+        //controller.lockTransitions(false); idk if lock/unlock should be here.
+    }
     private void LoadPassenger()
     {
         if (passenger.activeSelf)
@@ -69,7 +115,7 @@ public class PassengerSeat_Manager : MonoBehaviour
                 if (model.GetComponent<SpriteStateSwapper>())
                     model.GetComponent<SpriteStateSwapper>().spriteIndex = passenger.GetComponent<jimmy_face_swapper>().selectedFace;
             }
-            if (passenger.GetComponent<jimmy_face_swapper>().selectedFace>0)
+            if (passenger.GetComponent<jimmy_face_swapper>().selectedFace>0 || controller.skipTut)
             { 
                 FindFirstObjectByType<StressSystem>().AddStressor(new StressSource()
                 {
@@ -102,75 +148,7 @@ public class PassengerSeat_Manager : MonoBehaviour
         DM.OnDialogueEnded.RemoveListener(enableTransitionAfterBoardDialogue);
         controller.lockTransitions(false);
     }
-    private void ejectPassenger()
-    {
-        //cleanup passenger
-        foreach (GameObject model in insideModel)
-        {
-            model.SetActive(false);
-        }
-        seatOccupied = false;
-        passengerTimer = 0f;
-        passengerEventTimer = 0f;
-
-        //play final dialogue
-        try
-        {
-            DialogueManager.Instance.StartDialogue(dialogueBundle.finalDialogue);
-            DialogueManager.Instance.OnDialogueEnded.AddListener(setupForNextPassenger);
-        }
-        catch
-        {
-            setupForNextPassenger();
-        }
-
-    }
-    private void setupForNextPassenger()
-    {//setup for next passenger -> transition into silhouette
-        try { DialogueManager.Instance.OnDialogueEnded.RemoveListener(setupForNextPassenger); }
-        catch { }
-        if(passenger.GetComponent<jimmy_face_swapper>().selectedFace==0)
-        {//if we've looped the circuit, go to win condition.
-            FindAnyObjectByType<LevelManager>().LoadScene("Menu_EndGame");
-        }
-        setupNextDialogueBundle();
-        silhouetteModel.SetActive(true);
-        controller.silentTransition();
-    }
-    public void checkForDiscovery()
-    {
-        print("attempting discover");
-        if (needDiscovery())
-        {
-            controller.checkExpectedScene(false);
-            print("Discovering Passenger");
-            passenger.SetActive(true);
-            silhouetteModel.SetActive(false);
-            silhouetteEventTimer = 0f; // cleanup
-            if (dialogueBundle.windowDialogue)
-            {
-                DM.StartDialogue(dialogueBundle.windowDialogue);
-                DM.OnDialogueEnded.AddListener(loadListener);
-                controller.lockTransitions(true); // lock transition until after boarded dialogue ends..
-            }
-        }
-        else
-        {//activate silhouette 
-            if(!silhouetteModel.activeSelf & !seatOccupied & !passenger.activeSelf)
-                silhouetteModel.SetActive(true);
-        }
-    }
-    private bool needDiscovery()
-    {
-        return !seatOccupied & !passenger.activeSelf & silhouetteModel.activeSelf;
-    }
-    private void loadListener() 
-    { 
-        DM.OnDialogueEnded.RemoveListener(loadListener); 
-        controller.startNewTransition(car_interior_controller.transitionType.wide_blink, car_interior_controller.transitionGameEffect.passengerCutscene); 
-        //controller.lockTransitions(false); idk if lock/unlock should be here.
-    }
-
+    
     public void startBootDialogue()
     {
         controller.checkExpectedScene(false);
@@ -204,18 +182,44 @@ public class PassengerSeat_Manager : MonoBehaviour
         } 
         */
     }
-
-    public void stepPassenger()
+    private void ejectPassenger()
     {
-        if (seatOccupied)
-            ejectPassenger();
-        else
+        //send stats off.
+        StatTracker.Instance.totalPassengerTime += passengerTimer;
+        StatTracker.Instance.totalPassengersCollected = totalPassengersCollected;
+
+        //cleanup passenger
+        foreach (GameObject model in insideModel)
         {
-            if (silhouetteModel.activeSelf || passenger.activeSelf)
-                LoadPassenger();
-            else
-                silhouetteModel.SetActive(true);
+            model.SetActive(false);
         }
+        seatOccupied = false;
+        passengerTimer = 0f;
+        passengerEventTimer = 0f;
+
+        //play final dialogue
+        try
+        {
+            DialogueManager.Instance.StartDialogue(dialogueBundle.finalDialogue);
+            DialogueManager.Instance.OnDialogueEnded.AddListener(setupForNextPassenger);
+        }
+        catch
+        {
+            setupForNextPassenger();
+        }
+
+    }
+    private void setupForNextPassenger()
+    {//setup for next passenger -> transition into silhouette
+        try { DialogueManager.Instance.OnDialogueEnded.RemoveListener(setupForNextPassenger); }
+        catch { }
+        if (passenger.GetComponent<jimmy_face_swapper>().selectedFace == 0)
+        {//if we've looped the circuit, go to win condition.
+            FindAnyObjectByType<LevelManager>().LoadScene("Menu_EndGame");
+        }
+        setupNextDialogueBundle();
+        silhouetteModel.SetActive(true);
+        controller.silentTransition();
     }
 
     public void setupNextDialogueBundle(bool rogue = false)
