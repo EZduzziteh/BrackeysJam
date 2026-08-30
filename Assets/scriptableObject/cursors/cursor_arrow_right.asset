@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3755607278b95a542a833ea944792730, type: 3}
-  m_Name: cursor_DELETEMEEEEE
+  m_Name: cursor_arrow_right
   m_EditorClassIdentifier: Assembly-CSharp::cursorPackage
   cursorFrames:
-  - {fileID: 2800000, guid: 98e707911f44c6f45bedb45429c71fa1, type: 3}
-  - {fileID: 2800000, guid: 42517b6f93c799c46811eefaffb948a6, type: 3}
-  - {fileID: 2800000, guid: 650a0f2a2b1df054e9bdff24aa3c2c80, type: 3}
+  - {fileID: 2800000, guid: cfc436ce3c4cc124aac7b2330372cfe0, type: 3}
+  - {fileID: 2800000, guid: 6b21a82973ea2524da61b5fee0a78909, type: 3}
+  - {fileID: 2800000, guid: 8992bda75791f7c469c9fbe79c42dc15, type: 3}
   hotSpot: {x: 0, y: 0}
   animated: 1
-  animFrameRate: 0.3
+  animFrameRate: 0.1
