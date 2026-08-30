@@ -60,7 +60,7 @@ public class PassengerSeat_Manager : MonoBehaviour
             if (silhouetteEventTimer >= silhouetteMaxDuration)
             {
                 silhouetteEventTimer = 0f;
-                controller.startNewTransition(car_interior_controller.transitionType.full_blink, car_interior_controller.transitionGameEffect.moveScene);
+                controller.startNewTransition(car_interior_controller.transitionType.full_blink, car_interior_controller.transitionGameEffect.moveScene); //TODO: this could be improved, use check expected side function somewhere here to fix bug where window dialogue plays while you're looking forward/driving.
                 FindFirstObjectByType<CarSpeedSystem>().StopDriving(); //This triggers the car to stop driving immediately and also sets candrive to false.
             }
         }
