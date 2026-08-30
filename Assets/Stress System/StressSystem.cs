@@ -33,6 +33,10 @@ public class StressSystem : MonoBehaviour
         OnMaxStressAchieved.AddListener(() =>
         {
             FindFirstObjectByType<PassengerSeat_Manager>().startBootDialogue();
+
+
+
+            UpdateTotemBasedOnStress();
         });
 
         UpdateTotemBasedOnStress();
@@ -121,6 +125,8 @@ public class StressSystem : MonoBehaviour
         }
         StressSources.RemoveAt(index);
         Debug.Log("Stress removed!");
+
+        UpdateTotemBasedOnStress();
     }
 
 
