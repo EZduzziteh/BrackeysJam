@@ -876,11 +876,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4343517791297101837, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
       propertyPath: m_Pivot.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4343517791297101837, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4343517791297101837, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
       propertyPath: m_AnchorMax.y
@@ -888,7 +888,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4343517791297101837, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4343517791297101837, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
       propertyPath: m_AnchorMin.y
@@ -904,7 +904,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4343517791297101837, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 4536535763427956011, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
       propertyPath: m_UiScaleMode
@@ -933,6 +933,10 @@ PrefabInstance:
     - target: {fileID: 7588561469797693978, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
       propertyPath: m_Name
       value: Dialogue_Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7612039081236627939, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8340226450137256009, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
       propertyPath: m_AnchorMax.y
