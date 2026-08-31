@@ -119,6 +119,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+<<<<<<< Updated upstream
 --- !u!1 &200159574
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,6 +257,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 200159574}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> Stashed changes
 --- !u!1 &229661803
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,7 +271,7 @@ GameObject:
   - component: {fileID: 229661806}
   - component: {fileID: 229661805}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: studio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -290,7 +293,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 92.68338}
+  m_AnchoredPosition: {x: 0, y: 106.9}
   m_SizeDelta: {x: 383.43, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &229661805
@@ -393,6 +396,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 229661803}
   m_CullTransparentMesh: 1
+<<<<<<< Updated upstream
 --- !u!1 &274798668
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,6 +534,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 274798668}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> Stashed changes
 --- !u!1 &458780406
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,6 +827,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 585960440}
   m_CullTransparentMesh: 1
+<<<<<<< Updated upstream
 --- !u!1 &741794907
 GameObject:
   m_ObjectHideFlags: 0
@@ -1095,6 +1102,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 772700792}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> Stashed changes
 --- !u!1001 &780693008
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1146,6 +1155,10 @@ PrefabInstance:
     - target: {fileID: 3225949867234466218, guid: d5b90d192c55bb44994fbdc7ad41fb26, type: 3}
       propertyPath: m_ClearFlags
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225949867234466218, guid: d5b90d192c55bb44994fbdc7ad41fb26, type: 3}
+      propertyPath: orthographic size
+      value: 1.35
       objectReference: {fileID: 0}
     - target: {fileID: 3225949867234466218, guid: d5b90d192c55bb44994fbdc7ad41fb26, type: 3}
       propertyPath: m_BackGroundColor.b
@@ -1282,7 +1295,13 @@ RectTransform:
   - {fileID: 458780407}
   - {fileID: 814618280}
   - {fileID: 229661804}
+<<<<<<< Updated upstream
   - {fileID: 1567070393}
+=======
+  - {fileID: 1056702494}
+  - {fileID: 937764518}
+  - {fileID: 1233800884}
+>>>>>>> Stashed changes
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1422,7 +1441,7 @@ GameObject:
   - component: {fileID: 937764520}
   - component: {fileID: 937764519}
   m_Layer: 5
-  m_Name: Text (TMP) (6)
+  m_Name: ppl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1444,8 +1463,13 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
+<<<<<<< Updated upstream
   m_AnchoredPosition: {x: 44.75154, y: -14.782373}
   m_SizeDelta: {x: 115.5, y: 80.15}
+=======
+  m_AnchoredPosition: {x: 108.6, y: -9}
+  m_SizeDelta: {x: 188.16, y: 197.1666}
+>>>>>>> Stashed changes
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &937764519
 MonoBehaviour:
@@ -1467,13 +1491,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Rukiboop
-
-    Nissel
-
-    Mekazeth
-
-'
+  m_text: "Pants\nrukiboop\n \n\nmarzy\n\n\nErgale\nEzduzzit\n\n\n \n\nNissel\nMekazeth\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1500,14 +1518,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16
-  m_fontSizeBase: 16
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 17
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1565,7 +1583,7 @@ GameObject:
   - component: {fileID: 1056702496}
   - component: {fileID: 1056702495}
   m_Layer: 5
-  m_Name: Text (TMP) (4)
+  m_Name: header
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1585,10 +1603,17 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1567070393}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -162.04181, y: 40.07573}
   m_SizeDelta: {x: 112.3817, y: 29.5633}
+=======
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 182, y: 200}
+>>>>>>> Stashed changes
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1056702495
 MonoBehaviour:
@@ -1610,7 +1635,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Audio
+  m_text: 'Producers
+
+
+    writer
+
+
+    Code
+
+
+    Audio
+
+
+    art'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1637,14 +1674,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 17
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1690,7 +1727,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1056702493}
   m_CullTransparentMesh: 1
---- !u!1 &1290742037
+--- !u!1 &1233800883
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1698,24 +1735,29 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1290742038}
-  - component: {fileID: 1290742040}
-  - component: {fileID: 1290742039}
+  - component: {fileID: 1233800884}
+  - component: {fileID: 1233800886}
+  - component: {fileID: 1233800885}
   m_Layer: 5
-  m_Name: Text (TMP) (8)
+  m_Name: ppl (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &1290742038
+--- !u!224 &1233800884
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 1290742037}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+=======
+  m_GameObject: {fileID: 1233800883}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+>>>>>>> Stashed changes
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1724,16 +1766,21 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
+<<<<<<< Updated upstream
   m_AnchoredPosition: {x: -162.04265, y: -13.390923}
   m_SizeDelta: {x: 112.38, y: 77.37}
+=======
+  m_AnchoredPosition: {x: 106.7, y: -154.4}
+  m_SizeDelta: {x: 188.16, y: 197.1666}
+>>>>>>> Stashed changes
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1290742039
+--- !u!114 &1233800885
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1290742037}
+  m_GameObject: {fileID: 1233800883}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
@@ -1748,6 +1795,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'Tom Gaetjens
+
 
 '
   m_isRightToLeft: 0
@@ -1776,14 +1824,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16
-  m_fontSizeBase: 16
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 17
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1821,13 +1869,13 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1290742040
+--- !u!222 &1233800886
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1290742037}
+  m_GameObject: {fileID: 1233800883}
   m_CullTransparentMesh: 1
 --- !u!1 &1459935258
 GameObject:
@@ -2066,6 +2114,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8de16023e537b9347b35f785fe00ea01, type: 3}
+<<<<<<< Updated upstream
 --- !u!1 &2087403956
 GameObject:
   m_ObjectHideFlags: 0
@@ -2203,6 +2252,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2087403956}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> Stashed changes
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
