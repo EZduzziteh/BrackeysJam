@@ -919,7 +919,28 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7588561469797693978, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 119124180}
+    - targetCorrespondingSourceObject: {fileID: 7293966300925155402, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1288909238}
   m_SourcePrefab: {fileID: 100100000, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
+--- !u!1 &1288909237 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7293966300925155402, guid: 56d9cb7e6a4151946b2e3e36fa10ff9c, type: 3}
+  m_PrefabInstance: {fileID: 1288909236}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1288909238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288909237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47c0517a31e93e34184dd73eec92d7a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScaleCanvasToCamera
+  pixelPerfectCamera: {fileID: 5645120683801800799}
 --- !u!1 &1395535596 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8250989434395001628, guid: 881dedc10dd7ac24094696ea63b6ff65, type: 3}
@@ -1755,6 +1776,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 723075888}
   m_SourcePrefab: {fileID: 100100000, guid: d5b90d192c55bb44994fbdc7ad41fb26, type: 3}
+--- !u!114 &5645120683801800799 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3705394261494008173, guid: d5b90d192c55bb44994fbdc7ad41fb26, type: 3}
+  m_PrefabInstance: {fileID: 5645120683801800798}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723075881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c88f5cead0c0b2a4eb05b5900433f8d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.2D.Runtime::UnityEngine.Rendering.Universal.PixelPerfectCamera
 --- !u!1001 &7020610133408891157
 PrefabInstance:
   m_ObjectHideFlags: 0
