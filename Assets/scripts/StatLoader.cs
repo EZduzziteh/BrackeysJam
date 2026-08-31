@@ -16,8 +16,8 @@ public class StatLoader : MonoBehaviour
 
     public void LoadStats()
     {
-        killOMetersText.text = StatTracker.Instance.distanceTravelled.ToString() + " Kill-O-Meters";
+        killOMetersText.text = StatTracker.Instance.distanceTravelled.ToString("F2") + " Kill-O-Meters";
         murdersText.text =  StatTracker.Instance.totalPassengersCollected.ToString() + " Poor Unforunate Souls";
-        timeVictimsAliveText.text = StatTracker.Instance.totalPassengerTime.ToString() + " Very Long Seconds";
+        timeVictimsAliveText.text = StatTracker.Instance.totalPassengerTime.ToString("F0") + " Very Long Seconds";
     }
 }
